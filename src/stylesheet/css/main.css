@@ -1192,4 +1192,22 @@ body {
     flex: 0 0 calc(100% - 40px * 2) !important;
   }
 }
+
+.scrollable {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.wrap-overflow {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.test {
+  height: 100vh;
+  text-align: center;
+  font-size: 4rem;
+}
 /*# sourceMappingURL=main.css.map */

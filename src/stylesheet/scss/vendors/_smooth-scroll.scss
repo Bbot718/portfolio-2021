@@ -1,0 +1,18 @@
+.scrollable {
+   width: 100vw;
+   height: 100vh;
+   overflow: hidden;
+ }
+ 
+ .wrap-overflow {
+   position: relative;
+   overflow: hidden;
+   height: 100%;
+}
+
+.test{
+  height: 100vh;
+  text-align: center;
+  font-size: 4rem;
+}
+ 
