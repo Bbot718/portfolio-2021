@@ -18,7 +18,6 @@
       .col-#{$j}-of-#{$i}{ 
          flex: 0 0 calc(100% / #{$i} * #{$j}   - #{$gutter-vertical} * 2);
          margin: $gutter-horizontal $gutter-vertical;
-         background-color: lightcoral;
 
          @include respond(sm) {
             flex: 0 0 calc(100% - #{$gutter-vertical} * 2) !important;

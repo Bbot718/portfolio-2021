@@ -7,7 +7,7 @@ function App() {
       <div className="container">
         <div className="row">
           <div className="col-7-of-14">
-            ds
+            <span className="primary-heading">Hello Friend</span>
           </div>
           <div className="col-5-of-14">
             ds

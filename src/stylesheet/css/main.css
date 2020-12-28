@@ -11,6 +11,20 @@ body {
   overflow-x: hidden;
 }
 
+@font-face {
+  font-family: 'euclid_flexbold';
+  src: url("../../assets/fonts/euclidflex-bold-webfont.woff") format("woff"), url("../../assets/fonts/euclidflex-bold-webfont.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'euclid_flexregular';
+  src: url("../../assets/fonts/euclidflex-regular-webfont.woff") format("woff2"), url("../../assets/fonts/EuclidFlex-Regular_webfont.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .container {
   margin: 0 auto;
 }
@@ -27,7 +41,6 @@ body {
 .col-1-of-1 {
   flex: 0 0 calc(100% / 1 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -39,7 +52,6 @@ body {
 .col-1-of-2 {
   flex: 0 0 calc(100% / 2 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -51,7 +63,6 @@ body {
 .col-2-of-2 {
   flex: 0 0 calc(100% / 2 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -63,7 +74,6 @@ body {
 .col-1-of-3 {
   flex: 0 0 calc(100% / 3 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -75,7 +85,6 @@ body {
 .col-2-of-3 {
   flex: 0 0 calc(100% / 3 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -87,7 +96,6 @@ body {
 .col-3-of-3 {
   flex: 0 0 calc(100% / 3 * 3   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -99,7 +107,6 @@ body {
 .col-1-of-4 {
   flex: 0 0 calc(100% / 4 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -111,7 +118,6 @@ body {
 .col-2-of-4 {
   flex: 0 0 calc(100% / 4 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -123,7 +129,6 @@ body {
 .col-3-of-4 {
   flex: 0 0 calc(100% / 4 * 3   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -135,7 +140,6 @@ body {
 .col-4-of-4 {
   flex: 0 0 calc(100% / 4 * 4   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -147,7 +151,6 @@ body {
 .col-1-of-5 {
   flex: 0 0 calc(100% / 5 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -159,7 +162,6 @@ body {
 .col-2-of-5 {
   flex: 0 0 calc(100% / 5 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -171,7 +173,6 @@ body {
 .col-3-of-5 {
   flex: 0 0 calc(100% / 5 * 3   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -183,7 +184,6 @@ body {
 .col-4-of-5 {
   flex: 0 0 calc(100% / 5 * 4   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -195,7 +195,6 @@ body {
 .col-5-of-5 {
   flex: 0 0 calc(100% / 5 * 5   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -207,7 +206,6 @@ body {
 .col-1-of-6 {
   flex: 0 0 calc(100% / 6 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -219,7 +217,6 @@ body {
 .col-2-of-6 {
   flex: 0 0 calc(100% / 6 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -231,7 +228,6 @@ body {
 .col-3-of-6 {
   flex: 0 0 calc(100% / 6 * 3   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -243,7 +239,6 @@ body {
 .col-4-of-6 {
   flex: 0 0 calc(100% / 6 * 4   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -255,7 +250,6 @@ body {
 .col-5-of-6 {
   flex: 0 0 calc(100% / 6 * 5   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -267,7 +261,6 @@ body {
 .col-6-of-6 {
   flex: 0 0 calc(100% / 6 * 6   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -279,7 +272,6 @@ body {
 .col-1-of-7 {
   flex: 0 0 calc(100% / 7 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -291,7 +283,6 @@ body {
 .col-2-of-7 {
   flex: 0 0 calc(100% / 7 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -303,7 +294,6 @@ body {
 .col-3-of-7 {
   flex: 0 0 calc(100% / 7 * 3   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -315,7 +305,6 @@ body {
 .col-4-of-7 {
   flex: 0 0 calc(100% / 7 * 4   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -327,7 +316,6 @@ body {
 .col-5-of-7 {
   flex: 0 0 calc(100% / 7 * 5   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -339,7 +327,6 @@ body {
 .col-6-of-7 {
   flex: 0 0 calc(100% / 7 * 6   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -351,7 +338,6 @@ body {
 .col-7-of-7 {
   flex: 0 0 calc(100% / 7 * 7   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -363,7 +349,6 @@ body {
 .col-1-of-8 {
   flex: 0 0 calc(100% / 8 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -375,7 +360,6 @@ body {
 .col-2-of-8 {
   flex: 0 0 calc(100% / 8 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -387,7 +371,6 @@ body {
 .col-3-of-8 {
   flex: 0 0 calc(100% / 8 * 3   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -399,7 +382,6 @@ body {
 .col-4-of-8 {
   flex: 0 0 calc(100% / 8 * 4   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -411,7 +393,6 @@ body {
 .col-5-of-8 {
   flex: 0 0 calc(100% / 8 * 5   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -423,7 +404,6 @@ body {
 .col-6-of-8 {
   flex: 0 0 calc(100% / 8 * 6   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -435,7 +415,6 @@ body {
 .col-7-of-8 {
   flex: 0 0 calc(100% / 8 * 7   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -447,7 +426,6 @@ body {
 .col-8-of-8 {
   flex: 0 0 calc(100% / 8 * 8   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -459,7 +437,6 @@ body {
 .col-1-of-9 {
   flex: 0 0 calc(100% / 9 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -471,7 +448,6 @@ body {
 .col-2-of-9 {
   flex: 0 0 calc(100% / 9 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -483,7 +459,6 @@ body {
 .col-3-of-9 {
   flex: 0 0 calc(100% / 9 * 3   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -495,7 +470,6 @@ body {
 .col-4-of-9 {
   flex: 0 0 calc(100% / 9 * 4   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -507,7 +481,6 @@ body {
 .col-5-of-9 {
   flex: 0 0 calc(100% / 9 * 5   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -519,7 +492,6 @@ body {
 .col-6-of-9 {
   flex: 0 0 calc(100% / 9 * 6   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -531,7 +503,6 @@ body {
 .col-7-of-9 {
   flex: 0 0 calc(100% / 9 * 7   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -543,7 +514,6 @@ body {
 .col-8-of-9 {
   flex: 0 0 calc(100% / 9 * 8   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -555,7 +525,6 @@ body {
 .col-9-of-9 {
   flex: 0 0 calc(100% / 9 * 9   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -567,7 +536,6 @@ body {
 .col-1-of-10 {
   flex: 0 0 calc(100% / 10 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -579,7 +547,6 @@ body {
 .col-2-of-10 {
   flex: 0 0 calc(100% / 10 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -591,7 +558,6 @@ body {
 .col-3-of-10 {
   flex: 0 0 calc(100% / 10 * 3   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -603,7 +569,6 @@ body {
 .col-4-of-10 {
   flex: 0 0 calc(100% / 10 * 4   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -615,7 +580,6 @@ body {
 .col-5-of-10 {
   flex: 0 0 calc(100% / 10 * 5   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -627,7 +591,6 @@ body {
 .col-6-of-10 {
   flex: 0 0 calc(100% / 10 * 6   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -639,7 +602,6 @@ body {
 .col-7-of-10 {
   flex: 0 0 calc(100% / 10 * 7   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -651,7 +613,6 @@ body {
 .col-8-of-10 {
   flex: 0 0 calc(100% / 10 * 8   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -663,7 +624,6 @@ body {
 .col-9-of-10 {
   flex: 0 0 calc(100% / 10 * 9   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -675,7 +635,6 @@ body {
 .col-10-of-10 {
   flex: 0 0 calc(100% / 10 * 10   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -687,7 +646,6 @@ body {
 .col-1-of-11 {
   flex: 0 0 calc(100% / 11 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -699,7 +657,6 @@ body {
 .col-2-of-11 {
   flex: 0 0 calc(100% / 11 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -711,7 +668,6 @@ body {
 .col-3-of-11 {
   flex: 0 0 calc(100% / 11 * 3   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -723,7 +679,6 @@ body {
 .col-4-of-11 {
   flex: 0 0 calc(100% / 11 * 4   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -735,7 +690,6 @@ body {
 .col-5-of-11 {
   flex: 0 0 calc(100% / 11 * 5   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -747,7 +701,6 @@ body {
 .col-6-of-11 {
   flex: 0 0 calc(100% / 11 * 6   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -759,7 +712,6 @@ body {
 .col-7-of-11 {
   flex: 0 0 calc(100% / 11 * 7   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -771,7 +723,6 @@ body {
 .col-8-of-11 {
   flex: 0 0 calc(100% / 11 * 8   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -783,7 +734,6 @@ body {
 .col-9-of-11 {
   flex: 0 0 calc(100% / 11 * 9   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -795,7 +745,6 @@ body {
 .col-10-of-11 {
   flex: 0 0 calc(100% / 11 * 10   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -807,7 +756,6 @@ body {
 .col-11-of-11 {
   flex: 0 0 calc(100% / 11 * 11   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -819,7 +767,6 @@ body {
 .col-1-of-12 {
   flex: 0 0 calc(100% / 12 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -831,7 +778,6 @@ body {
 .col-2-of-12 {
   flex: 0 0 calc(100% / 12 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -843,7 +789,6 @@ body {
 .col-3-of-12 {
   flex: 0 0 calc(100% / 12 * 3   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -855,7 +800,6 @@ body {
 .col-4-of-12 {
   flex: 0 0 calc(100% / 12 * 4   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -867,7 +811,6 @@ body {
 .col-5-of-12 {
   flex: 0 0 calc(100% / 12 * 5   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -879,7 +822,6 @@ body {
 .col-6-of-12 {
   flex: 0 0 calc(100% / 12 * 6   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -891,7 +833,6 @@ body {
 .col-7-of-12 {
   flex: 0 0 calc(100% / 12 * 7   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -903,7 +844,6 @@ body {
 .col-8-of-12 {
   flex: 0 0 calc(100% / 12 * 8   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -915,7 +855,6 @@ body {
 .col-9-of-12 {
   flex: 0 0 calc(100% / 12 * 9   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -927,7 +866,6 @@ body {
 .col-10-of-12 {
   flex: 0 0 calc(100% / 12 * 10   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -939,7 +877,6 @@ body {
 .col-11-of-12 {
   flex: 0 0 calc(100% / 12 * 11   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -951,7 +888,6 @@ body {
 .col-12-of-12 {
   flex: 0 0 calc(100% / 12 * 12   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -963,7 +899,6 @@ body {
 .col-1-of-13 {
   flex: 0 0 calc(100% / 13 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -975,7 +910,6 @@ body {
 .col-2-of-13 {
   flex: 0 0 calc(100% / 13 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -987,7 +921,6 @@ body {
 .col-3-of-13 {
   flex: 0 0 calc(100% / 13 * 3   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -999,7 +932,6 @@ body {
 .col-4-of-13 {
   flex: 0 0 calc(100% / 13 * 4   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1011,7 +943,6 @@ body {
 .col-5-of-13 {
   flex: 0 0 calc(100% / 13 * 5   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1023,7 +954,6 @@ body {
 .col-6-of-13 {
   flex: 0 0 calc(100% / 13 * 6   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1035,7 +965,6 @@ body {
 .col-7-of-13 {
   flex: 0 0 calc(100% / 13 * 7   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1047,7 +976,6 @@ body {
 .col-8-of-13 {
   flex: 0 0 calc(100% / 13 * 8   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1059,7 +987,6 @@ body {
 .col-9-of-13 {
   flex: 0 0 calc(100% / 13 * 9   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1071,7 +998,6 @@ body {
 .col-10-of-13 {
   flex: 0 0 calc(100% / 13 * 10   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1083,7 +1009,6 @@ body {
 .col-11-of-13 {
   flex: 0 0 calc(100% / 13 * 11   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1095,7 +1020,6 @@ body {
 .col-12-of-13 {
   flex: 0 0 calc(100% / 13 * 12   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1107,7 +1031,6 @@ body {
 .col-13-of-13 {
   flex: 0 0 calc(100% / 13 * 13   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1119,7 +1042,6 @@ body {
 .col-1-of-14 {
   flex: 0 0 calc(100% / 14 * 1   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1131,7 +1053,6 @@ body {
 .col-2-of-14 {
   flex: 0 0 calc(100% / 14 * 2   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1143,7 +1064,6 @@ body {
 .col-3-of-14 {
   flex: 0 0 calc(100% / 14 * 3   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1155,7 +1075,6 @@ body {
 .col-4-of-14 {
   flex: 0 0 calc(100% / 14 * 4   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1167,7 +1086,6 @@ body {
 .col-5-of-14 {
   flex: 0 0 calc(100% / 14 * 5   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1179,7 +1097,6 @@ body {
 .col-6-of-14 {
   flex: 0 0 calc(100% / 14 * 6   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1191,7 +1108,6 @@ body {
 .col-7-of-14 {
   flex: 0 0 calc(100% / 14 * 7   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1203,7 +1119,6 @@ body {
 .col-8-of-14 {
   flex: 0 0 calc(100% / 14 * 8   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1215,7 +1130,6 @@ body {
 .col-9-of-14 {
   flex: 0 0 calc(100% / 14 * 9   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1227,7 +1141,6 @@ body {
 .col-10-of-14 {
   flex: 0 0 calc(100% / 14 * 10   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1239,7 +1152,6 @@ body {
 .col-11-of-14 {
   flex: 0 0 calc(100% / 14 * 11   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1251,7 +1163,6 @@ body {
 .col-12-of-14 {
   flex: 0 0 calc(100% / 14 * 12   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1263,7 +1174,6 @@ body {
 .col-13-of-14 {
   flex: 0 0 calc(100% / 14 * 13   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1275,7 +1185,6 @@ body {
 .col-14-of-14 {
   flex: 0 0 calc(100% / 14 * 14   - 40px * 2);
   margin: 0rem 40px;
-  background-color: lightcoral;
 }
 
 @media only screen and (max-width: 1024px) {
