@@ -1,0 +1,25 @@
+header{
+   width: 100vw;
+   height: 200vh;
+}
+
+.header{
+   position: relative;
+   width: 100vw;
+   height: 100vh;
+
+   &__container{
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      top: 50%;
+      transform: translateY(-50%);
+   }
+
+   &__content{
+
+   }
+
+   &--dark{ background-color: black;}
+   &--light{ background-color: white;}
+}

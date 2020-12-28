@@ -8,8 +8,7 @@ import HomePageAnimations from '../animations/home-page-animations.js';
 class SmoothScroll{
   constructor(){
     this.scroller = document.querySelector("[data-scrollbar]");
-    this.bodyScrollBar = Scrollbar.init(this.scroller, { damping: 0.02, renderByPixels: true, syncCallbacks: true });
-    this.bodyScrollBar.setMomentum(100,100);
+    this.bodyScrollBar = Scrollbar.init(this.scroller, { damping: 0.1, renderByPixels: true, syncCallbacks: true });
 
     gsap.registerPlugin(ScrollTrigger);
     this.ScrollerProxy(this.bodyScrollBar);

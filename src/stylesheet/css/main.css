@@ -20,9 +20,52 @@ body {
 
 @font-face {
   font-family: 'euclid_flexregular';
-  src: url("../../assets/fonts/euclidflex-regular-webfont.woff") format("woff2"), url("../../assets/fonts/EuclidFlex-Regular_webfont.woff2") format("woff");
+  src: url("../../assets/fonts/EuclidFlex-Regular_webfont.woff2") format("woff2"), url("../../assets/fonts/euclidflex-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
+}
+
+.header-heading {
+  font-family: 'euclid_flexregular';
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 1400px) {
+  .header-heading {
+    font-size: 6.4rem;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .header-heading {
+    font-size: 5.1rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .header-heading {
+    font-size: 4.6rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .header-heading {
+    font-size: 4.6rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .header-heading {
+    font-size: 4.5rem;
+  }
+}
+
+.header-heading--dark {
+  color: white;
+}
+
+.header-heading--light {
+  color: black;
 }
 
 .container {
@@ -1191,6 +1234,33 @@ body {
   .col-14-of-14 {
     flex: 0 0 calc(100% - 40px * 2) !important;
   }
+}
+
+header {
+  width: 100vw;
+  height: 200vh;
+}
+
+.header {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header__container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header--dark {
+  background-color: black;
+}
+
+.header--light {
+  background-color: white;
 }
 
 .scrollable {
