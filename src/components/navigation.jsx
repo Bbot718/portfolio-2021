@@ -9,7 +9,7 @@ class Navigation extends React.Component {
          
          {/* Current Section */}
          <div className="navigation__current"> 
-            <div className={"info-heading info-heading--bold info-heading--"+ this.props.theme}><span className="exception">B</span> enjamin Botros</div>
+            <div className={"info-heading info-heading--bold info-heading--"+ this.props.theme}>Benjamin Botros</div>
             <div className={"info-heading info-heading--"+ this.props.theme}>Interaction Designer</div> 
          </div>
 

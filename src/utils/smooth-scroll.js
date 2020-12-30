@@ -9,11 +9,15 @@ class SmoothScroll{
   constructor(){
     this.scroller = document.querySelector("[data-scrollbar]");
     this.bodyScrollBar = Scrollbar.init(this.scroller, { damping: 0.1, renderByPixels: true, syncCallbacks: true });
+    this.bodyScrollBar.track.yAxis.element.remove();
 
     gsap.registerPlugin(ScrollTrigger);
     this.ScrollerProxy(this.bodyScrollBar);
 
-    // this.FixedElements(document.querySelector('.navigationi'));
+    this.FixedElements(document.querySelector('.navigation'));
+    this.StickyElements(document.querySelector('.header__main', '.header'));
+
+    this.bodyScrollBar.addListener(ScrollTrigger.update);
 
     HomePageAnimations();
   }
@@ -26,14 +30,28 @@ class SmoothScroll{
         }
         return bodyScrollBar.scrollTop;
       },
+      getBoundingClientRect() {
+        return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+      }
     });
   }
 
+  
+
   FixedElements(fixedElement){
-      console.log(fixedElement)
       this.bodyScrollBar.addListener(({ offset }) => {  
         fixedElement.style.top = offset.y + 'px';
       });
+  }
+
+  StickyElements(stickyELement, trigger){
+    ScrollTrigger.create({
+        trigger: trigger,
+        markers: true
+
+        
+    })
+
   }
 
   ScrollTo(target){

@@ -1,38 +1,19 @@
 header{
-   width: 100vw;
    height: 200vh;
+   background-color: yellowgreen;
 }
 
 .header{
    position: relative;
-   width: 100vw;
    height: 100vh;
 
-   &__sidebar{
-      color: white;
-      mix-blend-mode: difference ;
-      position: absolute;
-      height: 90vh;
-      top: 50%;
-      transform: translateY(-50%);
-   }
 
    &__main{
-      color: white;
+
       mix-blend-mode: difference ;
       position: absolute;
       top: 50%;
+      height: 80vh;
       transform: translateY(-50%);
    }
-
-   &--dark{ 
-      background-color: teal;
-   }
-   &--light{ background-color: orange;}
-}
-
-.exception{
-   position: relative;
-   color: blue;
-   mix-blend-mode: none !important;
 }

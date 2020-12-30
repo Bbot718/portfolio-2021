@@ -34,7 +34,7 @@
    font-family: 'euclid_flexregular';
    text-transform: uppercase;
 
-
+   &__container{}
 
    @include respond(xxl) {font-size: 1.5rem;}
    @include respond(xl) {font-size: 1.4rem;}
