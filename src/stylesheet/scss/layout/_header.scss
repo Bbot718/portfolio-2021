@@ -8,18 +8,31 @@ header{
    width: 100vw;
    height: 100vh;
 
-   &__container{
+   &__sidebar{
+      color: white;
+      mix-blend-mode: difference ;
       position: absolute;
-      display: flex;
-      flex-direction: column;
+      height: 90vh;
       top: 50%;
       transform: translateY(-50%);
    }
 
-   &__content{
-
+   &__main{
+      color: white;
+      mix-blend-mode: difference ;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
    }
 
-   &--dark{ background-color: black;}
-   &--light{ background-color: white;}
+   &--dark{ 
+      background-color: teal;
+   }
+   &--light{ background-color: orange;}
+}
+
+.exception{
+   position: relative;
+   color: blue;
+   mix-blend-mode: none !important;
 }

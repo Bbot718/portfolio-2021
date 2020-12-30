@@ -4,10 +4,14 @@
 @import './base/reset';
 @import './base/typography';
 
+@import './components/navigation';
+@import './components/title';
 @import './components/line';
 
 @import './layout/grid';
-@import './layout/spacing';
 @import './layout/header';
+
+@import './page/home';
+
 
 @import './vendors/smooth-scroll';

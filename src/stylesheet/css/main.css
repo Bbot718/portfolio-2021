@@ -11,6 +11,10 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  color: inherit;
+}
+
 @font-face {
   font-family: 'euclid_flexbold';
   src: url("../../assets/fonts/euclidflex-bold-webfont.woff") format("woff"), url("../../assets/fonts/euclidflex-bold-webfont.woff2") format("woff2");
@@ -26,25 +30,30 @@ body {
 }
 
 .header-heading {
-  font-family: 'euclid_flexregular';
+  font-family: 'euclid_flexbold';
   text-transform: uppercase;
+  /*
+   &--dark{ color: white }
+   &--light{ color: black }
+   */
 }
 
 @media only screen and (min-width: 1400px) {
   .header-heading {
-    font-size: 6.4rem;
+    font-size: 5.75rem;
+    line-height: 8rem;
   }
 }
 
 @media only screen and (max-width: 1400px) {
   .header-heading {
-    font-size: 5.1rem;
+    font-size: 4.8rem;
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .header-heading {
-    font-size: 4.6rem;
+    font-size: 4rem;
   }
 }
 
@@ -60,12 +69,62 @@ body {
   }
 }
 
-.header-heading--dark {
-  color: white;
+.info-heading {
+  font-family: 'euclid_flexregular';
+  text-transform: uppercase;
 }
 
-.header-heading--light {
-  color: black;
+@media only screen and (min-width: 1400px) {
+  .info-heading {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .info-heading {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .info-heading {
+    font-size: 1.3rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .info-heading {
+    font-size: 4.6rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .info-heading {
+    font-size: 4.5rem;
+  }
+}
+
+.info-heading--bold {
+  font-family: 'euclid_flexbold';
+}
+
+.navigation {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: right;
+}
+
+.navigation__menu {
+  list-style: none;
+}
+
+@media only screen and (max-width: 1024px) {
+  .navigation {
+    display: none;
+  }
 }
 
 .container {
@@ -1247,20 +1306,39 @@ header {
   height: 100vh;
 }
 
-.header__container {
+.header__sidebar {
+  color: white;
+  mix-blend-mode: difference;
   position: absolute;
-  display: flex;
-  flex-direction: column;
+  height: 90vh;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.header__main {
+  color: white;
+  mix-blend-mode: difference;
+  position: absolute;
   top: 50%;
   transform: translateY(-50%);
 }
 
 .header--dark {
-  background-color: black;
+  background-color: teal;
 }
 
 .header--light {
-  background-color: white;
+  background-color: orange;
+}
+
+.exception {
+  position: relative;
+  color: blue;
+  mix-blend-mode: none !important;
+}
+
+.main {
+  height: 300vh;
 }
 
 .scrollable {

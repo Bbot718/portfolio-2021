@@ -12,7 +12,8 @@ class SmoothScroll{
 
     gsap.registerPlugin(ScrollTrigger);
     this.ScrollerProxy(this.bodyScrollBar);
-    this.FixedElements(document.querySelector('#navigation'));
+
+    // this.FixedElements(document.querySelector('.navigationi'));
 
     HomePageAnimations();
   }
@@ -29,11 +30,10 @@ class SmoothScroll{
   }
 
   FixedElements(fixedElement){
-    if(fixedElement){
+      console.log(fixedElement)
       this.bodyScrollBar.addListener(({ offset }) => {  
         fixedElement.style.top = offset.y + 'px';
       });
-    }
   }
 
   ScrollTo(target){

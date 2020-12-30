@@ -1,15 +1,19 @@
 import React  from 'react';
 
+import Navigation from './navigation';
+
 class Header extends React.Component {
 
   render() {
     return (
       <div className={'header header--'+ this.props.theme}>
-         <div className="container">
+         <div className="container container--full-width">
             <div className="row">
-               <div className="col-2-of-14" />
-               <div className="col-10-of-14">
-                  <div className="header__container container">
+               <div className="col-3-of-14">
+                  <div className="header__sidebar"><Navigation /></div>
+               </div>
+               <div className="col-11-of-14">
+                  <div className="header__main container">
                      <div className="row">
                         <div className="col-12-of-12">
                            <div className="header__content">
@@ -17,7 +21,7 @@ class Header extends React.Component {
                            </div>
                         </div>
                      </div>
-                     <div className="row">
+                     <div className="row">+
                         <div className="col-12-of-12">
                            <div className="header__content"> 
                               <span className={"header-heading header-heading--"+ this.props.theme}>I'm Ben, a Passionate</span> 
