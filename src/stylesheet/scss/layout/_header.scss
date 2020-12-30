@@ -1,6 +1,5 @@
 header{
    height: 200vh;
-   background-color: yellowgreen;
 }
 
 .header{
@@ -9,11 +8,18 @@ header{
 
 
    &__main{
-
+      color: black;
       mix-blend-mode: difference ;
       position: absolute;
       top: 50%;
       height: 80vh;
       transform: translateY(-50%);
+   }
+
+   &__animation{
+      &__container{
+         position: relative;
+         overflow: hidden;
+      }
    }
 }

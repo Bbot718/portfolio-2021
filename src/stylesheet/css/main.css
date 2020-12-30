@@ -15,6 +15,10 @@ a {
   color: inherit;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
 @font-face {
   font-family: 'euclid_flexbold';
   src: url("../../assets/fonts/euclidflex-bold-webfont.woff") format("woff"), url("../../assets/fonts/euclidflex-bold-webfont.woff2") format("woff2");
@@ -30,7 +34,7 @@ a {
 }
 
 .header-heading {
-  font-family: 'euclid_flexbold';
+  font-family: 'euclid_flexregular';
   text-transform: uppercase;
   /*
    &--dark{ color: white }
@@ -76,19 +80,19 @@ a {
 
 @media only screen and (min-width: 1400px) {
   .info-heading {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
 @media only screen and (max-width: 1400px) {
   .info-heading {
-    font-size: 1.4rem;
+    font-size: 1rem;
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .info-heading {
-    font-size: 1.3rem;
+    font-size: .75rem;
   }
 }
 
@@ -106,6 +110,34 @@ a {
 
 .info-heading--bold {
   font-family: 'euclid_flexbold';
+}
+
+.openTypeStyle1 {
+  font-feature-settings: "ss01";
+}
+
+.openTypeStyle2 {
+  font-feature-settings: "ss02";
+}
+
+.openTypeStyle3 {
+  font-feature-settings: "ss03";
+}
+
+.openTypeStyle4 {
+  font-feature-settings: "ss04";
+}
+
+.openTypeStyle5 {
+  font-feature-settings: "ss05";
+}
+
+.openTypeStyle6 {
+  font-feature-settings: "ss06";
+}
+
+.openTypeStyle7 {
+  font-feature-settings: "ss07";
 }
 
 .sidebar {
@@ -128,7 +160,36 @@ a {
 }
 
 .navigation__menu {
+  display: flex;
+  flex-direction: column;
   list-style: none;
+}
+
+.navigation__item {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.navigation__item:before {
+  position: absolute;
+  content: "";
+  height: 1px;
+  background: black;
+  transition: all 0.3s;
+  width: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.navigation__item:hover:not(.pass--active):before {
+  width: 100%;
+  left: 0;
+  background: black;
+}
+
+.navigation__item__container {
+  position: relative;
+  display: inline-block;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -1307,7 +1368,6 @@ a {
 
 header {
   height: 200vh;
-  background-color: yellowgreen;
 }
 
 .header {
@@ -1316,11 +1376,17 @@ header {
 }
 
 .header__main {
+  color: black;
   mix-blend-mode: difference;
   position: absolute;
   top: 50%;
   height: 80vh;
   transform: translateY(-50%);
+}
+
+.header__animation__container {
+  position: relative;
+  overflow: hidden;
 }
 
 .main {
@@ -1331,6 +1397,10 @@ header {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+}
+
+.scrollable::-webkit-scrollbar {
+  display: static !important;
 }
 
 .wrap-overflow {

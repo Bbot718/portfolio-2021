@@ -15,7 +15,7 @@
 }
 
 .header-heading{
-   font-family: 'euclid_flexbold';
+   font-family: 'euclid_flexregular';
    text-transform: uppercase;
 
    @include respond(xxl) {font-size: 5.75rem; line-height: 8rem;}
@@ -34,13 +34,15 @@
    font-family: 'euclid_flexregular';
    text-transform: uppercase;
 
-   &__container{}
-
-   @include respond(xxl) {font-size: 1.5rem;}
-   @include respond(xl) {font-size: 1.4rem;}
-   @include respond(l) { font-size: 1.3rem;}
+   @include respond(xxl) {font-size: 1.2rem;}
+   @include respond(xl) {font-size: 1rem;}
+   @include respond(l) { font-size: .75rem;}
    @include respond(md) { font-size: 4.6rem;}
    @include respond(sm) {font-size: 4.5rem;}
 
    &--bold{ font-family: 'euclid_flexbold'; }
+}
+
+@for $i from 1 through 7{
+   .openTypeStyle#{$i}{font-feature-settings: 'ss0#{$i}'}
 }

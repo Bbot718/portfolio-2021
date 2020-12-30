@@ -15,14 +15,14 @@ class Navigation extends React.Component {
 
          {/* Menu */}
          <ul className="navigation__menu">
-            <li className="navigation__item"> 
-               <span className="info-heading">Selected Work</span> 
+            <li className="navigation__item__container"> 
+               <span className="navigation__item info-heading">Selected Work</span> 
             </li>
-            <li className="navigation__item">
-               <span className="info-heading">About</span> 
+            <li className="navigation__item__container">
+               <span className="navigation__item info-heading">About</span> 
             </li>
-            <li className="navigation__item">
-               <span className="info-heading">Contact</span> 
+            <li className="navigation__item__container">
+               <span className="navigation__item info-heading">Contact</span> 
             </li>
          </ul>
 

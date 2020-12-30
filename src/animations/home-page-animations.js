@@ -1,4 +1,7 @@
 
+
+
+import HeaderAnimation from './header-animation.js';
 /*
 import TitleIn from './title-in.js';
 import ElementIn from './element-in.js'
@@ -15,6 +18,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HomePageAnimations = () => {
 
+   const headerAnimation = new HeaderAnimation('.header-animation');
+   headerAnimation.Play(); 
    /*
 
    //Navigation   

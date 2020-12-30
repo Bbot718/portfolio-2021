@@ -18,9 +18,43 @@
    width: 100%;
    margin-top: 10vh;
 
+   &__menu{
+      display: flex;   
+      flex-direction: column;
 
-   
-   &__menu{list-style: none;}
+      list-style: none;
+   }
+
+   &__item{
+      display: inline-block;
+      cursor: pointer;
+
+      &:before{
+         position: absolute;
+         content: "";
+      
+         height: 1px;
+         background: black;
+         transition: all 0.3s;
+
+         width: 0;
+         right: 0;
+         bottom: 0;   
+     }
+     &:hover:not(.pass--active){
+         &:before {
+             width: 100%;
+             left: 0;
+             background: black;
+             
+         }
+     }
+
+      &__container{
+         position: relative; 
+         display: inline-block;
+      }
+   }
 
    @include respond(sm) {display: none;}
 }

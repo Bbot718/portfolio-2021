@@ -8,7 +8,7 @@ import HomePageAnimations from '../animations/home-page-animations.js';
 class SmoothScroll{
   constructor(){
     this.scroller = document.querySelector("[data-scrollbar]");
-    this.bodyScrollBar = Scrollbar.init(this.scroller, { damping: 0.1, renderByPixels: true, syncCallbacks: true });
+    this.bodyScrollBar = Scrollbar.init(this.scroller, { damping: 0.1, renderByPixels: true, syncCallbacks: true, delegateTo: document });
     this.bodyScrollBar.track.yAxis.element.remove();
 
     gsap.registerPlugin(ScrollTrigger);
@@ -47,11 +47,12 @@ class SmoothScroll{
   StickyElements(stickyELement, trigger){
     ScrollTrigger.create({
         trigger: trigger,
-        markers: true
-
-        
+        start: 'top top',
+        end: 'bottom bottom',
+        markers: true,
+        onEnter: () => console.log('hey'),
+        onLeave: () => console.log('leave')       
     })
-
   }
 
   ScrollTo(target){
