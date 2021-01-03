@@ -1,5 +1,6 @@
 header{
    height: 200vh;
+   //background: linear-gradient(180deg, #FFC0CB 50%, #00FFFF 50%);
 }
 
 .header{
@@ -8,11 +9,12 @@ header{
 
 
    &__main{
+      
       color: black;
       mix-blend-mode: difference ;
       position: absolute;
       top: 50%;
-      height: 80vh;
+      //height: 80vh;
       transform: translateY(-50%);
    }
 

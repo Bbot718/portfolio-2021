@@ -17,7 +17,7 @@ class SmoothScroll{
     this.FixedElements(document.querySelector('.navigation'));
     this.StickyElements(document.querySelector('.header__main', '.header'));
 
-    this.bodyScrollBar.addListener(ScrollTrigger.update);
+   //this.bodyScrollBar.addListener(ScrollTrigger.update);
 
     HomePageAnimations();
   }

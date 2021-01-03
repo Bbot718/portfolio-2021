@@ -26,6 +26,7 @@
    }
 
    &__item{
+      position: relative;
       display: inline-block;
       cursor: pointer;
 
@@ -50,10 +51,19 @@
          }
      }
 
+    
+
       &__container{
          position: relative; 
          display: inline-block;
       }
+   }
+
+   &__current{
+      display: inline-block;
+       position: relative;
+      overflow: hidden;
+      margin-left: .5rem;
    }
 
    @include respond(sm) {display: none;}

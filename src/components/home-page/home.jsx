@@ -9,9 +9,8 @@ class HomePage extends React.Component {
   render() {
     return (
       <div id="home-page">
-        <header>
-          <Header theme='dark'/>
-        </header>
+        <header><Header theme='dark'/></header>
+        <Work />
 
       </div>
     )
