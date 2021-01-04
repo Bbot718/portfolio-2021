@@ -12,6 +12,7 @@ body {
 }
 
 a {
+  text-decoration: none;
   color: inherit;
 }
 
@@ -80,7 +81,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (min-width: 1400px) {
   .primary-heading {
-    font-size: 7rem;
+    font-size: 8rem;
   }
 }
 
@@ -104,7 +105,8 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 1024px) {
   .primary-heading {
-    font-size: 4.5rem;
+    font-size: 9rem;
+    line-height: 8rem;
   }
 }
 
@@ -145,7 +147,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 1024px) {
   .secondary-heading {
-    font-size: 4.5rem;
+    font-size: 5rem;
   }
 }
 
@@ -155,9 +157,117 @@ body::-webkit-scrollbar {
   overflow: hidden;
 }
 
-.info-heading {
-  font-family: 'euclid_flexregular';
+.large-link {
+  font-family: 'euclid_flexbold';
   text-transform: uppercase;
+  cursor: pointer;
+}
+
+.large-link:before {
+  position: absolute;
+  content: "";
+  height: 3px;
+  background: black;
+  transition: all 0.3s;
+  width: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.large-link:hover:not(.pass--active):before {
+  width: 100%;
+  left: 0;
+  background: black;
+}
+
+@media only screen and (min-width: 1400px) {
+  .large-link {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .large-link {
+    font-size: 4.8rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .large-link {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .large-link {
+    font-size: 4.6rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .large-link {
+    font-size: 5rem;
+  }
+}
+
+.large-link__container {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.paragraphe {
+  font-family: 'euclid_flexregular';
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 1400px) {
+  .paragraphe {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .paragraphe {
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .paragraphe {
+    font-size: .75rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .paragraphe {
+    font-size: 4.6rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .paragraphe {
+    font-size: 2.5rem;
+  }
+}
+
+.paragraphe__container {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.paragraphe--bold {
+  font-family: 'euclid_flexbold';
+}
+
+.paragraphe--uppercase {
+  text-transform: uppercase;
+}
+
+.info-heading {
+  position: relative;
+  font-family: 'euclid_flexregular';
 }
 
 @media only screen and (min-width: 1400px) {
@@ -186,7 +296,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 1024px) {
   .info-heading {
-    font-size: 4.5rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -198,6 +308,14 @@ body::-webkit-scrollbar {
 
 .info-heading--bold {
   font-family: 'euclid_flexbold';
+}
+
+.info-heading--uppercase {
+  text-transform: uppercase;
+}
+
+.info-heading--red {
+  color: red;
 }
 
 .openTypeStyle1 {
@@ -226,6 +344,10 @@ body::-webkit-scrollbar {
 
 .openTypeStyle7 {
   font-feature-settings: "ss07";
+}
+
+.text-align-right {
+  text-align: right;
 }
 
 .sidebar {
@@ -2627,6 +2749,16 @@ body::-webkit-scrollbar {
   }
 }
 
+.large-spacing {
+  display: block;
+  height: 5rem;
+}
+
+.medium-spacing {
+  display: block;
+  height: 2.5rem;
+}
+
 header {
   height: 200vh;
 }
@@ -2658,6 +2790,18 @@ header {
   width: 100%;
 }
 
+.work-item__info {
+  height: 100%;
+  position: relative;
+  left: 40px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .work-item__info {
+    left: 0;
+  }
+}
+
 .work-item__name {
   position: relative;
   bottom: 1rem;
@@ -2673,17 +2817,22 @@ header {
 
 .work-item__tag__container {
   position: absolute;
-  bottom: .25rem;
+  bottom: 0.1rem;
 }
 
 @media only screen and (max-width: 1024px) {
   .work-item__tag__container {
     position: static;
+    margin: 1rem 0;
   }
 }
 
-.main {
-  height: 300vh;
+.about__content {
+  margin: 1rem 0;
+}
+
+.footer {
+  margin-bottom: 10vh;
 }
 
 .scrollable {

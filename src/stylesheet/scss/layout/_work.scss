@@ -10,6 +10,16 @@
       }
    }
 
+   &__info{
+      height: 100%;
+      position: relative;
+      left: $gutter-vertical;
+
+      @include respond(sm) {
+         left: 0;
+      }
+   }
+
    &__name{
       position: relative;
       bottom: 1rem;
@@ -24,10 +34,13 @@
       
       &__container{
          position: absolute;
-         bottom: .25rem;
+         bottom: 0.1rem;
 
          @include respond(sm) {
             position: static;
+
+            margin: 1rem 0; 
+
          }
       }
    }
