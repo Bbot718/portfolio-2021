@@ -8,7 +8,7 @@
 
 @mixin respond($breakpoint) {
    @if $breakpoint == sm {
-      @media only screen and (max-width: $l) { @content};  
+      @media only screen and (max-width: $md) { @content};  
    }
    @if $breakpoint == md{
        @media only screen and (max-width: $l) { @content };   
