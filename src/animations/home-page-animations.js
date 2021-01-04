@@ -2,6 +2,8 @@
 
 
 import HeaderAnimation from './header-animation.js';
+import TitleIn from './title-in.js';
+import LineIn from './line-in.js';
 /*
 import TitleIn from './title-in.js';
 import ElementIn from './element-in.js'
@@ -20,6 +22,11 @@ const HomePageAnimations = () => {
 
    const headerAnimation = new HeaderAnimation('.header-animation');
    headerAnimation.Play(); 
+
+   TitleIn('.work__title', '.work', '.work__title__line');
+   TitleIn('.about__title', '.about', '.about__line');
+   TitleIn('.contact__title', '.contact', '.contact__line');
+
    /*
 
    //Navigation   

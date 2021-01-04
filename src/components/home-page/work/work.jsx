@@ -11,7 +11,7 @@ class Work extends React.Component {
             Selected Work
           </span>
         </div>
-        <hr className="work__line line--thick" />
+        <hr className="work__title__line line--thick" />
 
         <div className="container">
           <WorkItem  

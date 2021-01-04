@@ -6,9 +6,9 @@ class Contact extends React.Component {
     return (
       <section className="contact">
          <div className="primary-heading__container">
-            <span className="about__title primary-heading">Contact</span>
+            <span className="contact__title primary-heading">Contact</span>
          </div>
-         <hr className="about__line line--thick" />
+         <hr className="contact__line line--thick" />
          <div className="medium-spacing" />
 
          <div className="container">
@@ -24,7 +24,7 @@ class Contact extends React.Component {
          <div className="medium-spacing" />
          <div className="large-link__container">
             <a href="mailto:hello@benjaminbotros.ch">
-               <span className="about__title large-link">hello@benjaminbotros.ch</span>
+               <span className="large-link">hello@benjaminbotros.ch</span>
             </a>
          </div>
 
