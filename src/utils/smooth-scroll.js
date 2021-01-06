@@ -2,6 +2,8 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Scrollbar from 'smooth-scrollbar';
 
+import NavigationSelected from '../animations/navigation-selected';
+
 import HomePageAnimations from '../animations/home-page-animations.js';
 
 
@@ -28,6 +30,12 @@ class SmoothScroll{
     document.querySelector('#navigation--contact').addEventListener("click", () => { 
       this.bodyScrollBar.scrollIntoView(document.querySelector('#contact')) 
      });
+
+     //Current Navigation
+     NavigationSelected('#navigation-selected--work','#work')
+     NavigationSelected('#navigation-selected--about','#about-full')
+     NavigationSelected('#navigation-selected--contact', '#contact')
+
 
     //Animate Home Page Element
     HomePageAnimations();

@@ -65,6 +65,9 @@
       overflow: hidden;
       margin-left: .5rem;
    }
+   &__selected{
+      transform: translateX(-100%);
+   }
 
    @include respond(sm) {display: none;}
 }

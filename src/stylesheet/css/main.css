@@ -413,6 +413,10 @@ body::-webkit-scrollbar {
   margin-left: .5rem;
 }
 
+.navigation__selected {
+  transform: translateX(-100%);
+}
+
 @media only screen and (max-width: 768px) {
   .navigation {
     display: none;
