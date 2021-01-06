@@ -17,6 +17,10 @@ class App extends React.Component {
       <div className="App">
         <div className="scrollable" data-scrollbar>
               <div className="wrap-overflow">
+              <div className="header__background">
+                <div className="header__background--dark" />
+                <div className="header__background--light" />
+              </div>
                 <div className="container">
                   <div className="row">
                     <div className="col-3-of-14">

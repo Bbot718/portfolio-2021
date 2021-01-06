@@ -12,6 +12,7 @@
    justify-content: space-between;
    text-align: right;
 
+   color: white;
    mix-blend-mode: difference ;
    position: absolute;
    height: 80vh;
@@ -33,9 +34,10 @@
       &:before{
          position: absolute;
          content: "";
+         mix-blend-mode: difference ;
       
          height: 1px;
-         background: black;
+         background: white;
          transition: all 0.3s;
 
          width: 0;
@@ -46,7 +48,8 @@
          &:before {
              width: 100%;
              left: 0;
-             background: black;
+             background: white;
+             mix-blend-mode: difference ;
              
          }
      }

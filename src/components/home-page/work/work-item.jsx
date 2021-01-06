@@ -11,7 +11,7 @@ class WorkItem extends React.Component {
 
       workItem.addEventListener("mouseenter", () => {
          video[0].load();
-         video[0].play();
+         //video[0].play();
 
       })
 

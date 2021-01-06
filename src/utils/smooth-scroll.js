@@ -17,7 +17,7 @@ class SmoothScroll{
     this.ScrollerProxy(this.bodyScrollBar);
 
     this.FixedElements(document.querySelector('.navigation'));
-    //this.StickyElements(document.querySelector('.header__main', '.header'));
+    this.StickyElements(document.querySelector('.header__main', document.querySelector('.header__background')));
 
     //Scroll To Navigation
     this.bodyScrollBar.scrollIntoView(document.querySelector('.header'))
@@ -63,19 +63,42 @@ class SmoothScroll{
       });
   }
 
-  StickyElements(stickyELement, trigger){
-    this.bodyScrollBar.addListener(({ offset }) => {  
-      stickyELement.style.top = offset.y + 'px';
-    });
+  StickyElements(stickyELement){
+    let isSticky = true;
 
-    ScrollTrigger.create({
-        trigger: trigger,
-        start: 'top top',
-        end: 'bottom bottom',
-        markers: true,
-        onEnter: () => console.log('hey'),
-        onLeave: () => console.log('leave')       
+    gsap.to(document.querySelector('.header__background'),{
+      scrollTrigger: {
+        trigger: document.querySelector('.header__background'),
+        start: "top top",
+        end: "bottom bottom",
+        onEnterBack: () => {
+          this.bodyScrollBar.addListener(({ offset }) => {  
+            stickyELement.style.top = offset.y + window.innerHeight/2 + 'px';
+          });
+        }, 
+        onLeave: () => {
+          
+        this.bodyScrollBar.addListener(({ offset }) => {  
+          stickyELement.style.top = window.innerHeight * 1.5 + 'px';
+        });
+          },
+        },
     })
+    
+    if(isSticky){
+
+      this.bodyScrollBar.addListener(({ offset }) => {  
+        stickyELement.style.top = offset.y + window.innerHeight/2 + 'px';
+      });
+      
+    }
+    else{
+
+      this.bodyScrollBar.addListener(({ offset }) => {  
+        stickyELement.style.top = window.innerHeight * 1.5 + 'px';
+      });
+    }
+   
   }
 }
 

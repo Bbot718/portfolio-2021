@@ -3,10 +3,29 @@ header{
    //background: linear-gradient(180deg, #FFC0CB 50%, #00FFFF 50%);
 }
 
+
+
 .header{
    position: relative;
    height: 100vh;
 
+   &__background{
+      position: absolute;
+      width: 100vw;
+      height: 200vh;
+      
+      &--dark{
+         background-color: black;
+         width: 100vw;
+         height: 100vh;
+      }
+
+      &--light{
+         background-color: white;
+         width: 100vw;
+         height: 100vh;
+      }
+   }
 
    &__main{
       

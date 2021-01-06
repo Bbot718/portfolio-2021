@@ -13,7 +13,7 @@ class HomePage extends React.Component {
       <div id="home-page">
         
         {/* Welcome Section */}
-        <header>
+        <header id="header">
           <Header theme='dark'/>
         </header>
 

@@ -9,6 +9,7 @@
 body {
   box-sizing: border-box;
   overflow-x: hidden;
+  background-color: white;
 }
 
 a {
@@ -18,6 +19,10 @@ a {
 
 body::-webkit-scrollbar {
   display: none;
+}
+
+.App {
+  mix-blend-mode: difference;
 }
 
 @font-face {
@@ -37,6 +42,7 @@ body::-webkit-scrollbar {
 .header-heading {
   font-family: 'euclid_flexbold';
   text-transform: uppercase;
+  color: white;
   /*
    &--dark{ color: white }
    &--light{ color: black }
@@ -365,6 +371,7 @@ body::-webkit-scrollbar {
   flex-direction: column;
   justify-content: space-between;
   text-align: right;
+  color: white;
   mix-blend-mode: difference;
   position: absolute;
   height: 80vh;
@@ -387,8 +394,9 @@ body::-webkit-scrollbar {
 .navigation__item:before {
   position: absolute;
   content: "";
+  mix-blend-mode: difference;
   height: 1px;
-  background: black;
+  background: white;
   transition: all 0.3s;
   width: 0;
   right: 0;
@@ -398,7 +406,8 @@ body::-webkit-scrollbar {
 .navigation__item:hover:not(.pass--active):before {
   width: 100%;
   left: 0;
-  background: black;
+  background: white;
+  mix-blend-mode: difference;
 }
 
 .navigation__item__container {
@@ -2772,6 +2781,24 @@ header {
 
 .header {
   position: relative;
+  height: 100vh;
+}
+
+.header__background {
+  position: absolute;
+  width: 100vw;
+  height: 200vh;
+}
+
+.header__background--dark {
+  background-color: black;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header__background--light {
+  background-color: white;
+  width: 100vw;
   height: 100vh;
 }
 
