@@ -23,6 +23,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const HomePageAnimations = () => {
+   ScrollTrigger.refresh();
 
    //Header
    const headerAnimation = new HeaderAnimation('.header-animation');
@@ -55,7 +56,7 @@ const HomePageAnimations = () => {
    ElementOut('.header__mail',  '.contact__mail')
 
    //Footer
-   ElementIn('.footer__content', '.contact')
+   ElementIn('.footer__content', '.contact__line')
 }
 
 export default HomePageAnimations;

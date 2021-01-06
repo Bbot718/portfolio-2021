@@ -9,10 +9,7 @@ class WorkItem extends React.Component {
       const image = workItem.getElementsByClassName('work-item__image');
       const video = workItem.getElementsByClassName('work-item__image-video');
 
-      console.log(workItem);
-
       workItem.addEventListener("mouseenter", () => {
-         console.log('enter');
          video[0].load();
          video[0].play();
 

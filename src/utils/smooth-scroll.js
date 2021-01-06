@@ -15,8 +15,21 @@ class SmoothScroll{
     this.ScrollerProxy(this.bodyScrollBar);
 
     this.FixedElements(document.querySelector('.navigation'));
-    this.StickyElements(document.querySelector('.header__main', '.header'));
+    //this.StickyElements(document.querySelector('.header__main', '.header'));
 
+    //Scroll To Navigation
+    this.bodyScrollBar.scrollIntoView(document.querySelector('.header'))
+    document.querySelector('#navigation--work').addEventListener("click", () => { 
+      this.bodyScrollBar.scrollIntoView(document.querySelector('#work')) 
+    });
+    document.querySelector('#navigation--about').addEventListener("click", () => {
+      this.bodyScrollBar.scrollIntoView(document.querySelector('#about')) 
+    });
+    document.querySelector('#navigation--contact').addEventListener("click", () => { 
+      this.bodyScrollBar.scrollIntoView(document.querySelector('#contact')) 
+     });
+
+    //Animate Home Page Element
     HomePageAnimations();
   }
 
@@ -43,6 +56,10 @@ class SmoothScroll{
   }
 
   StickyElements(stickyELement, trigger){
+    this.bodyScrollBar.addListener(({ offset }) => {  
+      stickyELement.style.top = offset.y + 'px';
+    });
+
     ScrollTrigger.create({
         trigger: trigger,
         start: 'top top',
@@ -51,11 +68,6 @@ class SmoothScroll{
         onEnter: () => console.log('hey'),
         onLeave: () => console.log('leave')       
     })
-  }
-
-  ScrollTo(target){
-    this.bodyScrollBar.scrollIntoView(target);
-    console.log(target);
   }
 }
 

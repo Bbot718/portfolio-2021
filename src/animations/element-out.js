@@ -9,7 +9,7 @@ const ElementOut = (element, trigger) => {
         trigger: trigger,
         start: "top center",
         toggleActions: "play none none none",
-        scrub: 0.1
+        scrub: 0.00001
       },
       y: '-110%'
     })
