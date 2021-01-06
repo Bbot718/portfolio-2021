@@ -8,7 +8,6 @@ import LineIn from './line-in.js';
 gsap.registerPlugin(ScrollTrigger); 
 
 const Title = (element, trigger, line) => {
-  console.log(element);
 
   const splitText = new SplitText(element, {type:"words,chars"})
   const chars = splitText.chars; 
@@ -37,7 +36,7 @@ const Title = (element, trigger, line) => {
     wasAnimated[charIndex] = true;
 
     gsap.from(chars[charIndex],{
-      duration: 1,
+      duration: .5,
       delay: delay,
         scrollTrigger: {
           trigger: trigger,
@@ -51,7 +50,6 @@ const Title = (element, trigger, line) => {
   }
 
   if(line){
-    console.log("time:" + duration + delay);
     LineIn(line, trigger, duration + delay);
   }
 }

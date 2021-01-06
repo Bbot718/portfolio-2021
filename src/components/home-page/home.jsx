@@ -37,7 +37,9 @@ class HomePage extends React.Component {
         <div className="medium-spacing" />
 
         <footer className="footer">
-          <span className="info-heading">Designed with <span className="info-heading--red"> ♥ </span> | Copyright 2020</span>
+          <div className="info-heading__container">
+            <span className="footer__content info-heading">Designed with <span className="info-heading--red"> ♥ </span> | Copyright 2020</span>
+          </div>
         </footer>
       </div>
     )

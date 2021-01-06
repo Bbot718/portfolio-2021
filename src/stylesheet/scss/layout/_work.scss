@@ -1,12 +1,38 @@
 .work-item{
    position: relative;
-   margin: 1rem 0;
+   padding: 1rem 0;
 
    &__image{
+      position: relative;
+      display: absolute;
       width: 100%;
+      height: 100%;
+      transition: all 1000ms;
+     
 
       &__container{
+         position: relative;
+         overflow: hidden;
+      }
 
+      &-hidder{
+         display: block;
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         background-color: white;
+         bottom: 0;
+
+         transform-origin: bottom;
+         transform: scaleY(0);
+      }
+
+      &-video{
+         display: block;
+         position: absolute;
+         width: 100%;
+         height: 100%;
+         transition: all 500ms;
       }
    }
 
@@ -20,11 +46,6 @@
       }
    }
 
-   &__name{
-      position: relative;
-      bottom: 1rem;
-   }
-
    &__tag{
       display: inline-block;
       color: white;
@@ -35,12 +56,24 @@
       &__container{
          position: absolute;
          bottom: 0.1rem;
+         overflow: hidden;
 
          @include respond(sm) {
             position: static;
 
             margin: 1rem 0; 
 
+         }
+      }
+   }
+
+   &:hover .work-item{
+      &__image{
+         transform:translateY(-110%);
+         transition: all 1000ms;
+
+         &-video{
+            transform: scale(1.1);
          }
       }
    }

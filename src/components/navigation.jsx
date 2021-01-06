@@ -18,20 +18,20 @@ class Navigation extends React.Component {
             <li className="navigation__item__container"> 
                <span className="navigation__item info-heading">Selected Work</span> 
                <div className="navigation__current">
-                  <span className="info-heading">—</span> 
+                  <span id="navigation--work" className="info-heading">—</span> 
                </div>
             </li>
             <li className="navigation__item__container">
-               <span className="navigation__item info-heading">About</span> 
+               <span id="navigation--about" className="navigation__item info-heading">About</span> 
             </li>
             <li className="navigation__item__container">
-               <span className="navigation__item info-heading">Contact</span> 
+               <span id="navigation--contact" className="navigation__item info-heading">Contact</span> 
             </li>
          </ul>
 
          {/* Email */}
-         <div className="header__mail"> 
-            <span className={"info-heading info-heading--"+ this.props.theme}>
+         <div className="header__mail__container"> 
+            <span className={"header__mail info-heading info-heading--"+ this.props.theme}>
                <a href="mailto:hello@benjaminbotros.ch">Email Me</a>
             </span> 
          </div>

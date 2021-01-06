@@ -53,6 +53,7 @@
 }
 
 .secondary-heading{
+   display: inline-block;
    font-family: 'euclid_flexbold';
    text-transform: uppercase;
 
@@ -130,6 +131,7 @@
 }
 
 .info-heading{
+   display: inline-block;
    position: relative;
    font-family: 'euclid_flexregular';
    @include respond(xxl) {font-size: 1.2rem;}

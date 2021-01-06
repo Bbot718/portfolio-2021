@@ -3,11 +3,15 @@
 
 import HeaderAnimation from './header-animation.js';
 import TitleIn from './title-in.js';
+import ElementIn from './element-in.js';
+import ElementOut from './element-out.js';
+import ParagrapheIn from './paragraphe-in.js'
+import ImageIn from './image-in.js';
 import LineIn from './line-in.js';
 /*
 import TitleIn from './title-in.js';
 import ElementIn from './element-in.js'
-import ParagrapheIn from './paragraphe-in.js'
+
 import LineIn from './line-in.js';
 
 import MenuActive from './menu-active.js';
@@ -20,54 +24,38 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HomePageAnimations = () => {
 
+   //Header
    const headerAnimation = new HeaderAnimation('.header-animation');
    headerAnimation.Play(); 
 
+   //Work
    TitleIn('.work__title', '.work', '.work__title__line');
-   TitleIn('.about__title', '.about', '.about__line');
-   TitleIn('.contact__title', '.contact', '.contact__line');
-
-   /*
-
-   //Navigation   
-   ElementIn('.navigation__title', '.project', true)
-   LineIn('.navigation__line', '.project')
-   ElementIn('.navigation__item', '.project', true)
-
-   //Project Selection
-   MenuActive('#navigation--work', '.project');
-   MenuActive('#navigation--about', '#about');
-
-   TitleIn('.project__title', '.project', true)
-   LineIn('.project__line', '.project');
-   
-   
-   for(let i = 0; i < document.querySelectorAll('.project-item').length; i++){
-      ElementIn('#project-item-' + i + ' .project-item__name', '#project-item-' + i)
-      LineIn('#project-item-'+ i + " + .project-item__line", '#project-item-' + i);
-      ElementIn('#project-item-' + i + ' .project-item__date', '#project-item-' + i)
-      ElementIn('#project-item-' + i + ' .project-item__tag', '#project-item-' + i)
+   for(let i = 0; i < document.querySelectorAll('.work-item').length; i++){
+      ImageIn('#work-item-' + i + ' .work-item__image-hidder', '#work-item-' + i)
+      ElementIn('#work-item-' + i + ' .work-item__name', '#work-item-' + i)
+      LineIn('#work-item-' + i + ' + .work__line', '#work-item-' + i, 3.2);
+      ElementIn('#work-item-' + i + ' .work-item__date', '#work-item-' + i)
+      ElementIn('#work-item-' + i + ' .work-item__tag', '#work-item-' + i)
    }
 
    //About
-   TitleIn('.about__title', '.about', true);
-   LineIn('.about__line', '.about');
-   ParagrapheIn('.about__paragraphe', '.about');
+   TitleIn('.about__title', '.about', '.about__line');
+   ParagrapheIn('.about__paragraphe', '.about__content');
 
-   //Exhibitions
-   ElementIn('.exhibition__title', '.exhibition', true)
-   LineIn('.exhibition__line', '.exhibition');
-   ElementIn('.exhibition__name', '.exhibition', true)
-   ElementIn('.exhibition__date', '.exhibition', true)
-   ElementIn('.exhibition__location', '.exhibition', true)
-   
+   //Exhibition
+   ElementIn('.exhibition__title', '.exhibition')
+   ElementIn('.exhibition__element', '.exhibition')
+   LineIn('.exhibition__line', '.exhibition', 3);
+  
+
    //Contact
-   TitleIn('.contact__title', '.contact', true);
-   LineIn('.contact__line', '.contact');
+   TitleIn('.contact__title', '.contact', '.contact__line');
    ParagrapheIn('.contact__paragraphe', '.contact');
-   ElementIn('.contact__link', '.contact', true)
+   ElementIn('.contact__mail__content', '.contact')
+   ElementOut('.header__mail',  '.contact__mail')
 
-   */
+   //Footer
+   ElementIn('.footer__content', '.contact')
 }
 
 export default HomePageAnimations;

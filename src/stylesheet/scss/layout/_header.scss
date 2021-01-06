@@ -18,6 +18,12 @@ header{
       transform: translateY(-50%);
    }
 
+   &__mail{
+      &__container{
+         overflow: hidden;
+      }
+   }
+
    &__animation{
       &__container{
          position: relative;
