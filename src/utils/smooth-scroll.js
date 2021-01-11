@@ -2,7 +2,7 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Scrollbar from 'smooth-scrollbar';
 
-import NavigationSelected from '../animations/navigation-selected';
+import NavigationSelected from '../animations/navigation/navigation-selected';
 
 import HomePageAnimations from '../animations/home-page-animations.js';
 
@@ -16,9 +16,10 @@ class SmoothScroll{
     gsap.registerPlugin(ScrollTrigger);
     this.ScrollerProxy(this.bodyScrollBar);
 
+    this.FixedElements(document.querySelector('.header__background--light'));
     this.FixedElements(document.querySelector('.navigation'));
     this.StickyElements(document.querySelector('.header__main', document.querySelector('.header__background')));
-
+    
     //Scroll To Navigation
     this.bodyScrollBar.scrollIntoView(document.querySelector('.header'))
     document.querySelector('#navigation--work').addEventListener("click", () => { 

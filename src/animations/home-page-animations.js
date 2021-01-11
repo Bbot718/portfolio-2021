@@ -1,13 +1,14 @@
 
 
 
-import HeaderAnimation from './header-animation.js';
-import TitleIn from './title-in.js';
-import ElementIn from './element-in.js';
-import ElementOut from './element-out.js';
-import ParagrapheIn from './paragraphe-in.js'
-import ImageIn from './image-in.js';
-import LineIn from './line-in.js';
+import HeaderAnimation from './header/header-animation.js';
+import HeaderOut from './header/header-out.js'
+import TitleIn from './transtitions/title-in.js';
+import ElementIn from './transtitions/element-in.js';
+import ElementOut from './transtitions/element-out.js';
+import ParagrapheIn from './transtitions/paragraphe-in.js'
+import ImageIn from './transtitions/image-in.js';
+import LineIn from './transtitions/line-in.js';
 /*
 import TitleIn from './title-in.js';
 import ElementIn from './element-in.js'
@@ -26,8 +27,9 @@ const HomePageAnimations = () => {
    ScrollTrigger.refresh();
 
    //Header
-   const headerAnimation = new HeaderAnimation('.header-animation');
+   const headerAnimation = new HeaderAnimation('.header__title');
    headerAnimation.Play(); 
+   HeaderOut();
 
    //Work
    TitleIn('.work__title', '.work', '.work__title__line');

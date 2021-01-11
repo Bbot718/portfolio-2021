@@ -15,15 +15,23 @@
 }
 
 .header-heading{
+   position: relative !important;
    font-family: 'euclid_flexbold';
    text-transform: uppercase;
    color: white;
+
 
    @include respond(xxl) {font-size: 6vw; line-height: 7vw;}
    @include respond(xl) {font-size: 4.5rem;}
    @include respond(l) { font-size: 4rem;}
    @include respond(md) { font-size: 3.5rem;}
    @include respond(sm) {font-size: 4.5rem;}
+
+   &__container{
+      display: block;
+      position: relative;
+      overflow: hidden;
+   }
 
    /*
    &--dark{ color: white }

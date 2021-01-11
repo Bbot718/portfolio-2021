@@ -1,7 +1,7 @@
 import gsap from 'gsap';
 import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import RandomInt from '../utils/random-int.js';
+import RandomInt from '../../utils/random-int.js';
 
 import LineIn from './line-in.js';
 

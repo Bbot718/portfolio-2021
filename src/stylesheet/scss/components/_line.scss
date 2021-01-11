@@ -1,11 +1,17 @@
 .line{
    &--thick{
+      position: relative;
+      z-index: 3;
       height: .5rem;
+      width: 100%;
       background: black;
    }
    
    &--thin{
+      position: relative;
+      z-index: 3;
       height: .2rem;
+      width: 100%;
       background: black;
    }
 }

@@ -1,5 +1,5 @@
 import {gsap, Power4 }from 'gsap';
-import getRandomInt from '../utils/random-int.js';
+import getRandomInt from '../../utils/random-int.js';
 import { SplitText } from 'gsap/SplitText'
 
 

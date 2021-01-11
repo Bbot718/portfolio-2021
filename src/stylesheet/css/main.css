@@ -40,6 +40,7 @@ body::-webkit-scrollbar {
 }
 
 .header-heading {
+  position: relative !important;
   font-family: 'euclid_flexbold';
   text-transform: uppercase;
   color: white;
@@ -78,6 +79,12 @@ body::-webkit-scrollbar {
   .header-heading {
     font-size: 4.5rem;
   }
+}
+
+.header-heading__container {
+  display: block;
+  position: relative;
+  overflow: hidden;
 }
 
 .primary-heading {
@@ -433,12 +440,18 @@ body::-webkit-scrollbar {
 }
 
 .line--thick {
+  position: relative;
+  z-index: 3;
   height: .5rem;
+  width: 100%;
   background: black;
 }
 
 .line--thin {
+  position: relative;
+  z-index: 3;
   height: .2rem;
+  width: 100%;
   background: black;
 }
 
@@ -2776,12 +2789,23 @@ body::-webkit-scrollbar {
 }
 
 header {
-  height: 200vh;
+  height: 150vh;
 }
 
 .header {
   position: relative;
   height: 100vh;
+}
+
+.header__title {
+  display: inline-block;
+  transform: translateY(0);
+}
+
+.header__title__container {
+  position: relative;
+  display: block;
+  overflow: hidden;
 }
 
 .header__background {
@@ -2791,18 +2815,29 @@ header {
 }
 
 .header__background--dark {
+  position: relative;
+  z-index: 2;
   background-color: black;
   width: 100vw;
   height: 100vh;
 }
 
 .header__background--light {
+  position: fixed;
+  z-index: 0;
   background-color: white;
   width: 100vw;
   height: 100vh;
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: gray;
+  /* IE 6-9 */
 }
 
 .header__main {
+  position: relative;
+  z-index: 3;
   color: black;
   mix-blend-mode: difference;
   position: absolute;
@@ -2811,11 +2846,6 @@ header {
 }
 
 .header__mail__container {
-  overflow: hidden;
-}
-
-.header__animation__container {
-  position: relative;
   overflow: hidden;
 }
 
