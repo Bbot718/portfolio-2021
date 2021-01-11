@@ -3,7 +3,6 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger); 
 
 const HeaderOut = () => {
-   console.log('hey');
 
    gsap.to('.header-heading',{
       stagger: -.1,

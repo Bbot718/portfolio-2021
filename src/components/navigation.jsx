@@ -9,8 +9,13 @@ class Navigation extends React.Component {
          
          {/* Current Section */}
          <div className=""> 
-            <div className={"info-heading info-heading--bold info-heading--"+ this.props.theme}>Benjamin Botros</div>
-            <div className={"info-heading info-heading--"+ this.props.theme}>Interaction Designer</div> 
+            <div className="header__name__container">
+               <div className={"header__name info-heading info-heading--bold info-heading--"+ this.props.theme}>Benjamin Botros</div>
+            </div>
+            
+            <div className="header__name__container">
+               <div className={"header__name info-heading info-heading--"+ this.props.theme}>Interaction Designer</div>
+            </div>
          </div>
 
          {/* Menu */}

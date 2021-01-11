@@ -1,8 +1,8 @@
 
 
-
-import HeaderAnimation from './header/header-animation.js';
+import HeaderIn from './header/header-in.js'
 import HeaderOut from './header/header-out.js'
+
 import TitleIn from './transtitions/title-in.js';
 import ElementIn from './transtitions/element-in.js';
 import ElementOut from './transtitions/element-out.js';
@@ -27,8 +27,8 @@ const HomePageAnimations = () => {
    ScrollTrigger.refresh();
 
    //Header
-   const headerAnimation = new HeaderAnimation('.header__title');
-   headerAnimation.Play(); 
+   HeaderIn();
+   
    HeaderOut();
 
    //Work
@@ -55,7 +55,7 @@ const HomePageAnimations = () => {
    TitleIn('.contact__title', '.contact', '.contact__line');
    ParagrapheIn('.contact__paragraphe', '.contact');
    ElementIn('.contact__mail__content', '.contact')
-   ElementOut('.header__mail',  '.contact__mail')
+   //ElementOut('.header__mail',  '.contact__mail')
 
    //Footer
    ElementIn('.footer__content', '.contact__line')

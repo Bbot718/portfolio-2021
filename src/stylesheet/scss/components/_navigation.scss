@@ -31,6 +31,10 @@
       display: inline-block;
       cursor: pointer;
 
+      &__container{
+         overflow: hidden;
+      }
+
       &:before{
          position: absolute;
          content: "";

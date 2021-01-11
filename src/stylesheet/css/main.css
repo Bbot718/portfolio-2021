@@ -398,6 +398,10 @@ body::-webkit-scrollbar {
   cursor: pointer;
 }
 
+.navigation__item__container {
+  overflow: hidden;
+}
+
 .navigation__item:before {
   position: absolute;
   content: "";
@@ -2845,7 +2849,7 @@ header {
   transform: translateY(-50%);
 }
 
-.header__mail__container {
+.header__mail__container, .header__name__container {
   overflow: hidden;
 }
 

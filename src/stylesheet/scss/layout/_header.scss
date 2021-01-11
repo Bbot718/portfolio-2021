@@ -60,7 +60,7 @@ header{
       transform: translateY(-50%);
    }
 
-   &__mail{
+   &__mail, &__name{
       &__container{
          overflow: hidden;
       }
