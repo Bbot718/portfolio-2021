@@ -4,7 +4,7 @@
 }
 
 .navigation{ 
-   position: fixed;
+   position: relative;
    z-index: 1000;
 
    display: flex;   
@@ -17,6 +17,7 @@
    position: absolute;
    height: 80vh;
    width: 100%;
+   left: 1.5rem;
    margin-top: 10vh;
 
    &__menu{

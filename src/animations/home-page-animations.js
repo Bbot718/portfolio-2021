@@ -1,7 +1,10 @@
 
-
+/*
 import HeaderIn from './header/header-in.js'
 import HeaderOut from './header/header-out.js'
+*/
+
+import Header from './header.js';
 
 import TitleIn from './transtitions/title-in.js';
 import ElementIn from './transtitions/element-in.js';
@@ -27,9 +30,11 @@ const HomePageAnimations = () => {
    ScrollTrigger.refresh();
 
    //Header
+   const header = new Header();
+   /*
    HeaderIn();
-   
    HeaderOut();
+   */
 
    //Work
    TitleIn('.work__title', '.work', '.work__title__line');

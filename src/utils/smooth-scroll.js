@@ -9,8 +9,13 @@ import HomePageAnimations from '../animations/home-page-animations.js';
 
 class SmoothScroll{
   constructor(){
-    this.scroller = document.querySelector("[data-scrollbar]");
-    this.bodyScrollBar = Scrollbar.init(this.scroller, { damping: 0.1, renderByPixels: true, syncCallbacks: true, delegateTo: document });
+    this.scroller = document.querySelector(".scrollable");
+    this.bodyScrollBar = Scrollbar.init(this.scroller, { 
+      damping: 0.1, 
+      renderByPixels: true, 
+      syncCallbacks: true, 
+      delegateTo: document, 
+      alwaysShowTracks: true });
     this.bodyScrollBar.track.yAxis.element.remove();
 
     gsap.registerPlugin(ScrollTrigger);
@@ -43,7 +48,7 @@ class SmoothScroll{
   }
 
   ScrollerProxy(bodyScrollBar){
-    ScrollTrigger.scrollerProxy("body", {
+    ScrollTrigger.scrollerProxy(".scrollable", {
       scrollTop(value) {
         if (arguments.length) {
           bodyScrollBar.scrollTop = value;
@@ -54,6 +59,8 @@ class SmoothScroll{
         return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
       }
     });
+    bodyScrollBar.addListener(ScrollTrigger.update);
+    ScrollTrigger.defaults({ scroller: '.scrollable' });
   }
 
   
@@ -78,28 +85,23 @@ class SmoothScroll{
           });
         }, 
         onLeave: () => {
-          
-        this.bodyScrollBar.addListener(({ offset }) => {  
-          stickyELement.style.top = window.innerHeight * 1.5 + 'px';
-        });
-          },
+          this.bodyScrollBar.addListener(({ offset }) => {
+            stickyELement.style.top = window.innerHeight * 1.5 + 'px';
+          });
         },
+      },
     })
-    
+  
     if(isSticky){
-
       this.bodyScrollBar.addListener(({ offset }) => {  
         stickyELement.style.top = offset.y + window.innerHeight/2 + 'px';
       });
-      
     }
     else{
-
       this.bodyScrollBar.addListener(({ offset }) => {  
         stickyELement.style.top = window.innerHeight * 1.5 + 'px';
       });
     }
-   
   }
 }
 

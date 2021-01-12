@@ -41,7 +41,7 @@ body::-webkit-scrollbar {
 
 .header-heading {
   position: relative !important;
-  font-family: 'euclid_flexbold';
+  font-family: 'euclid_flexregular';
   text-transform: uppercase;
   color: white;
   /*
@@ -372,7 +372,7 @@ body::-webkit-scrollbar {
 }
 
 .navigation {
-  position: fixed;
+  position: relative;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -383,6 +383,7 @@ body::-webkit-scrollbar {
   position: absolute;
   height: 80vh;
   width: 100%;
+  left: 1.5rem;
   margin-top: 10vh;
 }
 
@@ -449,6 +450,7 @@ body::-webkit-scrollbar {
   height: .5rem;
   width: 100%;
   background: black;
+  border: 0;
 }
 
 .line--thin {
@@ -457,6 +459,7 @@ body::-webkit-scrollbar {
   height: .2rem;
   width: 100%;
   background: black;
+  border: 0;
 }
 
 .container {
