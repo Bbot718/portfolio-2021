@@ -56,8 +56,11 @@ header{
       mix-blend-mode: difference ;
       position: absolute;
       top: 50%;
-      //height: 80vh;
+      height: 80vh;
       transform: translateY(-50%);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
    }
 
    &__mail, &__name{

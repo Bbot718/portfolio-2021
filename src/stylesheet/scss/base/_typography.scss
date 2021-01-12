@@ -22,9 +22,9 @@
 
 
    @include respond(xxl) {font-size: 6vw; line-height: 7vw;}
-   @include respond(xl) {font-size: 4.5rem;}
-   @include respond(l) { font-size: 4rem;}
-   @include respond(md) { font-size: 3.5rem;}
+   @include respond(xl) {font-size: 6.8vh;}
+   @include respond(l) { font-size: 3.6rem;}
+   @include respond(md) { font-size: 2.5rem;}
    @include respond(sm) {font-size: 4.5rem;}
 
    &__container{

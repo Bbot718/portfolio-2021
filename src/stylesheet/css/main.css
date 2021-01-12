@@ -59,19 +59,19 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 1400px) {
   .header-heading {
-    font-size: 4.5rem;
+    font-size: 6.8vh;
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .header-heading {
-    font-size: 4rem;
+    font-size: 3.6rem;
   }
 }
 
 @media only screen and (max-width: 1024px) {
   .header-heading {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -2849,7 +2849,11 @@ header {
   mix-blend-mode: difference;
   position: absolute;
   top: 50%;
+  height: 80vh;
   transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .header__mail__container, .header__name__container {

@@ -12,7 +12,8 @@ class Header{
       this.timeline = gsap.timeline();   
       this.splitText = new SplitText('.header__title', {type:"words,chars"});
       this.chars = this.splitText.chars; 
-      
+
+
       toggleScroll(false);
 
       this.In();
@@ -24,24 +25,36 @@ class Header{
          this.AnimationPlay(); 
       }});
 
-      timeline.from('.header-heading', {y: '100%', stagger: 0.1}) //Header
-      timeline.from('.header__name', {y: '100%', stagger: 0.1, delay: -0.5}) //Name
+      timeline.from('.header-heading', {y: '100%'}) //Header
+      timeline.from('.header__name', {y: '100%', stagger: 0.1}) //Name
       timeline.from('.navigation__item', {y: '100%', stagger: 0.1, delay: -0.5}) //Navigation
       timeline.from('.header__mail', {y: '100%'}); //Email
    }
 
    Out(){
+      
+      let triggerOffset = document.querySelector('.header-heading').offsetHeight;
+      const triggerMargin = window.innerHeight / 10
+
+
+      console.log(triggerOffset)
+
       gsap.to('.header-heading',{
-         stagger: -0.8,
+         stagger: -0.1,
          scrollTrigger: {
             markers: true,
            trigger: '.header__background--dark',
-           start: "top-=1 top",
-           end: "center-=100 top",
+           start: "top+=" + (triggerMargin - triggerOffset) + " top",
+           end: "bottom+=" + (triggerMargin  - triggerOffset) + " top",
            scrub: .1,
            
-         }, y: 100
+         }, y: '100%'
        })
+
+       window.onresize = () =>{
+         triggerOffset = document.querySelector('.header-heading').offsetHeight;
+         console.log(triggerOffset);
+       } 
    }
 
    AnimationPlay(){
