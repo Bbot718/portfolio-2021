@@ -10,8 +10,15 @@ class Header{
       this.colorScheme = ['#ff0000', '#f6ff00', '#2100FF'];
 
       this.timeline = gsap.timeline();   
-      this.splitText = new SplitText('.header__title', {type:"words,chars"});
-      this.chars = this.splitText.chars; 
+      this.splitTextParent = new SplitText('.header__title', {type:"words, chars", backgroundColor: 'red', wordsClass:"header__word__container"});
+      this.splitTextChild = new SplitText('.header__title', {type:"words, chars", charsClass:"header__letter"});
+      this.charsContainer = this.splitTextParent.chars; 
+      this.chars = this.splitTextChild.chars; 
+
+
+      for(let i =0; i < this.charsContainer.length; i++){
+         gsap.set(this.charsContainer[i], { overflow: 'hidden', verticalAlign: 'top'})
+      }
 
 
       toggleScroll(false);
@@ -24,8 +31,8 @@ class Header{
       const timeline = new gsap.timeline({ delay: 1, onComplete: () => { 
          this.AnimationPlay(); 
       }});
-
-      timeline.from('.header-heading', {y: '100%'}) //Header
+      
+      timeline.from( this.chars, {x: '-100%'}) //Header
       timeline.from('.header__name', {y: '100%', stagger: 0.1}) //Name
       timeline.from('.navigation__item', {y: '100%', stagger: 0.1, delay: -0.5}) //Navigation
       timeline.from('.header__mail', {y: '100%'}); //Email
@@ -42,10 +49,9 @@ class Header{
       gsap.to('.header-heading',{
          stagger: -0.1,
          scrollTrigger: {
-            markers: true,
            trigger: '.header__background--dark',
-           start: "top+=" + (triggerMargin - triggerOffset) + " top",
-           end: "bottom+=" + (triggerMargin  - triggerOffset) + " top",
+           start: "top top",
+           end: "center-=" + window.innerHeight/5 + " top",
            scrub: .1,
            
          }, y: '100%'
@@ -61,6 +67,7 @@ class Header{
       const letterSelection = getRandomInt(0, this.chars.length -1);
       const openTypeSelection = this.openTypeList[getRandomInt(0, this.openTypeList.length)];
       
+
       this.timeline.to(this.chars[letterSelection], {
          y: (window.innerWidth >= 768) ? '-100%' : '-100%',
          onComplete:() => this.timeline.set(this.chars[letterSelection],{      

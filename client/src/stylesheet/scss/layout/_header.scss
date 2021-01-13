@@ -1,5 +1,5 @@
 header{
-   height: 150vh;
+   height: 100vh;
    //background: linear-gradient(180deg, #FFC0CB 50%, #00FFFF 50%);
 }
 
@@ -29,7 +29,7 @@ header{
       &--dark{
          position: relative;
          z-index: 2;
-         background-color: orange;
+         background-color: black;
          width: 100vw;
          height: 100vh;
       }
@@ -41,11 +41,6 @@ header{
          background-color: white;
          width: 100vw;
          height: 100vh;
-         -webkit-filter: grayscale(100%);
-         -moz-filter: grayscale(100%);
-         -ms-filter: grayscale(100%);
-         -o-filter: grayscale(100%);
-         filter: gray; /* IE 6-9 */
       }
    }
 
@@ -53,9 +48,8 @@ header{
       position: relative;
       z-index: 3;
       color: black;
-      mix-blend-mode: difference ;
       position: absolute;
-      top: 50%;
+      top: 50% !important;
       height: 80vh;
       transform: translateY(-50%);
       display: flex;

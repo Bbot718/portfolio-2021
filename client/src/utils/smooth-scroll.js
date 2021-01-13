@@ -2,16 +2,19 @@ import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
 import Scrollbar from 'smooth-scrollbar';
 
-import NavigationSelected from '../animations/navigation/navigation-selected';
 
+
+import NavigationSelected from '../animations/navigation/navigation-selected';
 import HomePageAnimations from '../animations/home-page-animations.js';
 
 
 class SmoothScroll{
   constructor(){
+
+    this.damping = 0.1;
     this.scroller = document.querySelector(".scrollable");
     this.bodyScrollBar = Scrollbar.init(this.scroller, { 
-      damping: 0.1, 
+      damping: this.damping, 
       renderByPixels: true, 
       syncCallbacks: true, 
       delegateTo: document, 
@@ -44,7 +47,8 @@ class SmoothScroll{
 
 
     //Animate Home Page Element
-    HomePageAnimations();
+
+    document.onload = HomePageAnimations();
   }
 
   ScrollerProxy(bodyScrollBar){

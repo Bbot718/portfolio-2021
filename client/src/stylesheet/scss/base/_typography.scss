@@ -44,13 +44,13 @@
    text-transform: uppercase;
    position: relative;
       
-
+   @include respond(xxxl) {font-size: 12rem;}
    @include respond(xxl) {font-size: 8rem;}
    @include respond(xl) {font-size: 6.5rem;}
    @include respond(l) { font-size: 5rem;}
    @include respond(md) { font-size: 4.2rem;}
    @include respond(sm) {
-      font-size: 3.5rem;
+      font-size: 6rem;
       line-height: 8rem;
    }
 
@@ -70,7 +70,7 @@
    @include respond(xl) {font-size: 4rem;}
    @include respond(l) { font-size: 3rem;}
    @include respond(md) { font-size: 2.5rem;}
-   @include respond(sm) {font-size: 2.6rem;}
+   @include respond(sm) {font-size: 3.5rem;}
 
    &__container{
       display: block;

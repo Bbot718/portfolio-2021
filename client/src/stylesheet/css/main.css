@@ -21,10 +21,6 @@ body::-webkit-scrollbar {
   display: none;
 }
 
-.App {
-  mix-blend-mode: difference;
-}
-
 @font-face {
   font-family: 'euclid_flexbold';
   src: url("../../assets/fonts/euclidflex-bold-webfont.woff") format("woff"), url("../../assets/fonts/euclidflex-bold-webfont.woff2") format("woff2");
@@ -50,7 +46,7 @@ body::-webkit-scrollbar {
    */
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (max-width: 3840px) {
   .header-heading {
     font-size: 6vw;
     line-height: 7vw;
@@ -93,7 +89,13 @@ body::-webkit-scrollbar {
   position: relative;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (min-width: 3840px) {
+  .primary-heading {
+    font-size: 12rem;
+  }
+}
+
+@media only screen and (max-width: 3840px) {
   .primary-heading {
     font-size: 8rem;
   }
@@ -119,7 +121,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 768px) {
   .primary-heading {
-    font-size: 3.5rem;
+    font-size: 6rem;
     line-height: 8rem;
   }
 }
@@ -136,7 +138,7 @@ body::-webkit-scrollbar {
   text-transform: uppercase;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (max-width: 3840px) {
   .secondary-heading {
     font-size: 5rem;
   }
@@ -162,7 +164,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 768px) {
   .secondary-heading {
-    font-size: 2.6rem;
+    font-size: 3.5rem;
   }
 }
 
@@ -195,7 +197,7 @@ body::-webkit-scrollbar {
   background: black;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (max-width: 3840px) {
   .large-link {
     font-size: 3rem;
   }
@@ -236,7 +238,7 @@ body::-webkit-scrollbar {
   margin-bottom: 1rem;
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (max-width: 3840px) {
   .paragraphe {
     font-size: 1.8rem;
   }
@@ -286,7 +288,7 @@ body::-webkit-scrollbar {
   font-family: 'euclid_flexregular';
 }
 
-@media only screen and (min-width: 1400px) {
+@media only screen and (max-width: 3840px) {
   .info-heading {
     font-size: 1.2rem;
   }
@@ -2796,7 +2798,7 @@ body::-webkit-scrollbar {
 }
 
 header {
-  height: 150vh;
+  height: 100vh;
 }
 
 .header {
@@ -2835,20 +2837,14 @@ header {
   background-color: white;
   width: 100vw;
   height: 100vh;
-  -moz-filter: grayscale(100%);
-  -ms-filter: grayscale(100%);
-  -o-filter: grayscale(100%);
-  filter: gray;
-  /* IE 6-9 */
 }
 
 .header__main {
   position: relative;
   z-index: 3;
   color: black;
-  mix-blend-mode: difference;
   position: absolute;
-  top: 50%;
+  top: 50% !important;
   height: 80vh;
   transform: translateY(-50%);
   display: flex;

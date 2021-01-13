@@ -38,7 +38,8 @@ class WorkItem extends React.Component {
                   <div className="work-item__tag__container">
                   {
                      this.props.tags.map((value, index) => {
-                        return <div key={index} className="work-item__tag info-heading">{value}</div>
+                        if(value != null)
+                           return <div key={index} className="work-item__tag info-heading">{value}</div>
                   })}
                   </div>
                   <div className="info-heading__container">

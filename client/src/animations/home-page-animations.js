@@ -12,14 +12,7 @@ import ElementOut from './transtitions/element-out.js';
 import ParagrapheIn from './transtitions/paragraphe-in.js'
 import ImageIn from './transtitions/image-in.js';
 import LineIn from './transtitions/line-in.js';
-/*
-import TitleIn from './title-in.js';
-import ElementIn from './element-in.js'
 
-import LineIn from './line-in.js';
-
-import MenuActive from './menu-active.js';
-*/
 
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -31,10 +24,7 @@ const HomePageAnimations = () => {
 
    //Header
    const header = new Header();
-   /*
-   HeaderIn();
-   HeaderOut();
-   */
+
 
    //Work
    TitleIn('.work__title', '.work', '.work__title__line');
