@@ -5,7 +5,7 @@ import Scrollbar from 'smooth-scrollbar';
 
 
 import NavigationSelected from '../animations/navigation/navigation-selected';
-import HomePageAnimations from '../animations/home-page-animations.js';
+import HomePageAnimations from '../animations/home/home-page-animations.js';
 
 
 class SmoothScroll{

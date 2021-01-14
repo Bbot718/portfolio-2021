@@ -1,8 +1,14 @@
 import React, { Component }  from 'react';
-import ReactDOM from "react-dom";
 import Axios from 'axios';
 
 import WorkItem from './work-item';
+import WorkAnimations from '../../../animations/home/work-animations'
+
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { Timeline } from 'gsap/gsap-core';
+gsap.registerPlugin(ScrollTrigger); 
+
 
 class Work extends Component{
   constructor(props) {
@@ -13,24 +19,28 @@ class Work extends Component{
       Tags: []
     };
 
-    this.cards = [];
-    //this.tl = new TimelineMax({ paused: true });
-    //this.toggleAnimation = this.toggleAnimation.bind(this);
+    this.references = {
+      trigger: [],
+      image: [],
+      name: [],
+      date: [],
+      line: []
+    }
   }
 
 
   componentDidMount() {
     Axios
     .get('http://localhost:3006/api/get_project')
-      .then(res => {
-        this.setState({ projects: res.data }, () => {
-          console.log(this.state.projects);
-        });
-      })
+      .then(res => { this.setState({ projects: res.data })})
       .catch(e => console.log(e));
+  }
 
-
-      console.log(this.state.projects)
+  componentDidUpdate(preProps, preState){
+    if(this.state.projects !== preState.projects){
+      //gsap.to(this.references.name,{ color: 'red', height: '1000px'})
+      WorkAnimations(this.references);
+    }
   }
 
   render(){
@@ -46,60 +56,44 @@ class Work extends Component{
             </span>
           </div>
           <hr className="work__title__line line--thick" />
-          <div className="container">
-        
-            <WorkItem  
-              id="0"
-              date="2019"
-              name="Camel Air Paint"
-              image="cap_detailed.png"
-              imageHover="cap_detailed.png"
-              tags={['Virtual Reality','Unity']}  />
-          
-
+          <div className="container">      
               { 
                 this.state.projects.map((project, i) => (
-                  <div key={project.id} ref={project => (this.cards[i] = project)}>
-                    <WorkItem  
-                      id={project.id}
-                      date={project.Date}
-                      name={project.Name}
-                      image={project.Image_link}
-                      imageHover={project.Video_link}
-                      tags={['Virtual Reality','Unity']}   
-                    />
-                  </div>
-                ))
-                /*
-                this.state.projects.map((projects, i) => {
-                  return(
-                    <WorkItem  
-                    key={project.id}
-                    id={project.id}
-                    date={project.Date}
-                    name={project.Name}
-                    image={project.Image_link}
-                    imageHover={project.Video_link}
-                    /*
-                    tags={
-                      tagList.map((tag) => {
-                        if(tag.project_num === project.id){
-                          return (
-                            [tag.Name]
-                          )
-                        }
-                        
-                      })
-                      //['Virtual Reality','Unity']
-                    }  
-                    */
-                  //  />
 
-                  //) 
-                //})
-              }
-              
-            
+                  <React.Fragment>
+                    <article ref={project => (this.references.trigger[i] = project)}  className="work-item row" >
+                      <div className="col-3-of-11--no-margin">
+                        <div className="work-item__image__container">
+                          <video className="work-item__image-video">
+                            <source src={require('../../../assets/videos/cap.mp4').default} />
+                          </video>
+                          <img  className="work-item__image" alt="" src={require('../../../assets/images/'+ project.Image_link).default} />
+                          <div ref={project => (this.references.image[i] = project)}   className="work-item__image-hidder"></div>
+                        </div>
+                      </div>
+                      <div className="col-8-of-11--no-margin">
+                        <div className="work-item__info">
+                          <div className="work-item__tag__container"></div>
+                          <div className="info-heading__container">
+                            <span ref={project => (this.references.date[i] = project)} 
+                                  className="work-item__date info-heading">
+                              {project.Date}
+                            </span>
+                          </div>
+                          <div className="secondary-heading__container">
+                            <span ref={project => (this.references.name[i] = project)} 
+                                  className="work-item__name secondary-heading">
+                              {project.Name}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                    <hr ref={project => (this.references.line[i] = project)} className="work__line line--thin" />
+                  </React.Fragment>
+
+                ))
+              }      
           </div>
           <div className="large-spacing" />
         </section>

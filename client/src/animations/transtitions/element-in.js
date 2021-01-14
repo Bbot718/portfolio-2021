@@ -10,13 +10,7 @@ const ElementIn = (element, trigger) => {
         trigger: trigger,
         start: "top center",
         toggleActions: "play none none none",
-        onEnter: () => {
-          if(element.includes("#work-item")){
-            gsap.set(document.querySelector(element.split(" ")[0]), { 
-              cursor: 'pointer',         
-            })
-          }
-        }
+        
       },
       y: '110%'
     })

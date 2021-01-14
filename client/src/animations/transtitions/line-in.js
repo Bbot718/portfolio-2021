@@ -14,9 +14,14 @@ const LineIn = (element, trigger, duration) => {
         toggleActions: "play none none none",
       },
       width:0,
+
     })
 
-   
+    window.onresize = () =>{
+      console.log('resize')
+        gsap.set(element, { width: '100%'})
+      
+    } 
 
 }
 

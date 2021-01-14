@@ -4,15 +4,14 @@ import HeaderIn from './header/header-in.js'
 import HeaderOut from './header/header-out.js'
 */
 
-import Header from './header.js';
+import Header from '../header.js';
 
-import TitleIn from './transtitions/title-in.js';
-import ElementIn from './transtitions/element-in.js';
-import ElementOut from './transtitions/element-out.js';
-import ParagrapheIn from './transtitions/paragraphe-in.js'
-import ImageIn from './transtitions/image-in.js';
-import LineIn from './transtitions/line-in.js';
-
+import TitleIn from '../transtitions/title-in.js';
+import ElementIn from '../transtitions/element-in.js';
+import ElementOut from '../transtitions/element-out.js';
+import ParagrapheIn from '../transtitions/paragraphe-in.js'
+import ImageIn from '../transtitions/image-in.js';
+import LineIn from '../transtitions/line-in.js';
 
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
