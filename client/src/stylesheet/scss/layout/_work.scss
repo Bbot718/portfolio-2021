@@ -37,9 +37,11 @@
    }
 
    &__info{
+      width: calc(100% - #{$gutter-vertical});
       height: 100%;
       position: relative;
-      left: $gutter-vertical;
+      margin-left: $gutter-vertical;
+
 
       @include respond(sm) {
          left: 0;

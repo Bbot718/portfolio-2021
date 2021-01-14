@@ -3,17 +3,18 @@
       position: relative;
       z-index: 3;
       height: .5rem;
-      width: 100%;
+      max-width: 99%;
       background: black;
-      border: 0;
+      border: none;
+      box-sizing: border-box;
    }
    
    &--thin{
       position: relative;
       z-index: 3;
       height: .2rem;
-      width: 100%;
+      max-width: 99%;
       background: black;
-      border: 0;
+      border: none;
    }
 }

@@ -46,7 +46,7 @@ body::-webkit-scrollbar {
    */
 }
 
-@media only screen and (max-width: 3840px) {
+@media only screen and (min-width: 1400px) {
   .header-heading {
     font-size: 6vw;
     line-height: 7vw;
@@ -89,15 +89,9 @@ body::-webkit-scrollbar {
   position: relative;
 }
 
-@media only screen and (min-width: 3840px) {
+@media only screen and (min-width: 1400px) {
   .primary-heading {
-    font-size: 12rem;
-  }
-}
-
-@media only screen and (max-width: 3840px) {
-  .primary-heading {
-    font-size: 8rem;
+    font-size: 6vw;
   }
 }
 
@@ -138,9 +132,9 @@ body::-webkit-scrollbar {
   text-transform: uppercase;
 }
 
-@media only screen and (max-width: 3840px) {
+@media only screen and (min-width: 1400px) {
   .secondary-heading {
-    font-size: 5rem;
+    font-size: 4vw;
   }
 }
 
@@ -169,7 +163,7 @@ body::-webkit-scrollbar {
 }
 
 .secondary-heading__container {
-  display: block;
+  display: inline-block;
   position: relative;
   overflow: hidden;
 }
@@ -197,7 +191,7 @@ body::-webkit-scrollbar {
   background: black;
 }
 
-@media only screen and (max-width: 3840px) {
+@media only screen and (min-width: 1400px) {
   .large-link {
     font-size: 3rem;
   }
@@ -238,7 +232,7 @@ body::-webkit-scrollbar {
   margin-bottom: 1rem;
 }
 
-@media only screen and (max-width: 3840px) {
+@media only screen and (min-width: 1400px) {
   .paragraphe {
     font-size: 1.8rem;
   }
@@ -288,7 +282,7 @@ body::-webkit-scrollbar {
   font-family: 'euclid_flexregular';
 }
 
-@media only screen and (max-width: 3840px) {
+@media only screen and (min-width: 1400px) {
   .info-heading {
     font-size: 1.2rem;
   }
@@ -450,18 +444,19 @@ body::-webkit-scrollbar {
   position: relative;
   z-index: 3;
   height: .5rem;
-  width: 100%;
+  max-width: 99%;
   background: black;
-  border: 0;
+  border: none;
+  box-sizing: border-box;
 }
 
 .line--thin {
   position: relative;
   z-index: 3;
   height: .2rem;
-  width: 100%;
+  max-width: 99%;
   background: black;
-  border: 0;
+  border: none;
 }
 
 .container {
@@ -2795,6 +2790,7 @@ body::-webkit-scrollbar {
 .medium-spacing {
   display: block;
   height: 2.5rem;
+  width: 90%;
 }
 
 header {
@@ -2894,9 +2890,10 @@ header {
 }
 
 .work-item__info {
+  width: calc(100% - 40px);
   height: 100%;
   position: relative;
-  left: 40px;
+  margin-left: 40px;
 }
 
 @media only screen and (max-width: 768px) {

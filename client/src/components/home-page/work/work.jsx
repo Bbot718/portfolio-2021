@@ -1,24 +1,39 @@
-import React, { useState, useEffect}  from 'react';
+import React, { Component }  from 'react';
+import ReactDOM from "react-dom";
 import Axios from 'axios';
 
 import WorkItem from './work-item';
 
-function Work(){
-  const [projectList, setProjectList] = useState([])
-  const [tagList, setTagList] = useState([])
-  
-  useEffect(() => {
-    Axios.get('http://localhost:3006/api/get_project').then((response) => {  
-      setProjectList(response.data)
-    })
+class Work extends Component{
+  constructor(props) {
+    super(props);
 
-    Axios.get('http://localhost:3006/api/get_tag').then((response) => {  
-      setTagList(response.data)
-      console.log(response.data)
-    })
+    this.state = {
+      projects: [],
+      Tags: []
+    };
 
-  }, [])
-  
+    this.cards = [];
+    //this.tl = new TimelineMax({ paused: true });
+    //this.toggleAnimation = this.toggleAnimation.bind(this);
+  }
+
+
+  componentDidMount() {
+    Axios
+    .get('http://localhost:3006/api/get_project')
+      .then(res => {
+        this.setState({ projects: res.data }, () => {
+          console.log(this.state.projects);
+        });
+      })
+      .catch(e => console.log(e));
+
+
+      console.log(this.state.projects)
+  }
+
+  render(){
     return (
       <React.Fragment>
       <div className="large-spacing" />
@@ -26,14 +41,13 @@ function Work(){
         <section id="work" className="work">
           <div className="primary-heading__container">
             <span className="work__title primary-heading">
-             
+            
               { (window.innerWidth > 768) ? "Selected Work" : "Work" }
             </span>
           </div>
           <hr className="work__title__line line--thick" />
-           <h1 className="primary-heading"> {projectList.Name} </h1>
           <div className="container">
-         
+        
             <WorkItem  
               id="0"
               date="2019"
@@ -44,7 +58,20 @@ function Work(){
           
 
               { 
-                projectList.map((project) => {
+                this.state.projects.map((project, i) => (
+                  <div key={project.id} ref={project => (this.cards[i] = project)}>
+                    <WorkItem  
+                      id={project.id}
+                      date={project.Date}
+                      name={project.Name}
+                      image={project.Image_link}
+                      imageHover={project.Video_link}
+                      tags={['Virtual Reality','Unity']}   
+                    />
+                  </div>
+                ))
+                /*
+                this.state.projects.map((projects, i) => {
                   return(
                     <WorkItem  
                     key={project.id}
@@ -53,6 +80,7 @@ function Work(){
                     name={project.Name}
                     image={project.Image_link}
                     imageHover={project.Video_link}
+                    /*
                     tags={
                       tagList.map((tag) => {
                         if(tag.project_num === project.id){
@@ -64,11 +92,11 @@ function Work(){
                       })
                       //['Virtual Reality','Unity']
                     }  
+                    */
+                  //  />
 
-                    />
-
-                  ) 
-                })
+                  //) 
+                //})
               }
               
             
@@ -76,7 +104,8 @@ function Work(){
           <div className="large-spacing" />
         </section>
       </React.Fragment>
-  )
+    )
+  }
 }
 
 

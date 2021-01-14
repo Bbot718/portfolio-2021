@@ -54,6 +54,14 @@ const HomePageAnimations = () => {
 
    //Footer
    ElementIn('.footer__content', '.contact__line')
+
+   window.onresize = () =>{
+      console.log('resize')
+        //gsap.set(element, {  background: 'red' })
+      gsap.set(['.line--thick', '.line--thin'], { width: '50% !important'  })
+    } 
 }
+
+
 
 export default HomePageAnimations;

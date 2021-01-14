@@ -6,6 +6,7 @@ import About from './about';
 import Exhibition from './exhibition';
 import Contact from './contact';
 
+
 class HomePage extends React.Component {
 
   render() {

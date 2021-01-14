@@ -44,8 +44,7 @@
    text-transform: uppercase;
    position: relative;
       
-   @include respond(xxxl) {font-size: 12rem;}
-   @include respond(xxl) {font-size: 8rem;}
+   @include respond(xxl) {font-size: 6vw;}
    @include respond(xl) {font-size: 6.5rem;}
    @include respond(l) { font-size: 5rem;}
    @include respond(md) { font-size: 4.2rem;}
@@ -66,14 +65,14 @@
    font-family: 'euclid_flexbold';
    text-transform: uppercase;
 
-   @include respond(xxl) {font-size: 5rem;}
+   @include respond(xxl) {font-size: 4vw;}
    @include respond(xl) {font-size: 4rem;}
    @include respond(l) { font-size: 3rem;}
    @include respond(md) { font-size: 2.5rem;}
    @include respond(sm) {font-size: 3.5rem;}
 
    &__container{
-      display: block;
+      display: inline-block;
       position: relative;
       overflow: hidden;
    }
