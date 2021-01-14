@@ -1,7 +1,7 @@
 import React  from 'react';
 
 import Header from './header';
-import Work from './work/work';
+import Work from './work';
 import About from './about';
 import Exhibition from './exhibition';
 import Contact from './contact';

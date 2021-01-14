@@ -17,11 +17,6 @@ const LineIn = (element, trigger, duration) => {
 
     })
 
-    window.onresize = () =>{
-      console.log('resize')
-        gsap.set(element, { width: '100%'})
-      
-    } 
 
 }
 

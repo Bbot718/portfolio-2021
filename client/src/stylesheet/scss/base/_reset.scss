@@ -18,3 +18,9 @@ a {
 } 
 
 body::-webkit-scrollbar {display: none;}
+
+
+.no-mobile{
+    @include respond(sm) {display:none;}
+    
+}

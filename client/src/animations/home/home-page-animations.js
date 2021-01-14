@@ -27,13 +27,6 @@ const HomePageAnimations = () => {
 
    //Work
    TitleIn('.work__title', '.work', '.work__title__line');
-   for(let i = 0; i < document.querySelectorAll('.work-item').length; i++){
-      ImageIn('#work-item-' + i + ' .work-item__image-hidder', '#work-item-' + i)
-      ElementIn('#work-item-' + i + ' .work-item__name', '#work-item-' + i)
-      LineIn('#work-item-' + i + ' + .work__line', '#work-item-' + i, 3.2);
-      ElementIn('#work-item-' + i + ' .work-item__date', '#work-item-' + i)
-      ElementIn('#work-item-' + i + ' .work-item__tag', '#work-item-' + i)
-   }
 
    //About
    TitleIn('.about__title', '.about', '.about__line');
@@ -49,16 +42,11 @@ const HomePageAnimations = () => {
    TitleIn('.contact__title', '.contact', '.contact__line');
    ParagrapheIn('.contact__paragraphe', '.contact');
    ElementIn('.contact__mail__content', '.contact')
-   //ElementOut('.header__mail',  '.contact__mail')
+   ElementOut('.header__mail',  '.contact__mail')
 
    //Footer
-   ElementIn('.footer__content', '.contact__line')
+   ElementIn('.footer__content', '.contact')
 
-   window.onresize = () =>{
-      console.log('resize')
-        //gsap.set(element, {  background: 'red' })
-      gsap.set(['.line--thick', '.line--thin'], { width: '50% !important'  })
-    } 
 }
 
 

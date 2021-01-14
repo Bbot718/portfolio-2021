@@ -13,7 +13,7 @@ class HomePage extends React.Component {
                   </div>
                </div>
             </div>
-            <hr className="exhibition__line line--thin"/>
+            <hr className="exhibition__line line--hair"/>
 
             <div className="row">
                <div className="col-1-of-2--no-margin">
@@ -28,7 +28,7 @@ class HomePage extends React.Component {
                   </div>
                </div>
             </div>
-            <hr className="exhibition__line line--thin"/>
+            <hr className="exhibition__line line--hair"/>
 
             <div className="row">
                <div className="col-1-of-2--no-margin">
@@ -43,7 +43,7 @@ class HomePage extends React.Component {
                   </div>
                </div>
             </div>
-            <hr className="exhibition__line line--thin"/>
+            <hr className="exhibition__line line--hair"/>
             
             <div className="row">
                <div className="col-1-of-2--no-margin">
@@ -73,7 +73,7 @@ class HomePage extends React.Component {
                   </div>
                </div>
             </div>
-            <hr className="exhibition__line line--thin"/>
+            <hr className="exhibition__line line--hair"/>
             
             <div className="row">
                <div className="col-1-of-2--no-margin">
@@ -88,7 +88,7 @@ class HomePage extends React.Component {
                   </div>
                </div>
             </div>
-            <hr className="exhibition__line line--thin"/>
+            <hr className="exhibition__line line--hair"/>
             <div className="row">
                <div className="col-1-of-2--no-margin">
                   <div className="info-heading__container">
@@ -102,7 +102,7 @@ class HomePage extends React.Component {
                   </div>
                </div>
             </div>
-            <hr className="exhibition__line line--thin"/>
+            <hr className="exhibition__line line--hair"/>
 
             <div className="row">
                <div className="col-1-of-2--no-margin">
@@ -117,7 +117,7 @@ class HomePage extends React.Component {
                   </div>
                </div>
             </div>
-            <hr className="exhibition__line line--thin"/>
+            <hr className="exhibition__line line--hair"/>
 
             <div className="row">
                <div className="col-1-of-2--no-margin">
@@ -132,7 +132,7 @@ class HomePage extends React.Component {
                   </div>
                </div>
             </div>
-            <hr className="exhibition__line line--thin"/>
+            <hr className="exhibition__line line--hair"/>
 
             <div className="row">
                <div className="col-1-of-2--no-margin">
@@ -147,7 +147,7 @@ class HomePage extends React.Component {
                   </div>
                </div>
             </div>
-            <hr className="exhibition__line line--thin"/>
+            <hr className="exhibition__line line--hair"/>
 
             <div className="row">
                <div className="col-1-of-2--no-margin">
@@ -162,7 +162,7 @@ class HomePage extends React.Component {
                   </div>
                </div>
             </div>
-            <hr className="exhibition__line line--thin"/>
+            <hr className="exhibition__line line--hair"/>
             <div className="large-spacing" />
          </section>
         

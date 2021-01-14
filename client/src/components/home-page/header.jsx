@@ -1,13 +1,11 @@
 import React  from 'react';
 
-import Navigation from '../navigation';
-
 class Header extends React.Component {
 
   render() {
     return (
       <div className={'header header--'+ this.props.theme}>
-
+                     
                   <div className="header__main container">
                      <div className="row">
                         <div className="col-1-of-1">

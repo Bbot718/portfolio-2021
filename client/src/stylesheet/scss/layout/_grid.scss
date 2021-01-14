@@ -18,6 +18,7 @@
       .col-#{$j}-of-#{$i}{ 
          flex: 0 0 calc(100% / #{$i} * #{$j}   - #{$gutter-vertical} * 2);
          margin: $gutter-horizontal $gutter-vertical;
+         overflow: hidden;
 
          @include respond(sm) {
             flex: 0 0 calc(100% - #{$gutter-vertical} * 2) !important;
@@ -26,6 +27,7 @@
          &--no-margin{
             flex: 0 0 calc(100% / #{$i} * #{$j});
             margin: 0 0 ;
+            overflow: hidden;
 
             @include respond(sm) {
                flex: 0 0 100% !important;

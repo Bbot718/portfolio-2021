@@ -3,7 +3,7 @@ import React  from 'react';
 import '../src/stylesheet/css/main.css';
 import SmoothScroll from './utils/smooth-scroll.js';
 
-import Navigation from './components/navigation';
+import Navigation from './components/home-page/navigation/navigation.jsx';
 import HomePage from './components/home-page/home.jsx'
 
 
@@ -23,7 +23,7 @@ class App extends React.Component {
               </div>
                 <div className="container">
                   <div className="row">
-                    <div className="col-3-of-14">
+                    <div className="col-3-of-14 no-mobile">
                       <nav className="sidebar">
                         <Navigation />
                       </nav> 

@@ -4,7 +4,6 @@ import LineIn from '../transtitions/line-in.js';
 
 const WorkAnimations = (references) => {
    for(let i = 0 ; i < references.name.length; i++){
-      console.log(references.line);
       LineIn(references.line[i], references.trigger[i], 3.2);
       ImageIn(references.image[i], references.trigger[i])
       ElementIn(references.name[i], references.trigger[i])

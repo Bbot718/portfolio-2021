@@ -37,6 +37,7 @@ const Title = (element, trigger, line) => {
 
     gsap.from(chars[charIndex],{
       duration: .5,
+      stagger: 0.3,
       delay: delay,
         scrollTrigger: {
           trigger: trigger,

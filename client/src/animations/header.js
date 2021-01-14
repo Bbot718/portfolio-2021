@@ -43,24 +43,18 @@ class Header{
       let triggerOffset = document.querySelector('.header-heading').offsetHeight;
       const triggerMargin = window.innerHeight / 10
 
-
-      console.log(triggerOffset)
-
       gsap.to('.header-heading',{
          stagger: -0.1,
          scrollTrigger: {
            trigger: '.header__background--dark',
            start: "top top",
-           end: "center-=" + window.innerHeight/5 + " top",
+           end: "center-=" + window.innerHeight/3 + " top",
            scrub: .1,
            
          }, y: '100%'
        })
 
-       window.onresize = () =>{
-         triggerOffset = document.querySelector('.header-heading').offsetHeight;
-         console.log(triggerOffset);
-       } 
+      
    }
 
    AnimationPlay(){

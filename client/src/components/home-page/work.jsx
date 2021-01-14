@@ -1,8 +1,7 @@
 import React, { Component }  from 'react';
 import Axios from 'axios';
 
-import WorkItem from './work-item';
-import WorkAnimations from '../../../animations/home/work-animations'
+import WorkAnimations from '../../animations/home/work-animations.js'
 
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -43,6 +42,11 @@ class Work extends Component{
     }
   }
 
+    handleClick(e) {
+      e.preventDefault();
+      console.log(e)
+    }
+
   render(){
     return (
       <React.Fragment>
@@ -52,7 +56,7 @@ class Work extends Component{
           <div className="primary-heading__container">
             <span className="work__title primary-heading">
             
-              { (window.innerWidth > 768) ? "Selected Work" : "Work" }
+               Work
             </span>
           </div>
           <hr className="work__title__line line--thick" />
@@ -61,33 +65,33 @@ class Work extends Component{
                 this.state.projects.map((project, i) => (
 
                   <React.Fragment>
-                    <article ref={project => (this.references.trigger[i] = project)}  className="work-item row" >
-                      <div className="col-3-of-11--no-margin">
-                        <div className="work-item__image__container">
-                          <video className="work-item__image-video">
-                            <source src={require('../../../assets/videos/cap.mp4').default} />
-                          </video>
-                          <img  className="work-item__image" alt="" src={require('../../../assets/images/'+ project.Image_link).default} />
-                          <div ref={project => (this.references.image[i] = project)}   className="work-item__image-hidder"></div>
-                        </div>
-                      </div>
-                      <div className="col-8-of-11--no-margin">
-                        <div className="work-item__info">
-                          <div className="work-item__tag__container"></div>
-                          <div className="info-heading__container">
-                            <span ref={project => (this.references.date[i] = project)} 
-                                  className="work-item__date info-heading">
-                              {project.Date}
-                            </span>
-                          </div>
-                          <div className="secondary-heading__container">
-                            <span ref={project => (this.references.name[i] = project)} 
-                                  className="work-item__name secondary-heading">
-                              {project.Name}
-                            </span>
+                    <article ref={project => (this.references.trigger[i] = project)} className="work-item row" >
+                        <div className="col-3-of-11--no-margin">
+                          <div className="work-item__image__container">
+                            <video className="work-item__image-video">
+                              <source src={require('../../assets/videos/cap.mp4').default} />
+                            </video>
+                            <img  className="work-item__image" alt="" src={require('../../assets/images/'+ project.Image_link).default} />
+                            <div ref={project => (this.references.image[i] = project)}   className="work-item__image-hidder"></div>
                           </div>
                         </div>
-                      </div>
+                        <div className="col-8-of-11--no-margin">
+                          <div className="work-item__info">
+                            <div className="work-item__tag__container"></div>
+                            <div className="info-heading__container">
+                              <span ref={project => (this.references.date[i] = project)} 
+                                    className="work-item__date info-heading">
+                                {project.Date}
+                              </span>
+                            </div>
+                            <div className="secondary-heading__container">
+                              <span ref={project => (this.references.name[i] = project)} 
+                                    className="work-item__name secondary-heading">
+                                {project.Name}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
                     </article>
                     <hr ref={project => (this.references.line[i] = project)} className="work__line line--thin" />
                   </React.Fragment>

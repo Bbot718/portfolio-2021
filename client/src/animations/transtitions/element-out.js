@@ -7,7 +7,7 @@ const ElementOut = (element, trigger) => {
       duration: .5,
       scrollTrigger: {
         trigger: trigger,
-        start: "top center",
+        start: "bottom center",
         toggleActions: "play none none none",
         scrub: 0.00001
       },

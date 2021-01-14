@@ -11,7 +11,7 @@ import HomePageAnimations from '../animations/home/home-page-animations.js';
 class SmoothScroll{
   constructor(){
 
-    this.damping = 0.2;
+    this.damping = 0.15;
     this.scroller = document.querySelector(".scrollable");
     this.bodyScrollBar = Scrollbar.init(this.scroller, { 
       damping: this.damping, 
