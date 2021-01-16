@@ -32,7 +32,7 @@ class Header{
          this.AnimationPlay(); 
       }});
       
-      timeline.from( this.chars, {x: '-100%'}) //Header
+      timeline.from( '.header__letter', {x: '-100%'}) //Header
       timeline.from('.header__name', {y: '100%', stagger: 0.1}) //Name
       timeline.from('.navigation__item', {y: '100%', stagger: 0.1, delay: -0.5}) //Navigation
       timeline.from('.header__mail', {y: '100%'}); //Email
@@ -53,6 +53,18 @@ class Header{
            
          }, y: '100%'
        })
+
+       gsap.to('.header__background--dark',{
+         stagger: -0.1,
+         scrollTrigger: {
+           trigger: '.header__background--dark',
+           start: "top top",
+           end: "bottom top",
+           scrub: .1,
+           
+         }, scaleY: 0
+       })
+
 
       
    }

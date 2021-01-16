@@ -21,6 +21,10 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+.no-mobile {
+  display: inline;
+}
+
 @media only screen and (max-width: 768px) {
   .no-mobile {
     display: none;
@@ -78,7 +82,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 768px) {
   .header-heading {
-    font-size: 10vw;
+    font-size: 8vw;
   }
 }
 
@@ -92,7 +96,7 @@ body::-webkit-scrollbar {
   font-family: 'euclid_flexbold';
   text-transform: uppercase;
   position: relative;
-  font-size: 11vw;
+  font-size: 8vw;
 }
 
 @media only screen and (max-width: 768px) {
@@ -116,7 +120,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (min-width: 1400px) {
   .secondary-heading {
-    font-size: 5.5vw;
+    font-size: 5vw;
   }
 }
 
@@ -140,7 +144,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 768px) {
   .secondary-heading {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 
@@ -240,7 +244,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 768px) {
   .paragraphe {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
 
@@ -429,6 +433,12 @@ body::-webkit-scrollbar {
   border: none;
   box-sizing: border-box;
   height: .9vw;
+}
+
+@media only screen and (max-width: 768px) {
+  .line--thick {
+    height: .5rem;
+  }
 }
 
 .line--thin {
@@ -3040,7 +3050,7 @@ body::-webkit-scrollbar {
 }
 
 header {
-  height: 100vh;
+  height: 80vh;
 }
 
 .header {
@@ -3071,6 +3081,7 @@ header {
   background-color: black;
   width: 100vw;
   height: 100vh;
+  transform-origin: top center;
 }
 
 .header__background--light {

@@ -25,7 +25,7 @@
    @include respond(xl) {font-size: 6.8vh;}
    @include respond(l) { font-size: 3.6rem;}
    @include respond(md) { font-size: 4.5rem;}
-   @include respond(sm) {font-size: 10vw;}
+   @include respond(sm) {font-size: 8vw;}
 
    &__container{
       display: block;
@@ -44,7 +44,7 @@
    text-transform: uppercase;
    position: relative;
       
-   font-size: 11vw;
+   font-size: 8vw;
    @include respond(sm) {
       font-size: 17vw;
       line-height: 17vw;
@@ -62,11 +62,11 @@
    font-family: 'euclid_flexbold';
    text-transform: uppercase;
 
-   @include respond(xxl) {font-size: 5.5vw;}
+   @include respond(xxl) {font-size: 5vw;}
    @include respond(xl) {font-size: 4rem;}
    @include respond(l) { font-size: 3rem;}
    @include respond(md) { font-size: 2.5rem;}
-   @include respond(sm) {font-size: 3.5rem;}
+   @include respond(sm) {font-size: 3rem;}
 
    &__container{
       display: inline-block;
@@ -123,7 +123,7 @@
    @include respond(xl) {font-size: 1.5rem;}
    @include respond(l) { font-size: 1.4rem;}
    @include respond(md) { font-size: 1.2rem;}
-   @include respond(sm) {font-size: 1.5rem;}
+   @include respond(sm) {font-size: 1.2rem;}
 
    &__container{
       display: block;

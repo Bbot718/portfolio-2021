@@ -19,8 +19,10 @@ class Work extends Component{
     };
 
     this.references = {
+      id: [],
       trigger: [],
       image: [],
+      video: [],
       name: [],
       date: [],
       line: []
@@ -42,21 +44,28 @@ class Work extends Component{
     }
   }
 
-    handleClick(e) {
-      e.preventDefault();
-      console.log(e)
-    }
+  handleMouseEnter(media) {
+    console.log(this.references.video[0])
+    //media.get(0).play()
+  }
+
+  handleMouseOut(){
+    console.log('mouse out')
+  }
+
+  handleClick(e) {
+    e.preventDefault();
+    //console.log(e)
+  }
 
   render(){
     return (
       <React.Fragment>
-      <div className="large-spacing" />
-      <div className="large-spacing" />
         <section id="work" className="work">
           <div className="primary-heading__container">
             <span className="work__title primary-heading">
-            
-               Work
+              <div className="no-mobile">Selected </div>
+              Work
             </span>
           </div>
           <hr className="work__title__line line--thick" />
@@ -65,11 +74,16 @@ class Work extends Component{
                 this.state.projects.map((project, i) => (
 
                   <React.Fragment>
-                    <article ref={project => (this.references.trigger[i] = project)} className="work-item row" >
+                      <article  ref={project => (this.references.trigger[i] = project)} 
+                                className="work-item row" 
+                                onMouseEnter={this.handleMouseEnter(this.references.video[i])} 
+                                onMouseOut={this.handleMouseOut}
+                      >
+                      
                         <div className="col-3-of-11--no-margin">
                           <div className="work-item__image__container">
-                            <video className="work-item__image-video">
-                              <source src={require('../../assets/videos/cap.mp4').default} />
+                            <video ref={project => (this.references.video[i] = project)}  className="work-item__image-video">
+                              <source src={require('../../assets/videos/'+ project.Video_link).default}/>
                             </video>
                             <img  className="work-item__image" alt="" src={require('../../assets/images/'+ project.Image_link).default} />
                             <div ref={project => (this.references.image[i] = project)}   className="work-item__image-hidder"></div>
@@ -92,7 +106,7 @@ class Work extends Component{
                             </div>
                           </div>
                         </div>
-                    </article>
+                      </article>
                     <hr ref={project => (this.references.line[i] = project)} className="work__line line--thin" />
                   </React.Fragment>
 

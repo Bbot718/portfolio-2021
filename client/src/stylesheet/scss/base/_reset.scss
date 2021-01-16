@@ -21,6 +21,9 @@ body::-webkit-scrollbar {display: none;}
 
 
 .no-mobile{
-    @include respond(sm) {display:none;}
+    display: inline;
+    @include respond(sm) {
+        display:none;
+    }
     
 }

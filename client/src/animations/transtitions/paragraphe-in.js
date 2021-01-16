@@ -19,7 +19,7 @@ const ParagrapheIn = (element, trigger) => {
     
 
    gsap.from(lines, {
-      stagger: 0.01,
+      stagger: 0.03,
         scrollTrigger: {
           trigger: trigger,
           start: "top center",
