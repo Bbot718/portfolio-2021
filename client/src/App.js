@@ -3,7 +3,7 @@ import React  from 'react';
 import '../src/stylesheet/css/main.css';
 import SmoothScroll from './utils/smooth-scroll.js';
 
-import Navigation from './components/home-page/navigation/navigation.jsx';
+import Navigation from './components/navigation/navigation.jsx';
 import HomePage from './components/home-page/home.jsx'
 
 

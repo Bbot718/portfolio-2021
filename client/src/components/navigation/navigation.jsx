@@ -21,7 +21,7 @@ class Navigation extends React.Component {
          {/* Menu */}
          <ul className="navigation__menu">
             <li className="navigation__item__container"> 
-               <span id="navigation--work" className="navigation__item info-heading">Work</span> 
+               <span id="navigation--work" className="navigation__item info-heading">Selected Work</span> 
                <div className="navigation__current">
                   <span id="navigation-selected--work" className="navigation__selected info-heading">—</span> 
                </div>

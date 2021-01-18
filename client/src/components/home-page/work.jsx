@@ -5,7 +5,6 @@ import WorkAnimations from '../../animations/home/work-animations.js'
 
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { Timeline } from 'gsap/gsap-core';
 gsap.registerPlugin(ScrollTrigger); 
 
 
@@ -44,14 +43,8 @@ class Work extends Component{
     }
   }
 
-  handleMouseEnter(media) {
-    console.log(this.references.video[0])
-    //media.get(0).play()
-  }
+  handleMouseEnter(i) {this.references.video[i].play()}
 
-  handleMouseOut(){
-    console.log('mouse out')
-  }
 
   handleClick(e) {
     e.preventDefault();
@@ -76,13 +69,12 @@ class Work extends Component{
                   <React.Fragment>
                       <article  ref={project => (this.references.trigger[i] = project)} 
                                 className="work-item row" 
-                                onMouseEnter={this.handleMouseEnter(this.references.video[i])} 
-                                onMouseOut={this.handleMouseOut}
+                                onMouseEnter={() => this.handleMouseEnter(i)}                                 
                       >
                       
                         <div className="col-3-of-11--no-margin">
                           <div className="work-item__image__container">
-                            <video ref={project => (this.references.video[i] = project)}  className="work-item__image-video">
+                            <video muted="muted" ref={project => (this.references.video[i] = project)}  className="work-item__image-video">
                               <source src={require('../../assets/videos/'+ project.Video_link).default}/>
                             </video>
                             <img  className="work-item__image" alt="" src={require('../../assets/images/'+ project.Image_link).default} />

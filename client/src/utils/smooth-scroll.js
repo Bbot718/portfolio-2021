@@ -11,10 +11,12 @@ import HomePageAnimations from '../animations/home/home-page-animations.js';
 class SmoothScroll{
   constructor(){
 
-    this.damping = 0.25;
+    this.damping = .05;
     this.scroller = document.querySelector(".scrollable");
     this.bodyScrollBar = Scrollbar.init(this.scroller, { 
       damping: this.damping, 
+      thumbMinSize: 20,
+      continuousScrolling:true,
       renderByPixels: true, 
       syncCallbacks: true, 
       delegateTo: document, 
@@ -26,7 +28,7 @@ class SmoothScroll{
 
     this.FixedElements(document.querySelector('.header__background--light'));
     this.FixedElements(document.querySelector('.navigation'));
-    this.StickyElements(document.querySelector('.header__main', document.querySelector('.header__background')));
+    //this.StickyElements(document.querySelector('.header__main', document.querySelector('.header__background')));
     
     //Scroll To Navigation
     this.bodyScrollBar.scrollIntoView(document.querySelector('.header'))
