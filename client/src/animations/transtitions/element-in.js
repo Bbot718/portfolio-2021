@@ -10,10 +10,10 @@ const ElementIn = (element, trigger) => {
         trigger: trigger,
         start: "top center",
         toggleActions: "play none none none",
-        
       },
-      y: '110%'
-    })
+      y: '110%',
+      onComplete: () => { element.classList.add('element-animated') }
+    }) 
 
     
  

@@ -4,7 +4,7 @@ import HeaderIn from './header/header-in.js'
 import HeaderOut from './header/header-out.js'
 */
 
-import Header from '../header.js';
+import Header from '../home/header.js';
 
 import TitleIn from '../transtitions/title-in.js';
 import ElementIn from '../transtitions/element-in.js';
@@ -26,7 +26,7 @@ const HomePageAnimations = () => {
 
 
    //Work
-   TitleIn('.work__title', '.work', '.work__title__line');
+   //TitleIn('.work__title', '.work', '.work__title__line');
 
    //About
    TitleIn('.about__title', '.about', '.about__line');

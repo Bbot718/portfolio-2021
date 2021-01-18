@@ -19,7 +19,7 @@ class HomePage extends React.Component {
         </header>
 
         {/* Work Section */}
-        <Work />
+        <Work action={this.props.action} />
 
         {/* About Section */}
         <div id="about-full" className="container">

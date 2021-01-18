@@ -3049,6 +3049,10 @@ body::-webkit-scrollbar {
   width: 90%;
 }
 
+.footer {
+  margin-bottom: 10vh;
+}
+
 header {
   height: 80vh;
 }
@@ -3197,10 +3201,6 @@ header {
 
 .about__content {
   margin: 1rem 0;
-}
-
-.footer {
-  margin-bottom: 10vh;
 }
 
 .scrollable {

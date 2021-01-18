@@ -1,6 +1,5 @@
 import {gsap, Power4 }from 'gsap';
-import getRandomInt from '../utils/random-int.js';
-import toggleScroll from '../utils/prevent-scroll.js';
+import getRandomInt from '../../utils/random-int.js';
 import { SplitText } from 'gsap/SplitText'
 
 
@@ -21,8 +20,6 @@ class Header{
       }
 
 
-      toggleScroll(false);
-
       this.In();
       this.Out();
    }
@@ -39,10 +36,6 @@ class Header{
    }
 
    Out(){
-      
-      let triggerOffset = document.querySelector('.header-heading').offsetHeight;
-      const triggerMargin = window.innerHeight / 10
-
       gsap.to('.header-heading',{
          stagger: -0.1,
          scrollTrigger: {
@@ -50,8 +43,8 @@ class Header{
            start: "top top",
            end: "center-=" + window.innerHeight/3 + " top",
            scrub: .1,
-           
-         }, y: '100%'
+         }, 
+         y: '100%'
        })
 
        gsap.to('.header__background--dark',{
@@ -61,12 +54,9 @@ class Header{
            start: "top top",
            end: "bottom top",
            scrub: .1,
-           
-         }, scaleY: 0
+         }, 
+         scaleY: 0
        })
-
-
-      
    }
 
    AnimationPlay(){

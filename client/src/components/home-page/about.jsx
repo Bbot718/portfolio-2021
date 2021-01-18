@@ -1,14 +1,39 @@
-import React  from 'react';
+import React, { Component }  from 'react';
 
-class About extends React.Component {
+import TitleIn from '../../animations/transtitions/title-in.js';
+import ParagrapheIn from '../../animations/transtitions/paragraphe-in.js';
+
+class About extends Component {
+   constructor(props) {
+      super(props);
+  
+      this.title = {
+        trigger: React.createRef(),
+        name: React.createRef(),
+        line: React.createRef()
+      }
+        
+      this.paragraphe = React.createRef()
+   }
+
+   componentDidMount(){
+      TitleIn(this.title.name,this.title.trigger, this.title.line);
+   }
+
+   componentDidUpdate(){
+      console.log('ieurshfguirehbi');
+      TitleIn(this.title.name,this.title.trigger, this.title.line);
+      //ParagrapheIn('.about__paragraphe', '.about__content');
+      
+    }
 
   render() {
     return (
-      <section id="about" className="about">
+      <section ref={ref => this.title.trigger = ref} id="about" className="about">
          <div className="primary-heading__container">
-            <span className="about__title primary-heading">About</span>
+            <span ref={ref => this.title.name = ref} className="about__title primary-heading">About</span>
          </div>
-         <hr className="about__line line--thick" />
+         <hr ref={ref => this.title.line = ref} className="about__line line--thick" />
          <div className="medium-spacing" />
          <div className="about__content container">
             <div className="row">
