@@ -36,6 +36,8 @@ class Header{
    }
 
    Out(){
+
+
       gsap.to('.header-heading',{
          stagger: -0.1,
          scrollTrigger: {
@@ -43,8 +45,7 @@ class Header{
            start: "top top",
            end: "center-=" + window.innerHeight/3 + " top",
            scrub: .1,
-         }, 
-         y: '100%'
+         }, y: '100%'
        })
 
        gsap.to('.header__background--dark',{
@@ -54,9 +55,11 @@ class Header{
            start: "top top",
            end: "bottom top",
            scrub: .1,
-         }, 
-         scaleY: 0
+         }, scaleY: 0
        })
+
+
+      
    }
 
    AnimationPlay(){

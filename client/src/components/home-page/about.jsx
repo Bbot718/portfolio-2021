@@ -1,7 +1,8 @@
 import React, { Component }  from 'react';
 
-import TitleIn from '../../animations/transtitions/title-in.js';
-import ParagrapheIn from '../../animations/transtitions/paragraphe-in.js';
+import TitleIn from '../../animations/scrolltrigger/title-in.js';
+import ParagrapheIn from '../../animations/scrolltrigger/paragraphe-in.js';
+import gsap from 'gsap/gsap-core';
 
 class About extends Component {
    constructor(props) {
@@ -12,17 +13,24 @@ class About extends Component {
         name: React.createRef(),
         line: React.createRef()
       }
+
+
         
-      this.paragraphe = React.createRef()
+      this.paragraphe = {
+         text: React.createRef(),
+         trigger: React.createRef()
+      }
    }
 
-   componentDidMount(){
+   componentDidMount(){ 
+      //console.log(this.title.name)          
       TitleIn(this.title.name,this.title.trigger, this.title.line);
+      //ParagrapheIn(this.paragraphe.text, this.paragraphe.trigger);
    }
 
    componentDidUpdate(){
-      console.log('ieurshfguirehbi');
-      TitleIn(this.title.name,this.title.trigger, this.title.line);
+      //console.log('ieurshfguirehbi');
+      //TitleIn(this.title.name,this.title.trigger, this.title.line);
       //ParagrapheIn('.about__paragraphe', '.about__content');
       
     }
@@ -35,7 +43,7 @@ class About extends Component {
          </div>
          <hr ref={ref => this.title.line = ref} className="about__line line--thick" />
          <div className="medium-spacing" />
-         <div className="about__content container">
+         <div ref={ref => this.paragraphe.trigger = ref}  className="about__content container">
             <div className="row">
                <div className="col-4-of-11--no-margin">
                   
@@ -44,7 +52,7 @@ class About extends Component {
                   <div className="info-heading__container">
                      <span className="exhibition__title info-heading">A Few Words</span>
                   </div>
-                  <p className="about__paragraphe paragraphe">I’m a designer who loves to code and a coder who loves to design. Bringing these two competences together opens innovative  solutions for digital spaces. I’m especially excited about developing interactive systems whether it is for the web, VR or any other digital projects.Having graduated from ECAL in 2016 with a distinction I started working as a 3D developer with focus in VR. Growing up in a multicultural environment I am both comfortable communicating in French and English and have basics in German.</p>
+                  <p ref={ref => this.paragraphe.text = ref} className="about__paragraphe paragraphe">I’m a designer who loves to code and a coder who loves to design. Bringing these two competences together opens innovative  solutions for digital spaces. I’m especially excited about developing interactive systems whether it is for the web, VR or any other digital projects.Having graduated from ECAL in 2016 with a distinction I started working as a 3D developer with focus in VR. Growing up in a multicultural environment I am both comfortable communicating in French and English and have basics in German.</p>
                </div>
             </div>
          </div>

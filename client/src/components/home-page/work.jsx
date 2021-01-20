@@ -4,10 +4,10 @@ import React, { Component }  from 'react';
 import Axios from 'axios';
 
 //Transitions
-import TitleIn from '../../animations/transtitions/title-in' 
-import ElementIn from '../../animations/transtitions/element-in.js';
-import ImageIn from '../../animations/transtitions/image-in.js';
-import LineIn from '../../animations/transtitions/line-in.js';
+import TitleIn from '../../animations/scrolltrigger/title-in' 
+import ElementScrolltrigger from '../../animations/scrolltrigger/element-scrolltrigger.js';
+import ImageIn from '../../animations/scrolltrigger/image-in.js';
+import LineIn from '../../animations/scrolltrigger/line-in.js';
 
 //GSAP
 import gsap from 'gsap';
@@ -59,8 +59,8 @@ class Work extends Component{
 
       for(let i = 0 ; i < this.state.projects.length; i++){
          ImageIn(this.project.image[i], this.project.trigger[i])
-         ElementIn(this.project.name[i], this.project.trigger[i])
-         ElementIn(this.project.date[i], this.project.trigger[i])
+         ElementScrolltrigger(this.project.name[i], this.project.trigger[i])
+         ElementScrolltrigger(this.project.date[i], this.project.trigger[i])
          LineIn(this.project.line[i], this.project.trigger[i], 3.2);
       }
     }
@@ -70,11 +70,7 @@ class Work extends Component{
 
 
   handleClick(id) {
-
     const duration = 1;
-    
-    //Headet Background out
-
     //Project Out
     for(let i =0; i < this.state.projects.length; i++){
       gsap.to(this.project.image[i], { scaleY: 1, duration: duration }) //Image Out
@@ -85,12 +81,8 @@ class Work extends Component{
 
     //Navigation Out
     gsap.to(['.navigation__item', '.navigation__selected'], { y: '-100%', duration: duration,  onComplete:() => {
-      this.props.action(this.state.projects[id]);
+      this.props.switchPage(this.state.projects[id]);
     }})
-
-
-   
-    
   }
 
   render(){

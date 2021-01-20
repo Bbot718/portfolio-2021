@@ -360,7 +360,8 @@ body::-webkit-scrollbar {
   flex-direction: column;
   justify-content: space-between;
   text-align: right;
-  color: white;
+  color: black;
+  background-color: white;
   mix-blend-mode: difference;
   position: absolute;
   height: 80vh;

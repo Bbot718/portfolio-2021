@@ -6,12 +6,12 @@ import HeaderOut from './header/header-out.js'
 
 import Header from '../home/header.js';
 
-import TitleIn from '../transtitions/title-in.js';
-import ElementIn from '../transtitions/element-in.js';
-import ElementOut from '../transtitions/element-out.js';
-import ParagrapheIn from '../transtitions/paragraphe-in.js'
-import ImageIn from '../transtitions/image-in.js';
-import LineIn from '../transtitions/line-in.js';
+import TitleIn from '../scrolltrigger/title-in.js';
+import ElementIn from '../scrolltrigger/element-scrolltrigger.js';
+import ElementOut from '../scrolltrigger/element-out.js';
+import ParagrapheIn from '../scrolltrigger/paragraphe-in.js'
+import ImageIn from '../scrolltrigger/image-in.js';
+import LineIn from '../scrolltrigger/line-in.js';
 
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -29,8 +29,8 @@ const HomePageAnimations = () => {
    //TitleIn('.work__title', '.work', '.work__title__line');
 
    //About
-   TitleIn('.about__title', '.about', '.about__line');
-   ParagrapheIn('.about__paragraphe', '.about__content');
+   //TitleIn('.about__title', '.about', '.about__line');
+   //ParagrapheIn('.about__paragraphe', '.about__content');
 
    //Exhibition
    ElementIn('.exhibition__title', '.exhibition')

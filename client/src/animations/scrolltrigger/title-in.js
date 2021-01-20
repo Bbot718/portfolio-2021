@@ -9,6 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Title = (element, trigger, line) => {
 
+  //console.log(trigger)
+
   const splitText = new SplitText(element, {type:"words,chars"})
   const chars = splitText.chars; 
   let wasAnimated = [chars.length]; 
@@ -35,7 +37,7 @@ const Title = (element, trigger, line) => {
 
     wasAnimated[charIndex] = true;
 
-    gsap.from(chars[charIndex],{
+    gsap.from(element,{
       duration: .5,
       stagger: 0.3,
       delay: delay,

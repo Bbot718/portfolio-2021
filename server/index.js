@@ -15,6 +15,14 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+app.get('/api/menu', (req, res) => {
+   const sqlSelect = "SELECT * FROM Menu";
+   db.query(sqlSelect, (err, result) => {
+      res.send(result);
+   })
+})
+
+
 app.get('/api/project', (req, res) => {
    const sqlSelect = "SELECT * FROM Projects ORDER BY id DESC";
    db.query(sqlSelect, (err, result) => {
