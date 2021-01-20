@@ -22,10 +22,7 @@ class App extends React.Component {
 
    this.bodyScrollBar = {};
 
-    this.state = { 
-      
-      currentProject: null 
-    }
+    this.state = { currentProject: null }
     this.SwitchPageHandler = this.SwitchPageHandler.bind(this);
     this.scrollIntoViewHandler = this.scrollIntoViewHandler.bind(this);
   }
@@ -67,15 +64,15 @@ class App extends React.Component {
                   <div className="row">
                     <div className="col-3-of-14 no-mobile">
                       <nav className="sidebar">
-                        <Navigation scrollIntoView={this.scrollIntoViewHandler}  />
+                        <Navigation currentProject={this.state.currentProject} scrollIntoView={this.scrollIntoViewHandler}  />
                       </nav> 
                       </div>
                     <div className="col-11-of-14">
                       <div className="main">
                         {
-                          (this.state.currentProject === null) ? (
-                            <HomePage switchPage={this.SwitchPageHandler} />)
-                          :( 
+                          (!this.state.currentProject) ? (
+                            <HomePage switchPage={this.SwitchPageHandler} />
+                          ):( 
                             <Project />
                           )
                         }

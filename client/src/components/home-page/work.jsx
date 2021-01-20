@@ -70,7 +70,7 @@ class Work extends Component{
 
 
   handleClick(id) {
-    const duration = 1;
+    const duration = .5;
     //Project Out
     for(let i =0; i < this.state.projects.length; i++){
       gsap.to(this.project.image[i], { scaleY: 1, duration: duration }) //Image Out
