@@ -94,7 +94,7 @@ function HandlePlay(currentProject){
 
    timeline.to(chars[letterSelection], {
       y: '0%',
-      onStart:() => { currentProject != null && chars[letterSelection].classList.add('openTypeStyle' + openTypeSelection)},
+      onStart:() => { chars[letterSelection].classList.add('openTypeStyle' + openTypeSelection)},
       onComplete:() => (HandlePlay(currentProject))
    })
 }
