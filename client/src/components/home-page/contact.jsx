@@ -1,9 +1,20 @@
-import React  from 'react';
+import React, { useEffect } from 'react'
 
-class Contact extends React.Component {
+//Transitions
+import ElementIn from '../../animations/scrolltrigger/element-scrolltrigger.js'
+import ParagrapheIn from '../../animations/scrolltrigger/paragraphe-in.js';
+import TitleIn from '../../animations/scrolltrigger/title-in.js';
 
-  render() {
-    return (
+function Contact(props) {
+
+   useEffect(() => {
+      TitleIn('.contact__title', '.contact', '.contact__line');
+      ParagrapheIn('.contact__paragraphe', '.contact');
+      ElementIn('.contact__mail__content', '.contact');
+   }, [])
+
+
+   return (
       <section id="contact" className="contact">
          <div className="primary-heading__container">
             <span className="contact__title primary-heading">Contact</span>
@@ -27,10 +38,8 @@ class Contact extends React.Component {
                <span className="contact__mail__content large-link">hello@benjaminbotros.ch</span>
             </a>
          </div>
-
       </section>
-    )
-  }
+   )  
 }
 
 export default Contact;

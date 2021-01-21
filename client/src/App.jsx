@@ -56,10 +56,7 @@ class App extends React.Component {
       <div className="App">
         <div ref={this.state.scroller} className="scrollable" data-scrollbar>
               <div className="wrap-overflow">
-              <div className="header__background">
-                <div className="header__background--dark" />
-                <div className="header__background--light" />
-              </div>
+             
                 <div className="container">
                   <div className="row">
                     <div className="col-3-of-14 no-mobile">
@@ -68,15 +65,13 @@ class App extends React.Component {
                       </nav> 
                       </div>
                     <div className="col-11-of-14">
-                      <div className="main">
                         {
                           (!this.state.currentProject) ? (
-                            <HomePage switchPage={this.SwitchPageHandler} />
+                            <HomePage currentProject={this.state.currentProject} switchPage={this.SwitchPageHandler} />
                           ):( 
                             <Project />
                           )
                         }
-                      </div>
                     </div>
                   </div>
                 </div>

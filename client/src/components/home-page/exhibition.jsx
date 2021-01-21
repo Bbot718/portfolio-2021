@@ -1,9 +1,18 @@
-import React  from 'react';
+import React, { useEffect } from 'react'
 
-class HomePage extends React.Component {
+//Transitions
+import ElementIn from '../../animations/scrolltrigger/element-scrolltrigger.js'
+import LineIn from '../../animations/scrolltrigger/line-in.js'
 
-  render() {
-    return (
+function Exhibition(props) {
+
+   useEffect(() => {
+      ElementIn('.exhibition__title', '.exhibition')
+      ElementIn('.exhibition__element', '.exhibition')
+      LineIn('.exhibition__line', '.exhibition', 3);
+   }, [])
+   
+   return (
       <React.Fragment>
          <section className="exhibition container">
             <div className="row">
@@ -167,8 +176,7 @@ class HomePage extends React.Component {
          </section>
         
       </React.Fragment>
-    )
-  }
+   )
 }
 
-export default HomePage;
+export default Exhibition;

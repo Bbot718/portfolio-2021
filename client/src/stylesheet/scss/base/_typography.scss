@@ -139,7 +139,7 @@
    display: inline-block;
    position: relative;
    font-family: 'euclid_flexregular';
-   @include respond(xxl) {font-size: 1.02vw;}
+   @include respond(xxl) {font-size: 1.3rem;}
    @include respond(xl) {font-size: 1.1rem;}
    @include respond(l) { font-size: .8rem;}
    @include respond(md) { font-size: .8rem;}
