@@ -7,6 +7,13 @@
 }
 
 @font-face {
+   font-family: 'euclid_flexmedium';
+   src: url('../../assets/fonts/EuclidFlex-Medium-WebTrial.woff') format('woff');
+   font-weight: normal;
+   font-style: normal;
+}
+
+@font-face {
    font-family: 'euclid_flexregular';
    src: url('../../assets/fonts/EuclidFlex-Regular_webfont.woff2') format('woff2'),
         url('../../assets/fonts/euclidflex-regular-webfont.woff') format('woff');
@@ -18,8 +25,7 @@
    position: relative !important;
    font-family: 'euclid_flexregular';
    text-transform: uppercase;
-   color: white;
-
+   color: black;
 
    @include respond(xxl) {font-size: 6vw;}
    @include respond(xl) {font-size: 6.8vh;}
@@ -33,16 +39,15 @@
       overflow: hidden;
    }
 
-   /*
-   &--dark{ color: white }
-   &--light{ color: black }
-   */
+   &--bold{ font-family: 'euclid_flexbold';  }
+   
 }
 
 .primary-heading{
    font-family: 'euclid_flexbold';
    text-transform: uppercase;
    position: relative;
+
       
    font-size: 8vw;
    @include respond(sm) {
@@ -62,7 +67,28 @@
    font-family: 'euclid_flexbold';
    text-transform: uppercase;
 
-   @include respond(xxl) {font-size: 5vw;}
+   @include respond(xxl) {
+      font-size: 5vw;
+      line-height: 5vw;
+   }
+   @include respond(xl) {font-size: 4rem;}
+   @include respond(l) { font-size: 3rem;}
+   @include respond(md) { font-size: 2.5rem;}
+   @include respond(sm) {font-size: 3rem;}
+
+   &__container{
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
+   }
+}
+
+.tertiary-heading{
+   display: inline-block;
+   font-family: 'euclid_flexbold';
+   text-transform: uppercase;
+
+   @include respond(xxl) {font-size: 3vw;}
    @include respond(xl) {font-size: 4rem;}
    @include respond(l) { font-size: 3rem;}
    @include respond(md) { font-size: 2.5rem;}
@@ -116,10 +142,31 @@
 }
 
 .paragraphe{
-   font-family: 'euclid_flexregular';
+   font-family: 'euclid_flexmedium';
    margin-bottom: 1rem;
    
    @include respond(xxl) {font-size: 1.8rem;}
+   @include respond(xl) {font-size: 1.5rem;}
+   @include respond(l) { font-size: 1.4rem;}
+   @include respond(md) { font-size: 1.2rem;}
+   @include respond(sm) {font-size: 1.2rem;}
+
+   &__container{
+      display: block;
+      position: relative;
+      overflow: hidden;
+   }
+
+   &--bold{ font-family: 'euclid_flexbold'; }
+   &--uppercase{ text-transform: uppercase; }
+}
+
+
+.project-paragraphe{
+   font-family: 'euclid_flexregular';
+   margin-bottom: 1rem;
+   
+   @include respond(xxl) {font-size: 1.2rem;}
    @include respond(xl) {font-size: 1.5rem;}
    @include respond(l) { font-size: 1.4rem;}
    @include respond(md) { font-size: 1.2rem;}
@@ -152,13 +199,17 @@
    }
 
    &--bold{ font-family: 'euclid_flexbold'; }
+   &--medium{ font-family: 'euclid_flexmedium'; }
    &--uppercase{ text-transform: uppercase; }
    &--red{ color: red; }
+
 }
 
 @for $i from 1 through 7{
    .openTypeStyle#{$i}{font-feature-settings: 'ss0#{$i}'}
 }
+
+.openTypeStyle11{font-feature-settings: 'ss11'}
 
 
 

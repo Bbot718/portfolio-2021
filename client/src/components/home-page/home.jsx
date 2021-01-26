@@ -10,10 +10,7 @@ function HomePage(props) {
 
   return (
     <div id="home-page">
-      <div className="header__background">
-        <div className="header__background--dark" />
-        <div className="header__background--light" />
-      </div>
+
       {/* Welcome Section */}
       <header id="header">
         <Header currentProject={props.currentProject}/>

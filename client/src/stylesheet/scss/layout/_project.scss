@@ -1,0 +1,117 @@
+.project{
+   margin-top: 10vh;
+
+   &__title{
+      &__container{
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+      }
+   }
+
+   &__close{
+      cursor: pointer;
+      background-color: black;
+      color: white;
+      padding: 0 1rem ;
+      display: inline-block;
+      position: relative;
+
+
+      &__container{
+
+         display: block;
+         overflow: hidden;
+         right: 0;
+      }
+   }
+
+   &__video{
+      display: block;
+      width: 100%;
+
+      &__controls{
+         background-color: black;
+         color: white;
+         width: 100%;
+         padding: .1rem 1rem;
+      }
+
+      &__hidder{
+         position: absolute;
+         background-color: white;
+         width: 100%;
+         height: 100%;
+         display: block;
+         transform-origin: bottom;
+         transform: scaleY(1);
+         z-index: 1000;
+      }
+
+      &__container{
+         position: relative;
+         overflow: hidden;
+      }
+   }
+
+   &__selection{
+      position: relative;
+
+      width: 100%;
+
+
+      &__arrow{
+        overflow: hidden;
+        width: 0px;
+
+      }
+
+      &__controls{
+         position: relative;
+         background-color: black;
+         color: white;
+         display: inline-block;
+         padding: 0.2rem 0.5rem;
+         transition: all 250ms;
+
+         &__container{
+            position: relative;
+           display: inline-block; 
+
+           &--left{background-color: blue;}
+           &--center{
+              margin: auto 0;
+           }
+           &--right{right: 0;}
+         }
+
+         &:hover{
+            cursor: pointer;
+
+
+            &:hover{
+               & .project__selection__arrow{
+                  transition: all 250ms;
+                  width: 15px;
+                  &--left{ margin-right: .5rem; }
+                  &--right{ margin-left: .5rem; }
+               }
+            }
+         }
+
+         &--right{
+            right: 0;
+         }
+      }
+      
+      
+   }
+
+   &__paragraphe{
+
+      &__container{
+         overflow: hidden;
+         position: relative;
+      }
+   }
+}

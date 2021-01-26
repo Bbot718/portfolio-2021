@@ -7,10 +7,26 @@
       border: none;
       box-sizing: border-box;
 
+
       height: .9vw;
       @include respond(sm) {height: .5rem;}
      
    }
+
+   &--middle{
+      position: relative;
+      z-index: 3;
+
+      max-width: 100%;
+      background: black;
+      border: none;
+
+      @include respond(xxl) {height: 10px;}
+      @include respond(xl) {height: .15rem;}
+      @include respond(l) {height: 1px}
+      @include respond(md) {height: .2rem;}
+   }
+
    
    &--thin{
       position: relative;
@@ -34,7 +50,7 @@
       background: black;
       border: none;
 
-      @include respond(xxl) {height: 2px;}
+      @include respond(xxl) {height: 3px;}
       @include respond(xl) {height: .15rem;}
       @include respond(l) {height: 1px}
       @include respond(md) {height: .2rem;}

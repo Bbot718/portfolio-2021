@@ -5,7 +5,7 @@ import Axios from 'axios';
 
 //Transitions
 import TitleIn from '../../animations/scrolltrigger/title-in' 
-import ElementScrolltrigger from '../../animations/scrolltrigger/element-scrolltrigger.js';
+import ElementScrolltrigger from '../../animations/scrolltrigger/element-in.js';
 import ImageIn from '../../animations/scrolltrigger/image-in.js';
 import LineIn from '../../animations/scrolltrigger/line-in.js';
 
@@ -57,11 +57,19 @@ class Work extends Component{
     if(this.state.projects !== preState.projects){
       TitleIn(this.title.name, this.title.trigger, this.title.line)
 
+
       for(let i = 0 ; i < this.state.projects.length; i++){
          ImageIn(this.project.image[i], this.project.trigger[i])
          ElementScrolltrigger(this.project.name[i], this.project.trigger[i])
          ElementScrolltrigger(this.project.date[i], this.project.trigger[i])
+
          LineIn(this.project.line[i], this.project.trigger[i], 3.2);
+
+         ScrollTrigger.create({
+          trigger: this.project.trigger[i],
+          start: "top center",
+          onEnter: () => { gsap.set(this.project.trigger[i], {cursor: 'pointer' }) }
+         })
       }
     }
   }
@@ -70,16 +78,13 @@ class Work extends Component{
 
 
   handleClick(id) {
-    const duration = .5;
+    const duration = .8;
     //Project Out
     for(let i =0; i < this.state.projects.length; i++){
       gsap.to(this.project.image[i], { scaleY: 1, duration: duration }) //Image Out
-      this.project.date[i].classList.contains('element-animated') && gsap.to(this.project.date[i], {y: '-100%', duration: duration}); //Date Out
-      this.project.name[i].classList.contains('element-animated') && gsap.to(this.project.name[i], {y: '-100%', duration: duration}); //Name Out      
-      gsap.to(this.project.line[i], { width: 0, duration: duration}) // Line Out
+      gsap.to('.animation-complete', {y: '-100%', duration: duration}); //Date Out
     }
-
-    //Navigation Out
+    gsap.to(['.line--thick', '.line--thin'], {width: 0, duration:duration})
     gsap.to(['.navigation__item', '.navigation__selected'], { y: '-100%', duration: duration,  onComplete:() => {
       this.props.switchPage(this.state.projects[id]);
     }})
@@ -114,23 +119,32 @@ class Work extends Component{
                             </video>
                             <img  className="work-item__image" alt="" src={require('../../assets/images/'+ project.Image_link).default} />
                             <div ref={project => (this.project.image[i] = project)}   className="work-item__image-hidder"></div>
+                           
+                          </div>
+                          <div className="work-item__view__container">
+                          <div className="work-item__view">
+                           <span className="info-heading ">View Project</span>
+                            </div>
                           </div>
                         </div>
                         <div className="col-8-of-11--no-margin">
                           <div className="work-item__info">
-                            <div className="work-item__tag__container">
-                              {
-                                //console.log(this.state.tags);
-                                /*
-                                this.state.tags.map((tag, j) => (
-                                  console.log(tag => this.tag.Name[j] = tag)
-                                  
-                                ))*/
-                              }
-                            </div>
+                          
+                          <div className="work-item__tag__container">
+
+
+                          {
+                            this.state.tags.map((tag, index) => {
+                                //console.log(tag.Tag_num +" - " + project.Project_num)
+                                if(tag.project_num === project.Project_num){
+                                  return  <div className="work-item__tag info-heading info-heading--medium info-heading--uppercase">{tag.Name}</div>
+                                }
+                          })}
+
+                          </div>
                             <div className="info-heading__container">
                               <span ref={project => (this.project.date[i] = project)} 
-                                    className="work-item__date info-heading">
+                                    className="work-item__date info-heading ">
                                 {project.Date}
                               </span>
                             </div>

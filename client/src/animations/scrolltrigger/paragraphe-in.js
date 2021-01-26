@@ -4,8 +4,8 @@ import SplitText from 'gsap/SplitText'
 gsap.registerPlugin(ScrollTrigger); 
 
 const ParagrapheIn = (element, trigger) => {
-   const splitText = new SplitText(element, {type:"words"})
-   const lines = splitText.words;
+   const splitText = new SplitText(element, {type:"lines"})
+   const lines = splitText.lines;
 
    for(let i = 0; i < lines.length; i++){
     var parent = lines[i].parentNode;
@@ -19,7 +19,7 @@ const ParagrapheIn = (element, trigger) => {
     
 
    gsap.from(lines, {
-      stagger: 0.03,
+      stagger: 0.2,
         scrollTrigger: {
           trigger: trigger,
           start: "top center",

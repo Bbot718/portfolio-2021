@@ -4,6 +4,8 @@ const cors = require('cors');
 const app = express();
 const mysql = require('mysql');
 
+
+
 const db = mysql.createPool({
    host: "localhost",
    user: "root",
@@ -36,6 +38,18 @@ app.get('/api/tag', (req, res) => {
       res.send(result);
    })
 })
+
+for(let i = 0; i < 6; i++){
+   app.get('/api/tag_' + i, (req, res) => {
+      const sqlSelect = "SELECT * FROM Project_Tag  INNER JOIN Tag ON Tag.Tag_num = Project_Tag.project_num WHERE Project_Tag.tag_num = " + i;
+      db.query(sqlSelect, (err, result) => {
+         res.send(result);
+      })
+   })
+}
+
+
+
 
 app.listen(3006, () => {
    console.log('running on port 3006');

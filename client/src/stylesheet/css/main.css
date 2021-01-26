@@ -39,6 +39,13 @@ body::-webkit-scrollbar {
 }
 
 @font-face {
+  font-family: 'euclid_flexmedium';
+  src: url("../../assets/fonts/EuclidFlex-Medium-WebTrial.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'euclid_flexregular';
   src: url("../../assets/fonts/EuclidFlex-Regular_webfont.woff2") format("woff2"), url("../../assets/fonts/euclidflex-regular-webfont.woff") format("woff");
   font-weight: normal;
@@ -49,11 +56,7 @@ body::-webkit-scrollbar {
   position: relative !important;
   font-family: 'euclid_flexregular';
   text-transform: uppercase;
-  color: white;
-  /*
-   &--dark{ color: white }
-   &--light{ color: black }
-   */
+  color: black;
 }
 
 @media only screen and (min-width: 1400px) {
@@ -92,6 +95,10 @@ body::-webkit-scrollbar {
   overflow: hidden;
 }
 
+.header-heading--bold {
+  font-family: 'euclid_flexbold';
+}
+
 .primary-heading {
   font-family: 'euclid_flexbold';
   text-transform: uppercase;
@@ -121,6 +128,7 @@ body::-webkit-scrollbar {
 @media only screen and (min-width: 1400px) {
   .secondary-heading {
     font-size: 5vw;
+    line-height: 5vw;
   }
 }
 
@@ -149,6 +157,48 @@ body::-webkit-scrollbar {
 }
 
 .secondary-heading__container {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+}
+
+.tertiary-heading {
+  display: inline-block;
+  font-family: 'euclid_flexbold';
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 1400px) {
+  .tertiary-heading {
+    font-size: 3vw;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .tertiary-heading {
+    font-size: 4rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .tertiary-heading {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .tertiary-heading {
+    font-size: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .tertiary-heading {
+    font-size: 3rem;
+  }
+}
+
+.tertiary-heading__container {
   display: inline-block;
   position: relative;
   overflow: hidden;
@@ -214,7 +264,7 @@ body::-webkit-scrollbar {
 }
 
 .paragraphe {
-  font-family: 'euclid_flexregular';
+  font-family: 'euclid_flexmedium';
   margin-bottom: 1rem;
 }
 
@@ -259,6 +309,55 @@ body::-webkit-scrollbar {
 }
 
 .paragraphe--uppercase {
+  text-transform: uppercase;
+}
+
+.project-paragraphe {
+  font-family: 'euclid_flexregular';
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 1400px) {
+  .project-paragraphe {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .project-paragraphe {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .project-paragraphe {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .project-paragraphe {
+    font-size: 1.2rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .project-paragraphe {
+    font-size: 1.2rem;
+  }
+}
+
+.project-paragraphe__container {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-paragraphe--bold {
+  font-family: 'euclid_flexbold';
+}
+
+.project-paragraphe--uppercase {
   text-transform: uppercase;
 }
 
@@ -308,6 +407,10 @@ body::-webkit-scrollbar {
   font-family: 'euclid_flexbold';
 }
 
+.info-heading--medium {
+  font-family: 'euclid_flexmedium';
+}
+
 .info-heading--uppercase {
   text-transform: uppercase;
 }
@@ -344,6 +447,10 @@ body::-webkit-scrollbar {
   font-feature-settings: "ss07";
 }
 
+.openTypeStyle11 {
+  font-feature-settings: 'ss11';
+}
+
 .text-align-right {
   text-align: right;
 }
@@ -355,17 +462,28 @@ body::-webkit-scrollbar {
 
 .navigation {
   position: relative;
-  z-index: 10000000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: right;
   color: white;
-  mix-blend-mode: difference;
   position: absolute;
   height: 80vh;
   width: 100%;
   margin-top: 10vh;
+}
+
+.navigation__top, .navigation__center, .navigation__bottom {
+  z-index: 2;
+  mix-blend-mode: difference;
+}
+
+.navigation__background {
+  z-index: 0;
+  position: absolute;
+  background-color: white;
+  height: 80vh;
+  width: 100%;
 }
 
 .navigation__menu {
@@ -378,10 +496,15 @@ body::-webkit-scrollbar {
   position: relative;
   display: inline-block;
   cursor: pointer;
+  z-index: 8;
+  background-color: white;
+  color: black;
+  padding: .2rem .5rem;
 }
 
 .navigation__item__container {
   overflow: hidden;
+  transform: translateY(-50%);
 }
 
 .navigation__item:before {
@@ -441,6 +564,38 @@ body::-webkit-scrollbar {
   }
 }
 
+.line--middle {
+  position: relative;
+  z-index: 3;
+  max-width: 100%;
+  background: black;
+  border: none;
+}
+
+@media only screen and (min-width: 1400px) {
+  .line--middle {
+    height: 10px;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  .line--middle {
+    height: .15rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .line--middle {
+    height: 1px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .line--middle {
+    height: .2rem;
+  }
+}
+
 .line--thin {
   position: relative;
   z-index: 3;
@@ -483,7 +638,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (min-width: 1400px) {
   .line--hair {
-    height: 2px;
+    height: 3px;
   }
 }
 
@@ -521,7 +676,7 @@ body::-webkit-scrollbar {
 .col-1-of-1 {
   flex: 0 0 calc(100% / 1 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -533,7 +688,7 @@ body::-webkit-scrollbar {
 .col-1-of-1--no-margin {
   flex: 0 0 calc(100% / 1 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -545,7 +700,7 @@ body::-webkit-scrollbar {
 .col-1-of-2 {
   flex: 0 0 calc(100% / 2 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -557,7 +712,7 @@ body::-webkit-scrollbar {
 .col-1-of-2--no-margin {
   flex: 0 0 calc(100% / 2 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -569,7 +724,7 @@ body::-webkit-scrollbar {
 .col-2-of-2 {
   flex: 0 0 calc(100% / 2 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -581,7 +736,7 @@ body::-webkit-scrollbar {
 .col-2-of-2--no-margin {
   flex: 0 0 calc(100% / 2 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -593,7 +748,7 @@ body::-webkit-scrollbar {
 .col-1-of-3 {
   flex: 0 0 calc(100% / 3 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -605,7 +760,7 @@ body::-webkit-scrollbar {
 .col-1-of-3--no-margin {
   flex: 0 0 calc(100% / 3 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -617,7 +772,7 @@ body::-webkit-scrollbar {
 .col-2-of-3 {
   flex: 0 0 calc(100% / 3 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -629,7 +784,7 @@ body::-webkit-scrollbar {
 .col-2-of-3--no-margin {
   flex: 0 0 calc(100% / 3 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -641,7 +796,7 @@ body::-webkit-scrollbar {
 .col-3-of-3 {
   flex: 0 0 calc(100% / 3 * 3   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -653,7 +808,7 @@ body::-webkit-scrollbar {
 .col-3-of-3--no-margin {
   flex: 0 0 calc(100% / 3 * 3);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -665,7 +820,7 @@ body::-webkit-scrollbar {
 .col-1-of-4 {
   flex: 0 0 calc(100% / 4 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -677,7 +832,7 @@ body::-webkit-scrollbar {
 .col-1-of-4--no-margin {
   flex: 0 0 calc(100% / 4 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -689,7 +844,7 @@ body::-webkit-scrollbar {
 .col-2-of-4 {
   flex: 0 0 calc(100% / 4 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -701,7 +856,7 @@ body::-webkit-scrollbar {
 .col-2-of-4--no-margin {
   flex: 0 0 calc(100% / 4 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -713,7 +868,7 @@ body::-webkit-scrollbar {
 .col-3-of-4 {
   flex: 0 0 calc(100% / 4 * 3   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -725,7 +880,7 @@ body::-webkit-scrollbar {
 .col-3-of-4--no-margin {
   flex: 0 0 calc(100% / 4 * 3);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -737,7 +892,7 @@ body::-webkit-scrollbar {
 .col-4-of-4 {
   flex: 0 0 calc(100% / 4 * 4   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -749,7 +904,7 @@ body::-webkit-scrollbar {
 .col-4-of-4--no-margin {
   flex: 0 0 calc(100% / 4 * 4);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -761,7 +916,7 @@ body::-webkit-scrollbar {
 .col-1-of-5 {
   flex: 0 0 calc(100% / 5 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -773,7 +928,7 @@ body::-webkit-scrollbar {
 .col-1-of-5--no-margin {
   flex: 0 0 calc(100% / 5 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -785,7 +940,7 @@ body::-webkit-scrollbar {
 .col-2-of-5 {
   flex: 0 0 calc(100% / 5 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -797,7 +952,7 @@ body::-webkit-scrollbar {
 .col-2-of-5--no-margin {
   flex: 0 0 calc(100% / 5 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -809,7 +964,7 @@ body::-webkit-scrollbar {
 .col-3-of-5 {
   flex: 0 0 calc(100% / 5 * 3   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -821,7 +976,7 @@ body::-webkit-scrollbar {
 .col-3-of-5--no-margin {
   flex: 0 0 calc(100% / 5 * 3);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -833,7 +988,7 @@ body::-webkit-scrollbar {
 .col-4-of-5 {
   flex: 0 0 calc(100% / 5 * 4   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -845,7 +1000,7 @@ body::-webkit-scrollbar {
 .col-4-of-5--no-margin {
   flex: 0 0 calc(100% / 5 * 4);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -857,7 +1012,7 @@ body::-webkit-scrollbar {
 .col-5-of-5 {
   flex: 0 0 calc(100% / 5 * 5   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -869,7 +1024,7 @@ body::-webkit-scrollbar {
 .col-5-of-5--no-margin {
   flex: 0 0 calc(100% / 5 * 5);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -881,7 +1036,7 @@ body::-webkit-scrollbar {
 .col-1-of-6 {
   flex: 0 0 calc(100% / 6 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -893,7 +1048,7 @@ body::-webkit-scrollbar {
 .col-1-of-6--no-margin {
   flex: 0 0 calc(100% / 6 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -905,7 +1060,7 @@ body::-webkit-scrollbar {
 .col-2-of-6 {
   flex: 0 0 calc(100% / 6 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -917,7 +1072,7 @@ body::-webkit-scrollbar {
 .col-2-of-6--no-margin {
   flex: 0 0 calc(100% / 6 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -929,7 +1084,7 @@ body::-webkit-scrollbar {
 .col-3-of-6 {
   flex: 0 0 calc(100% / 6 * 3   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -941,7 +1096,7 @@ body::-webkit-scrollbar {
 .col-3-of-6--no-margin {
   flex: 0 0 calc(100% / 6 * 3);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -953,7 +1108,7 @@ body::-webkit-scrollbar {
 .col-4-of-6 {
   flex: 0 0 calc(100% / 6 * 4   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -965,7 +1120,7 @@ body::-webkit-scrollbar {
 .col-4-of-6--no-margin {
   flex: 0 0 calc(100% / 6 * 4);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -977,7 +1132,7 @@ body::-webkit-scrollbar {
 .col-5-of-6 {
   flex: 0 0 calc(100% / 6 * 5   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -989,7 +1144,7 @@ body::-webkit-scrollbar {
 .col-5-of-6--no-margin {
   flex: 0 0 calc(100% / 6 * 5);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1001,7 +1156,7 @@ body::-webkit-scrollbar {
 .col-6-of-6 {
   flex: 0 0 calc(100% / 6 * 6   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1013,7 +1168,7 @@ body::-webkit-scrollbar {
 .col-6-of-6--no-margin {
   flex: 0 0 calc(100% / 6 * 6);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1025,7 +1180,7 @@ body::-webkit-scrollbar {
 .col-1-of-7 {
   flex: 0 0 calc(100% / 7 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1037,7 +1192,7 @@ body::-webkit-scrollbar {
 .col-1-of-7--no-margin {
   flex: 0 0 calc(100% / 7 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1049,7 +1204,7 @@ body::-webkit-scrollbar {
 .col-2-of-7 {
   flex: 0 0 calc(100% / 7 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1061,7 +1216,7 @@ body::-webkit-scrollbar {
 .col-2-of-7--no-margin {
   flex: 0 0 calc(100% / 7 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1073,7 +1228,7 @@ body::-webkit-scrollbar {
 .col-3-of-7 {
   flex: 0 0 calc(100% / 7 * 3   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1085,7 +1240,7 @@ body::-webkit-scrollbar {
 .col-3-of-7--no-margin {
   flex: 0 0 calc(100% / 7 * 3);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1097,7 +1252,7 @@ body::-webkit-scrollbar {
 .col-4-of-7 {
   flex: 0 0 calc(100% / 7 * 4   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1109,7 +1264,7 @@ body::-webkit-scrollbar {
 .col-4-of-7--no-margin {
   flex: 0 0 calc(100% / 7 * 4);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1121,7 +1276,7 @@ body::-webkit-scrollbar {
 .col-5-of-7 {
   flex: 0 0 calc(100% / 7 * 5   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1133,7 +1288,7 @@ body::-webkit-scrollbar {
 .col-5-of-7--no-margin {
   flex: 0 0 calc(100% / 7 * 5);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1145,7 +1300,7 @@ body::-webkit-scrollbar {
 .col-6-of-7 {
   flex: 0 0 calc(100% / 7 * 6   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1157,7 +1312,7 @@ body::-webkit-scrollbar {
 .col-6-of-7--no-margin {
   flex: 0 0 calc(100% / 7 * 6);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1169,7 +1324,7 @@ body::-webkit-scrollbar {
 .col-7-of-7 {
   flex: 0 0 calc(100% / 7 * 7   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1181,7 +1336,7 @@ body::-webkit-scrollbar {
 .col-7-of-7--no-margin {
   flex: 0 0 calc(100% / 7 * 7);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1193,7 +1348,7 @@ body::-webkit-scrollbar {
 .col-1-of-8 {
   flex: 0 0 calc(100% / 8 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1205,7 +1360,7 @@ body::-webkit-scrollbar {
 .col-1-of-8--no-margin {
   flex: 0 0 calc(100% / 8 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1217,7 +1372,7 @@ body::-webkit-scrollbar {
 .col-2-of-8 {
   flex: 0 0 calc(100% / 8 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1229,7 +1384,7 @@ body::-webkit-scrollbar {
 .col-2-of-8--no-margin {
   flex: 0 0 calc(100% / 8 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1241,7 +1396,7 @@ body::-webkit-scrollbar {
 .col-3-of-8 {
   flex: 0 0 calc(100% / 8 * 3   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1253,7 +1408,7 @@ body::-webkit-scrollbar {
 .col-3-of-8--no-margin {
   flex: 0 0 calc(100% / 8 * 3);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1265,7 +1420,7 @@ body::-webkit-scrollbar {
 .col-4-of-8 {
   flex: 0 0 calc(100% / 8 * 4   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1277,7 +1432,7 @@ body::-webkit-scrollbar {
 .col-4-of-8--no-margin {
   flex: 0 0 calc(100% / 8 * 4);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1289,7 +1444,7 @@ body::-webkit-scrollbar {
 .col-5-of-8 {
   flex: 0 0 calc(100% / 8 * 5   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1301,7 +1456,7 @@ body::-webkit-scrollbar {
 .col-5-of-8--no-margin {
   flex: 0 0 calc(100% / 8 * 5);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1313,7 +1468,7 @@ body::-webkit-scrollbar {
 .col-6-of-8 {
   flex: 0 0 calc(100% / 8 * 6   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1325,7 +1480,7 @@ body::-webkit-scrollbar {
 .col-6-of-8--no-margin {
   flex: 0 0 calc(100% / 8 * 6);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1337,7 +1492,7 @@ body::-webkit-scrollbar {
 .col-7-of-8 {
   flex: 0 0 calc(100% / 8 * 7   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1349,7 +1504,7 @@ body::-webkit-scrollbar {
 .col-7-of-8--no-margin {
   flex: 0 0 calc(100% / 8 * 7);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1361,7 +1516,7 @@ body::-webkit-scrollbar {
 .col-8-of-8 {
   flex: 0 0 calc(100% / 8 * 8   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1373,7 +1528,7 @@ body::-webkit-scrollbar {
 .col-8-of-8--no-margin {
   flex: 0 0 calc(100% / 8 * 8);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1385,7 +1540,7 @@ body::-webkit-scrollbar {
 .col-1-of-9 {
   flex: 0 0 calc(100% / 9 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1397,7 +1552,7 @@ body::-webkit-scrollbar {
 .col-1-of-9--no-margin {
   flex: 0 0 calc(100% / 9 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1409,7 +1564,7 @@ body::-webkit-scrollbar {
 .col-2-of-9 {
   flex: 0 0 calc(100% / 9 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1421,7 +1576,7 @@ body::-webkit-scrollbar {
 .col-2-of-9--no-margin {
   flex: 0 0 calc(100% / 9 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1433,7 +1588,7 @@ body::-webkit-scrollbar {
 .col-3-of-9 {
   flex: 0 0 calc(100% / 9 * 3   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1445,7 +1600,7 @@ body::-webkit-scrollbar {
 .col-3-of-9--no-margin {
   flex: 0 0 calc(100% / 9 * 3);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1457,7 +1612,7 @@ body::-webkit-scrollbar {
 .col-4-of-9 {
   flex: 0 0 calc(100% / 9 * 4   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1469,7 +1624,7 @@ body::-webkit-scrollbar {
 .col-4-of-9--no-margin {
   flex: 0 0 calc(100% / 9 * 4);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1481,7 +1636,7 @@ body::-webkit-scrollbar {
 .col-5-of-9 {
   flex: 0 0 calc(100% / 9 * 5   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1493,7 +1648,7 @@ body::-webkit-scrollbar {
 .col-5-of-9--no-margin {
   flex: 0 0 calc(100% / 9 * 5);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1505,7 +1660,7 @@ body::-webkit-scrollbar {
 .col-6-of-9 {
   flex: 0 0 calc(100% / 9 * 6   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1517,7 +1672,7 @@ body::-webkit-scrollbar {
 .col-6-of-9--no-margin {
   flex: 0 0 calc(100% / 9 * 6);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1529,7 +1684,7 @@ body::-webkit-scrollbar {
 .col-7-of-9 {
   flex: 0 0 calc(100% / 9 * 7   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1541,7 +1696,7 @@ body::-webkit-scrollbar {
 .col-7-of-9--no-margin {
   flex: 0 0 calc(100% / 9 * 7);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1553,7 +1708,7 @@ body::-webkit-scrollbar {
 .col-8-of-9 {
   flex: 0 0 calc(100% / 9 * 8   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1565,7 +1720,7 @@ body::-webkit-scrollbar {
 .col-8-of-9--no-margin {
   flex: 0 0 calc(100% / 9 * 8);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1577,7 +1732,7 @@ body::-webkit-scrollbar {
 .col-9-of-9 {
   flex: 0 0 calc(100% / 9 * 9   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1589,7 +1744,7 @@ body::-webkit-scrollbar {
 .col-9-of-9--no-margin {
   flex: 0 0 calc(100% / 9 * 9);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1601,7 +1756,7 @@ body::-webkit-scrollbar {
 .col-1-of-10 {
   flex: 0 0 calc(100% / 10 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1613,7 +1768,7 @@ body::-webkit-scrollbar {
 .col-1-of-10--no-margin {
   flex: 0 0 calc(100% / 10 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1625,7 +1780,7 @@ body::-webkit-scrollbar {
 .col-2-of-10 {
   flex: 0 0 calc(100% / 10 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1637,7 +1792,7 @@ body::-webkit-scrollbar {
 .col-2-of-10--no-margin {
   flex: 0 0 calc(100% / 10 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1649,7 +1804,7 @@ body::-webkit-scrollbar {
 .col-3-of-10 {
   flex: 0 0 calc(100% / 10 * 3   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1661,7 +1816,7 @@ body::-webkit-scrollbar {
 .col-3-of-10--no-margin {
   flex: 0 0 calc(100% / 10 * 3);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1673,7 +1828,7 @@ body::-webkit-scrollbar {
 .col-4-of-10 {
   flex: 0 0 calc(100% / 10 * 4   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1685,7 +1840,7 @@ body::-webkit-scrollbar {
 .col-4-of-10--no-margin {
   flex: 0 0 calc(100% / 10 * 4);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1697,7 +1852,7 @@ body::-webkit-scrollbar {
 .col-5-of-10 {
   flex: 0 0 calc(100% / 10 * 5   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1709,7 +1864,7 @@ body::-webkit-scrollbar {
 .col-5-of-10--no-margin {
   flex: 0 0 calc(100% / 10 * 5);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1721,7 +1876,7 @@ body::-webkit-scrollbar {
 .col-6-of-10 {
   flex: 0 0 calc(100% / 10 * 6   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1733,7 +1888,7 @@ body::-webkit-scrollbar {
 .col-6-of-10--no-margin {
   flex: 0 0 calc(100% / 10 * 6);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1745,7 +1900,7 @@ body::-webkit-scrollbar {
 .col-7-of-10 {
   flex: 0 0 calc(100% / 10 * 7   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1757,7 +1912,7 @@ body::-webkit-scrollbar {
 .col-7-of-10--no-margin {
   flex: 0 0 calc(100% / 10 * 7);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1769,7 +1924,7 @@ body::-webkit-scrollbar {
 .col-8-of-10 {
   flex: 0 0 calc(100% / 10 * 8   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1781,7 +1936,7 @@ body::-webkit-scrollbar {
 .col-8-of-10--no-margin {
   flex: 0 0 calc(100% / 10 * 8);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1793,7 +1948,7 @@ body::-webkit-scrollbar {
 .col-9-of-10 {
   flex: 0 0 calc(100% / 10 * 9   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1805,7 +1960,7 @@ body::-webkit-scrollbar {
 .col-9-of-10--no-margin {
   flex: 0 0 calc(100% / 10 * 9);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1817,7 +1972,7 @@ body::-webkit-scrollbar {
 .col-10-of-10 {
   flex: 0 0 calc(100% / 10 * 10   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1829,7 +1984,7 @@ body::-webkit-scrollbar {
 .col-10-of-10--no-margin {
   flex: 0 0 calc(100% / 10 * 10);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1841,7 +1996,7 @@ body::-webkit-scrollbar {
 .col-1-of-11 {
   flex: 0 0 calc(100% / 11 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1853,7 +2008,7 @@ body::-webkit-scrollbar {
 .col-1-of-11--no-margin {
   flex: 0 0 calc(100% / 11 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1865,7 +2020,7 @@ body::-webkit-scrollbar {
 .col-2-of-11 {
   flex: 0 0 calc(100% / 11 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1877,7 +2032,7 @@ body::-webkit-scrollbar {
 .col-2-of-11--no-margin {
   flex: 0 0 calc(100% / 11 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1889,7 +2044,7 @@ body::-webkit-scrollbar {
 .col-3-of-11 {
   flex: 0 0 calc(100% / 11 * 3   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1901,7 +2056,7 @@ body::-webkit-scrollbar {
 .col-3-of-11--no-margin {
   flex: 0 0 calc(100% / 11 * 3);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1913,7 +2068,7 @@ body::-webkit-scrollbar {
 .col-4-of-11 {
   flex: 0 0 calc(100% / 11 * 4   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1925,7 +2080,7 @@ body::-webkit-scrollbar {
 .col-4-of-11--no-margin {
   flex: 0 0 calc(100% / 11 * 4);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1937,7 +2092,7 @@ body::-webkit-scrollbar {
 .col-5-of-11 {
   flex: 0 0 calc(100% / 11 * 5   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1949,7 +2104,7 @@ body::-webkit-scrollbar {
 .col-5-of-11--no-margin {
   flex: 0 0 calc(100% / 11 * 5);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1961,7 +2116,7 @@ body::-webkit-scrollbar {
 .col-6-of-11 {
   flex: 0 0 calc(100% / 11 * 6   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1973,7 +2128,7 @@ body::-webkit-scrollbar {
 .col-6-of-11--no-margin {
   flex: 0 0 calc(100% / 11 * 6);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1985,7 +2140,7 @@ body::-webkit-scrollbar {
 .col-7-of-11 {
   flex: 0 0 calc(100% / 11 * 7   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -1997,7 +2152,7 @@ body::-webkit-scrollbar {
 .col-7-of-11--no-margin {
   flex: 0 0 calc(100% / 11 * 7);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2009,7 +2164,7 @@ body::-webkit-scrollbar {
 .col-8-of-11 {
   flex: 0 0 calc(100% / 11 * 8   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2021,7 +2176,7 @@ body::-webkit-scrollbar {
 .col-8-of-11--no-margin {
   flex: 0 0 calc(100% / 11 * 8);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2033,7 +2188,7 @@ body::-webkit-scrollbar {
 .col-9-of-11 {
   flex: 0 0 calc(100% / 11 * 9   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2045,7 +2200,7 @@ body::-webkit-scrollbar {
 .col-9-of-11--no-margin {
   flex: 0 0 calc(100% / 11 * 9);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2057,7 +2212,7 @@ body::-webkit-scrollbar {
 .col-10-of-11 {
   flex: 0 0 calc(100% / 11 * 10   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2069,7 +2224,7 @@ body::-webkit-scrollbar {
 .col-10-of-11--no-margin {
   flex: 0 0 calc(100% / 11 * 10);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2081,7 +2236,7 @@ body::-webkit-scrollbar {
 .col-11-of-11 {
   flex: 0 0 calc(100% / 11 * 11   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2093,7 +2248,7 @@ body::-webkit-scrollbar {
 .col-11-of-11--no-margin {
   flex: 0 0 calc(100% / 11 * 11);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2105,7 +2260,7 @@ body::-webkit-scrollbar {
 .col-1-of-12 {
   flex: 0 0 calc(100% / 12 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2117,7 +2272,7 @@ body::-webkit-scrollbar {
 .col-1-of-12--no-margin {
   flex: 0 0 calc(100% / 12 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2129,7 +2284,7 @@ body::-webkit-scrollbar {
 .col-2-of-12 {
   flex: 0 0 calc(100% / 12 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2141,7 +2296,7 @@ body::-webkit-scrollbar {
 .col-2-of-12--no-margin {
   flex: 0 0 calc(100% / 12 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2153,7 +2308,7 @@ body::-webkit-scrollbar {
 .col-3-of-12 {
   flex: 0 0 calc(100% / 12 * 3   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2165,7 +2320,7 @@ body::-webkit-scrollbar {
 .col-3-of-12--no-margin {
   flex: 0 0 calc(100% / 12 * 3);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2177,7 +2332,7 @@ body::-webkit-scrollbar {
 .col-4-of-12 {
   flex: 0 0 calc(100% / 12 * 4   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2189,7 +2344,7 @@ body::-webkit-scrollbar {
 .col-4-of-12--no-margin {
   flex: 0 0 calc(100% / 12 * 4);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2201,7 +2356,7 @@ body::-webkit-scrollbar {
 .col-5-of-12 {
   flex: 0 0 calc(100% / 12 * 5   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2213,7 +2368,7 @@ body::-webkit-scrollbar {
 .col-5-of-12--no-margin {
   flex: 0 0 calc(100% / 12 * 5);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2225,7 +2380,7 @@ body::-webkit-scrollbar {
 .col-6-of-12 {
   flex: 0 0 calc(100% / 12 * 6   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2237,7 +2392,7 @@ body::-webkit-scrollbar {
 .col-6-of-12--no-margin {
   flex: 0 0 calc(100% / 12 * 6);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2249,7 +2404,7 @@ body::-webkit-scrollbar {
 .col-7-of-12 {
   flex: 0 0 calc(100% / 12 * 7   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2261,7 +2416,7 @@ body::-webkit-scrollbar {
 .col-7-of-12--no-margin {
   flex: 0 0 calc(100% / 12 * 7);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2273,7 +2428,7 @@ body::-webkit-scrollbar {
 .col-8-of-12 {
   flex: 0 0 calc(100% / 12 * 8   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2285,7 +2440,7 @@ body::-webkit-scrollbar {
 .col-8-of-12--no-margin {
   flex: 0 0 calc(100% / 12 * 8);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2297,7 +2452,7 @@ body::-webkit-scrollbar {
 .col-9-of-12 {
   flex: 0 0 calc(100% / 12 * 9   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2309,7 +2464,7 @@ body::-webkit-scrollbar {
 .col-9-of-12--no-margin {
   flex: 0 0 calc(100% / 12 * 9);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2321,7 +2476,7 @@ body::-webkit-scrollbar {
 .col-10-of-12 {
   flex: 0 0 calc(100% / 12 * 10   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2333,7 +2488,7 @@ body::-webkit-scrollbar {
 .col-10-of-12--no-margin {
   flex: 0 0 calc(100% / 12 * 10);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2345,7 +2500,7 @@ body::-webkit-scrollbar {
 .col-11-of-12 {
   flex: 0 0 calc(100% / 12 * 11   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2357,7 +2512,7 @@ body::-webkit-scrollbar {
 .col-11-of-12--no-margin {
   flex: 0 0 calc(100% / 12 * 11);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2369,7 +2524,7 @@ body::-webkit-scrollbar {
 .col-12-of-12 {
   flex: 0 0 calc(100% / 12 * 12   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2381,7 +2536,7 @@ body::-webkit-scrollbar {
 .col-12-of-12--no-margin {
   flex: 0 0 calc(100% / 12 * 12);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2393,7 +2548,7 @@ body::-webkit-scrollbar {
 .col-1-of-13 {
   flex: 0 0 calc(100% / 13 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2405,7 +2560,7 @@ body::-webkit-scrollbar {
 .col-1-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2417,7 +2572,7 @@ body::-webkit-scrollbar {
 .col-2-of-13 {
   flex: 0 0 calc(100% / 13 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2429,7 +2584,7 @@ body::-webkit-scrollbar {
 .col-2-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2441,7 +2596,7 @@ body::-webkit-scrollbar {
 .col-3-of-13 {
   flex: 0 0 calc(100% / 13 * 3   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2453,7 +2608,7 @@ body::-webkit-scrollbar {
 .col-3-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 3);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2465,7 +2620,7 @@ body::-webkit-scrollbar {
 .col-4-of-13 {
   flex: 0 0 calc(100% / 13 * 4   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2477,7 +2632,7 @@ body::-webkit-scrollbar {
 .col-4-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 4);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2489,7 +2644,7 @@ body::-webkit-scrollbar {
 .col-5-of-13 {
   flex: 0 0 calc(100% / 13 * 5   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2501,7 +2656,7 @@ body::-webkit-scrollbar {
 .col-5-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 5);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2513,7 +2668,7 @@ body::-webkit-scrollbar {
 .col-6-of-13 {
   flex: 0 0 calc(100% / 13 * 6   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2525,7 +2680,7 @@ body::-webkit-scrollbar {
 .col-6-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 6);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2537,7 +2692,7 @@ body::-webkit-scrollbar {
 .col-7-of-13 {
   flex: 0 0 calc(100% / 13 * 7   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2549,7 +2704,7 @@ body::-webkit-scrollbar {
 .col-7-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 7);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2561,7 +2716,7 @@ body::-webkit-scrollbar {
 .col-8-of-13 {
   flex: 0 0 calc(100% / 13 * 8   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2573,7 +2728,7 @@ body::-webkit-scrollbar {
 .col-8-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 8);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2585,7 +2740,7 @@ body::-webkit-scrollbar {
 .col-9-of-13 {
   flex: 0 0 calc(100% / 13 * 9   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2597,7 +2752,7 @@ body::-webkit-scrollbar {
 .col-9-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 9);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2609,7 +2764,7 @@ body::-webkit-scrollbar {
 .col-10-of-13 {
   flex: 0 0 calc(100% / 13 * 10   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2621,7 +2776,7 @@ body::-webkit-scrollbar {
 .col-10-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 10);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2633,7 +2788,7 @@ body::-webkit-scrollbar {
 .col-11-of-13 {
   flex: 0 0 calc(100% / 13 * 11   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2645,7 +2800,7 @@ body::-webkit-scrollbar {
 .col-11-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 11);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2657,7 +2812,7 @@ body::-webkit-scrollbar {
 .col-12-of-13 {
   flex: 0 0 calc(100% / 13 * 12   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2669,7 +2824,7 @@ body::-webkit-scrollbar {
 .col-12-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 12);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2681,7 +2836,7 @@ body::-webkit-scrollbar {
 .col-13-of-13 {
   flex: 0 0 calc(100% / 13 * 13   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2693,7 +2848,7 @@ body::-webkit-scrollbar {
 .col-13-of-13--no-margin {
   flex: 0 0 calc(100% / 13 * 13);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2705,7 +2860,7 @@ body::-webkit-scrollbar {
 .col-1-of-14 {
   flex: 0 0 calc(100% / 14 * 1   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2717,7 +2872,7 @@ body::-webkit-scrollbar {
 .col-1-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 1);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2729,7 +2884,7 @@ body::-webkit-scrollbar {
 .col-2-of-14 {
   flex: 0 0 calc(100% / 14 * 2   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2741,7 +2896,7 @@ body::-webkit-scrollbar {
 .col-2-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 2);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2753,7 +2908,7 @@ body::-webkit-scrollbar {
 .col-3-of-14 {
   flex: 0 0 calc(100% / 14 * 3   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2765,7 +2920,7 @@ body::-webkit-scrollbar {
 .col-3-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 3);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2777,7 +2932,7 @@ body::-webkit-scrollbar {
 .col-4-of-14 {
   flex: 0 0 calc(100% / 14 * 4   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2789,7 +2944,7 @@ body::-webkit-scrollbar {
 .col-4-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 4);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2801,7 +2956,7 @@ body::-webkit-scrollbar {
 .col-5-of-14 {
   flex: 0 0 calc(100% / 14 * 5   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2813,7 +2968,7 @@ body::-webkit-scrollbar {
 .col-5-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 5);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2825,7 +2980,7 @@ body::-webkit-scrollbar {
 .col-6-of-14 {
   flex: 0 0 calc(100% / 14 * 6   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2837,7 +2992,7 @@ body::-webkit-scrollbar {
 .col-6-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 6);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2849,7 +3004,7 @@ body::-webkit-scrollbar {
 .col-7-of-14 {
   flex: 0 0 calc(100% / 14 * 7   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2861,7 +3016,7 @@ body::-webkit-scrollbar {
 .col-7-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 7);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2873,7 +3028,7 @@ body::-webkit-scrollbar {
 .col-8-of-14 {
   flex: 0 0 calc(100% / 14 * 8   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2885,7 +3040,7 @@ body::-webkit-scrollbar {
 .col-8-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 8);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2897,7 +3052,7 @@ body::-webkit-scrollbar {
 .col-9-of-14 {
   flex: 0 0 calc(100% / 14 * 9   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2909,7 +3064,7 @@ body::-webkit-scrollbar {
 .col-9-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 9);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2921,7 +3076,7 @@ body::-webkit-scrollbar {
 .col-10-of-14 {
   flex: 0 0 calc(100% / 14 * 10   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2933,7 +3088,7 @@ body::-webkit-scrollbar {
 .col-10-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 10);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2945,7 +3100,7 @@ body::-webkit-scrollbar {
 .col-11-of-14 {
   flex: 0 0 calc(100% / 14 * 11   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2957,7 +3112,7 @@ body::-webkit-scrollbar {
 .col-11-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 11);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2969,7 +3124,7 @@ body::-webkit-scrollbar {
 .col-12-of-14 {
   flex: 0 0 calc(100% / 14 * 12   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2981,7 +3136,7 @@ body::-webkit-scrollbar {
 .col-12-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 12);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -2993,7 +3148,7 @@ body::-webkit-scrollbar {
 .col-13-of-14 {
   flex: 0 0 calc(100% / 14 * 13   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3005,7 +3160,7 @@ body::-webkit-scrollbar {
 .col-13-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 13);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3017,7 +3172,7 @@ body::-webkit-scrollbar {
 .col-14-of-14 {
   flex: 0 0 calc(100% / 14 * 14   - 40px * 2);
   margin: 0rem 40px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3029,7 +3184,7 @@ body::-webkit-scrollbar {
 .col-14-of-14--no-margin {
   flex: 0 0 calc(100% / 14 * 14);
   margin: 0 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 @media only screen and (max-width: 768px) {
@@ -3049,17 +3204,26 @@ body::-webkit-scrollbar {
   width: 90%;
 }
 
+.bottom-spacing {
+  display: block;
+  height: 10vh;
+  width: 90%;
+}
+
 .footer {
   margin-bottom: 10vh;
 }
 
 header {
-  height: 80vh;
+  height: 100vh;
+  margin-bottom: 20%;
+  z-index: -1;
 }
 
 .header {
   position: relative;
   height: 100vh;
+  z-index: -1;
 }
 
 .header__title {
@@ -3080,9 +3244,8 @@ header {
 }
 
 .header__background--dark {
+  z-index: 1;
   position: fixed;
-  z-index: 2;
-  background-color: black;
   width: 100vw;
   height: 100vh;
   left: 0vw;
@@ -3099,7 +3262,7 @@ header {
 
 .header__main {
   position: relative;
-  z-index: 3;
+  z-index: 6;
   color: black;
   position: absolute;
   top: 50% !important;
@@ -3115,14 +3278,19 @@ header {
   }
 }
 
+.header__word {
+  overflow: hidden;
+  vertical-align: top;
+}
+
 .header__mail__container, .header__name__container {
   overflow: hidden;
 }
 
 .work-item {
-  cursor: pointer;
   position: relative;
-  padding: 1rem 0;
+  margin: 1rem 0;
+  overflow: visible;
 }
 
 .work-item__image {
@@ -3170,17 +3338,31 @@ header {
   }
 }
 
+.work-item__view {
+  background-color: black;
+  color: white;
+  padding: 0.2rem 0.5rem;
+  transform: translateY(100%);
+  transition: all 250ms;
+  text-align: center;
+}
+
+.work-item__view__container {
+  position: absolute;
+  right: 0;
+  bottom: -1rem;
+  overflow: hidden;
+}
+
 .work-item__tag {
   display: inline-block;
-  color: white;
-  background-color: black;
   margin-right: 1rem;
-  padding: .2rem .5rem;
 }
 
 .work-item__tag__container {
   position: absolute;
   bottom: 0.1rem;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -3200,8 +3382,128 @@ header {
   transform: scale(1.1);
 }
 
+.work-item:hover .work-item__view {
+  transform: translateY(0);
+  transition: all 250ms;
+}
+
 .about__content {
   margin: 1rem 0;
+}
+
+.project {
+  margin-top: 10vh;
+}
+
+.project__title__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.project__close {
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  padding: 0 1rem;
+  display: inline-block;
+  position: relative;
+}
+
+.project__close__container {
+  display: block;
+  overflow: hidden;
+  right: 0;
+}
+
+.project__video {
+  display: block;
+  width: 100%;
+}
+
+.project__video__controls {
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: .1rem 1rem;
+}
+
+.project__video__hidder {
+  position: absolute;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: block;
+  transform-origin: bottom;
+  transform: scaleY(1);
+  z-index: 1000;
+}
+
+.project__video__container {
+  position: relative;
+  overflow: hidden;
+}
+
+.project__selection {
+  position: relative;
+  width: 100%;
+}
+
+.project__selection__arrow {
+  overflow: hidden;
+  width: 0px;
+}
+
+.project__selection__controls {
+  position: relative;
+  background-color: black;
+  color: white;
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  transition: all 250ms;
+}
+
+.project__selection__controls__container {
+  position: relative;
+  display: inline-block;
+}
+
+.project__selection__controls__container--left {
+  background-color: blue;
+}
+
+.project__selection__controls__container--center {
+  margin: auto 0;
+}
+
+.project__selection__controls__container--right {
+  right: 0;
+}
+
+.project__selection__controls:hover {
+  cursor: pointer;
+}
+
+.project__selection__controls:hover:hover .project__selection__arrow {
+  transition: all 250ms;
+  width: 15px;
+}
+
+.project__selection__controls:hover:hover .project__selection__arrow--left {
+  margin-right: .5rem;
+}
+
+.project__selection__controls:hover:hover .project__selection__arrow--right {
+  margin-left: .5rem;
+}
+
+.project__selection__controls--right {
+  right: 0;
+}
+
+.project__paragraphe__container {
+  overflow: hidden;
+  position: relative;
 }
 
 .scrollable {

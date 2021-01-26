@@ -1,6 +1,7 @@
 header{
-   height: 80vh;
-   
+   height: 100vh;
+   margin-bottom: 20%;
+   z-index: -1;
    //background: linear-gradient(180deg, #FFC0CB 50%, #00FFFF 50%);
 }
 
@@ -9,6 +10,7 @@ header{
 .header{
    position: relative;
    height: 100vh;
+   z-index: -1;
 
    &__title{
       display: inline-block;
@@ -28,10 +30,11 @@ header{
       height: 200vh;
       
       &--dark{
-
+         z-index: 1;
          position: fixed;
-         z-index: 2;
-         background-color: black;
+
+         //background-color: black;
+
          width: 100vw;
          height: 100vh;
          left: 0vw ;
@@ -49,8 +52,9 @@ header{
    }
 
    &__main{
+
       position: relative;
-      z-index: 3;
+      z-index: 6;
       color: black;
       position: absolute;
       top: 50% !important;
@@ -60,6 +64,11 @@ header{
       justify-content: space-between;
 
       @include respond(sm) {height: auto;}
+   }
+
+   &__word{
+      overflow: hidden;
+      vertical-align: top;
    }
 
    &__mail, &__name{

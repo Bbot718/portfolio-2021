@@ -1,7 +1,8 @@
 .work-item{
-   cursor: pointer;
+
    position: relative;
-   padding: 1rem 0;
+   margin: 1rem 0;
+   overflow: visible;
 
    &__image{
       position: relative;
@@ -49,16 +50,36 @@
       }
    }
 
+   &__view{
+      background-color: black;
+      color: white;
+      padding: 0.2rem 0.5rem;
+      transform: translateY(100%);
+      transition: all 250ms;
+      text-align: center;
+
+
+      &__container{
+         position: absolute;
+         right: 0;
+         
+         bottom: -1rem;
+         overflow: hidden;
+
+         
+      }
+   }
+
    &__tag{
       display: inline-block;
-      color: white;
-      background-color: black;
+
       margin-right: 1rem;
-      padding: .2rem .5rem;
+
       
       &__container{
          position: absolute;
          bottom: 0.1rem;
+         width: 100%;
          overflow: hidden;
 
          @include respond(sm) {
@@ -78,6 +99,12 @@
          &-video{
             transform: scale(1.1);
          }
+      }
+
+      &__view{
+         transform:translateY(0);
+         transition: all 250ms;
+
       }
    }
 }

@@ -23,11 +23,7 @@ class Current extends React.Component {
             {this.props.currentProject.Name}
             </span>
          </div>
-         <div className="info-heading__container">
-            <span ref={this.currentProject}  className="current__title info-heading">
-            {this.props.currentProject.Date}
-            </span>
-         </div>
+        
       </div>
     )
   }

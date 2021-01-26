@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 
 //Transitions
-import ElementIn from '../../animations/scrolltrigger/element-scrolltrigger.js'
+import ElementIn from '../../animations/scrolltrigger/element-in.js'
 import ParagrapheIn from '../../animations/scrolltrigger/paragraphe-in.js';
 import TitleIn from '../../animations/scrolltrigger/title-in.js';
 
@@ -9,7 +9,7 @@ function Contact(props) {
 
    useEffect(() => {
       TitleIn('.contact__title', '.contact', '.contact__line');
-      ParagrapheIn('.contact__paragraphe', '.contact');
+      ParagrapheIn('.contact__paragraphe', '.contact__paragraphe');
       ElementIn('.contact__mail__content', '.contact');
    }, [])
 

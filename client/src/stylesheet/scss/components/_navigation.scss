@@ -5,19 +5,31 @@
 
 .navigation{ 
    position: relative;
-   z-index: 10000000;
-
    display: flex;   
    flex-direction: column;
    justify-content: space-between;
    text-align: right;
 
    color: white;
-   mix-blend-mode: difference ;
+
+
    position: absolute;
    height: 80vh;
    width: 100%;
    margin-top: 10vh;
+
+   &__top, &__center, &__bottom{
+      z-index: 2;
+      mix-blend-mode: difference;
+   }
+
+   &__background{
+      z-index: 0;
+      position: absolute;
+      background-color: white;
+      height: 80vh;
+      width: 100%;
+   }
 
    &__menu{
       display: flex;   
@@ -30,9 +42,16 @@
       position: relative;
       display: inline-block;
       cursor: pointer;
+      z-index: 8;
+      background-color: white;
+      color: black;
+      padding: .2rem .5rem;
+     
+      
 
       &__container{
          overflow: hidden;
+         transform: translateY(-50%);
       }
 
       &:before{

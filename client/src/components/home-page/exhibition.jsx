@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react'
 
 //Transitions
-import ElementIn from '../../animations/scrolltrigger/element-scrolltrigger.js'
+import ElementScrolltrigger from '../../animations/scrolltrigger/element-in.js'
 import LineIn from '../../animations/scrolltrigger/line-in.js'
 
 function Exhibition(props) {
 
    useEffect(() => {
-      ElementIn('.exhibition__title', '.exhibition')
-      ElementIn('.exhibition__element', '.exhibition')
+      ElementScrolltrigger('.exhibition__title', '.exhibition')
+      ElementScrolltrigger('.exhibition__element', '.exhibition')
       LineIn('.exhibition__line', '.exhibition', 3);
    }, [])
    

@@ -17,7 +17,7 @@ class Navigation extends React.Component {
             </div>
             
             <div className="header__name__container">
-               <div className={"header__name info-heading info-heading--"+ this.props.theme}>Interaction Designer</div>
+               <div className={"header__name info-heading info-heading--dark"}>Interaction Designer</div>
             </div>
          </div>
 
@@ -43,6 +43,7 @@ class Navigation extends React.Component {
                </span> 
             </div>
          </div>
+         <div className="navigation__background"></div>
       </section>
     )
   }

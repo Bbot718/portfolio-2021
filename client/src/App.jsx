@@ -15,6 +15,9 @@ import Navigation from './components/navigation/navigation.jsx';
 import HomePage from './components/home-page/home.jsx'
 import Project from './components/project/project.jsx'
 
+//Utilities
+import ToggleScroll from './utils/prevent-scroll.js'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -29,22 +32,26 @@ class App extends React.Component {
 
   
   SwitchPageHandler(data){
+    console.log(data);
     // Handles Switching Pages
     (data) ? this.setState({currentProject: data}) : this.setState({currentProject: null}) 
+    this.bodyScrollBar.scrollTo(0, 0, 0);
   }
 
   scrollIntoViewHandler(target){ this.bodyScrollBar.scrollIntoView(target) }
 
   
   componentDidMount(){
+
+    ToggleScroll(false);
     // Setting Up Smooth Scrollbar
-    this.bodyScrollBar = Scrollbar.init(document.querySelector(".scrollable"), {damping: 0.1, renderByPixels: true})
+    this.bodyScrollBar = Scrollbar.init(document.querySelector(".scrollable"), {damping: .05, renderByPixels: true})
     this.bodyScrollBar.track.yAxis.element.remove();
 
     ScrollerProxy(this.bodyScrollBar);
-   
-    FixedElements(this.bodyScrollBar, document.querySelector('.header__background--light'));
+
     FixedElements(this.bodyScrollBar, document.querySelector('.navigation'));
+    FixedElements(this.bodyScrollBar, document.querySelector('.header'));
 
 
     //document.onload = HomePageAnimations();
@@ -69,7 +76,7 @@ class App extends React.Component {
                           (!this.state.currentProject) ? (
                             <HomePage currentProject={this.state.currentProject} switchPage={this.SwitchPageHandler} />
                           ):( 
-                            <Project />
+                            <Project currentProject={this.state.currentProject} switchPage={this.SwitchPageHandler}/>
                           )
                         }
                     </div>
