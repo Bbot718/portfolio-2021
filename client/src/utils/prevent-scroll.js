@@ -5,7 +5,6 @@ function preventDefault(e) {
 }
 
 function preventDefaultForScrollKeys(e) {
-   console.log('prevent scroll i')
   if (keys[e.keyCode]) {
     preventDefault(e);
     return false;
@@ -25,7 +24,6 @@ var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewh
 
 // call this to Disable
 function ToggleScroll(isenabled) {
-   console.log('prevent scroll')
 
    if(isenabled){
       window.removeEventListener('DOMMouseScroll', preventDefault, false);
@@ -34,7 +32,6 @@ function ToggleScroll(isenabled) {
       window.removeEventListener('keydown', preventDefaultForScrollKeys, false);
    }
    else{
-      console.log('ho');
       window.addEventListener('DOMMouseScroll', preventDefault, false); // older FF
       window.addEventListener(wheelEvent, preventDefault, wheelOpt); // modern desktop
       window.addEventListener('touchmove', preventDefault, wheelOpt); // mobile

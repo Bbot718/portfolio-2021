@@ -12,6 +12,9 @@ import { Timeline } from 'gsap/gsap-core';
 gsap.registerPlugin(ScrollTrigger); 
 
 function HandlePlay(currentProject){
+   if(currentProject ===null){
+      
+   }
    const timeline = new gsap.timeline(); 
 
    const chars = document.querySelectorAll('.header__letter');
@@ -19,7 +22,9 @@ function HandlePlay(currentProject){
    let letterSelection = getRandomInt(0, (chars.length-1));
 
    let openTypeList = OpenTypeSelection(chars[letterSelection]);
-   let openTypeSelection = openTypeList[getRandomInt(0, (openTypeList.length-1))];
+
+   if(openTypeList!= undefined){
+      let openTypeSelection = openTypeList[getRandomInt(0, (openTypeList.length-1))];
 
       /*
       console.log("There are " + chars.length + " letters")
@@ -52,9 +57,11 @@ function HandlePlay(currentProject){
             }
            
          },
-         onComplete:() => (HandlePlay(currentProject)),
+         onComplete:() => (currentProject === null && HandlePlay(currentProject)),
       })
    
+   }
+  
 }
 
 function HandleIn(currentProject){
@@ -65,7 +72,7 @@ function HandleIn(currentProject){
    tl.from( '.header__title-2', {y: '100%'}) //Header
    tl.from( '.header__title-3', {y: '100%'}) //Header
    tl.from(['.header__name', '.header__mail'], {y: '100%',}) //Name
-   tl.from('.navigation__item', {y: '100%',}) //Navigatiom
+   tl.from('.navigation__item__container', {x: '100%'}) //Navigatiom
 }
 
 function HandleOut(){   
@@ -78,7 +85,10 @@ function HandleOut(){
       start: "top top",
       end: "+=40%",
       scrub: .1,
-      animation: timeline
+      animation: timeline, 
+      onLeave: () => { gsap.set('.header', {display: 'none'}) },
+      onEnterBack: () => { gsap.set('.header', {display: 'block'}) }
+      
    })
 }
 

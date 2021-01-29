@@ -129,19 +129,18 @@ class Work extends Component{
                         </div>
                         <div className="col-8-of-11--no-margin">
                           <div className="work-item__info">
-                          
-                          <div className="work-item__tag__container">
+                            <div className="work-item__tag__container">
 
 
-                          {
-                            this.state.tags.map((tag, index) => {
-                                //console.log(tag.Tag_num +" - " + project.Project_num)
-                                if(tag.project_num === project.Project_num){
-                                  return  <div className="work-item__tag info-heading info-heading--medium info-heading--uppercase">{tag.Name}</div>
-                                }
-                          })}
+                            {
+                              this.state.tags.map((tag, index) => {
+                                  //console.log(tag.Tag_num +" - " + project.Project_num)
+                                  if(tag.project_num === project.Project_num){
+                                    return  <div className="work-item__tag info-heading info-heading--medium info-heading--uppercase">{tag.Name}</div>
+                                  }
+                            })}
 
-                          </div>
+                            </div>
                             <div className="info-heading__container">
                               <span ref={project => (this.project.date[i] = project)} 
                                     className="work-item__date info-heading ">

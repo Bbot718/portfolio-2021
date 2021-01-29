@@ -4,6 +4,8 @@ const cors = require('cors');
 const app = express();
 const mysql = require('mysql');
 
+let numberOfProjects;
+
 
 
 const db = mysql.createPool({
@@ -17,6 +19,8 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
+
+//Get Menu
 app.get('/api/menu', (req, res) => {
    const sqlSelect = "SELECT * FROM Menu";
    db.query(sqlSelect, (err, result) => {
@@ -24,7 +28,7 @@ app.get('/api/menu', (req, res) => {
    })
 })
 
-
+//Get All Projects
 app.get('/api/project', (req, res) => {
    const sqlSelect = "SELECT * FROM Projects ORDER BY id DESC";
    db.query(sqlSelect, (err, result) => {
@@ -32,21 +36,37 @@ app.get('/api/project', (req, res) => {
    })
 })
 
+//Get All Projects
 app.get('/api/tag', (req, res) => {
-   const sqlSelect = "SELECT * FROM Project_Tag  INNER JOIN Tag ON Tag.Tag_num = Project_Tag.project_num";
+   const sqlSelect = "SELECT * FROM Project_Tag INNER JOIN Tag ON Project_Tag.tag_num = Tag.Tag_num";
    db.query(sqlSelect, (err, result) => {
       res.send(result);
    })
 })
 
-for(let i = 0; i < 6; i++){
-   app.get('/api/tag_' + i, (req, res) => {
-      const sqlSelect = "SELECT * FROM Project_Tag  INNER JOIN Tag ON Tag.Tag_num = Project_Tag.project_num WHERE Project_Tag.tag_num = " + i;
-      db.query(sqlSelect, (err, result) => {
-         res.send(result);
+db.query("SELECT * FROM Projects ORDER BY id DESC", function(err, results) {
+   for(let i = 0; i < results.length; i++){
+
+      //Get specific Tag
+      app.get('/api/project_'+ i, (req, res) => {
+         const sqlSelect = "SELECT * FROM Projects WHERE id = " + i;
+         db.query(sqlSelect, (err, result) => {
+            res.send(result);
+         })
       })
-   })
-}
+
+      //Get specific Menu
+      app.get('/api/tag_'+ i, (req, res) => {
+         const sqlSelect = "SELECT * FROM Tag INNER JOIN Project_Tag ON Tag.Tag_num = Project_Tag.tag_num WHERE  Project_Tag.project_num = " + i;
+         db.query(sqlSelect, (err, result) => {
+            res.send(result);
+         })
+      })
+   }
+});
+
+
+
 
 
 

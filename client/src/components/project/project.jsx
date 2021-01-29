@@ -1,28 +1,59 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
-import Selection from './selection.jsx'
+import Axios from 'axios';
+
+import Selection from './selection.jsx';
 
 import gsap from 'gsap';
 import { Timeline } from 'gsap/gsap-core';
 import { SplitText } from 'gsap/all';
 
 const Project = (props) => {
+  const [project, setProject] = useState();
 
   
   useEffect(() => {
+    console.log(props.previousProject);
+    if(props.previousProject == null)
+      ProjectIn();
+    else
+      ProjectSwitchIn();
+
+      Axios
+      .get('http://localhost:3006/api/project_' + props.currentProject )
+        .then(res => { setProject(res.data) })
+        .catch(e => console.log(e));
+
+   
+  }, [])
+
+
+  function ProjectIn(){
     const paragrapheSTContainer = new SplitText('.project__paragraphe', {type: "lines", linesClass: 'project__paragraphe__container' })
     const paragrapheST = new SplitText('.project__paragraphe', {type: "lines" })
     const paragrapheLines = paragrapheST.words;
 
-    //Project In
-    const titlTl = new Timeline( {delay: 2} );
-    titlTl.from('.project__title__line', { width: 0 });
-    titlTl.to('.project__video__hidder', {scaleY: 0 })
-    titlTl.from('.project__title', { y: '100%' })
-    titlTl.from('.project__selection__controls', { y: '110%' })
-    titlTl.from('.project__line', { width: 0 });
-    titlTl.from(paragrapheLines, { y: '100%', stagger: 1 });
-  }, [])
+     //Project In
+     const titlTl = new Timeline( {delay: 2} );
+     titlTl.from('.project__title__line', { width: 0 });
+     titlTl.to('.project__video__hidder', {scaleY: 0 })
+     titlTl.from('.project__title', { y: '100%' })
+     titlTl.from('.project__selection__controls', { y: '110%' })
+     titlTl.from('.project__line', { width: 0 });
+     titlTl.from(paragrapheLines, { y: '100%', stagger: 1 });
+  }
+
+  function ProjectOut(){
+
+  }
+
+  function ProjectSwitchIn(){
+
+  }
+
+  function ProjectSwitchIn(){
+    
+  }
 
   function HandleProjectToggle(){
     console.log("coucouc");
@@ -47,15 +78,13 @@ const Project = (props) => {
         <div className="container">
 
           <Selection  currentProject={props.currentProject} 
-                      switchProject={props.switchPage}
-                      handleProjectToggle={HandleProjectToggle}
-                      handleHomeToggle={HandleHomeToggle} />                 
+                      switchProject={props.switchPage} />                 
 
           <div className="row">
             <div className="col-3-of-4 col-3-of-4--no-margin">
               <div className="project__title__container info-heading__container">
                 <h2 className="project__title">
-                  <span className="secondary-heading info-heading--bold">{ props.currentProject.Name }</span>
+                  <span className="secondary-heading info-heading--bold">{ project.Name }</span>
                   <span className="info-heading">{  " / " + props.currentProject.Date}</span>
                 </h2>
               </div>

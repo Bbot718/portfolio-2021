@@ -32,8 +32,6 @@ const Title = (element, trigger, line) => {
     tl.from(shuffledChars[i], { y: '100%', duration: .2});
   }
 
-  console.log( tl.totalDuration())
-
   ScrollTrigger.create({
     trigger: trigger,
     start: "top center",

@@ -25,14 +25,15 @@ class App extends React.Component {
 
    this.bodyScrollBar = {};
 
-    this.state = { currentProject: null }
-    this.SwitchPageHandler = this.SwitchPageHandler.bind(this);
+    this.state = { currentProject: null, previousProject: null }
+    this.SwitchProjectId = this.SwitchProjectId.bind(this);
     this.scrollIntoViewHandler = this.scrollIntoViewHandler.bind(this);
   }
 
   
-  SwitchPageHandler(data){
-    console.log(data);
+  SwitchProjectId(data){
+
+    this.setState({previousProject: this.state.currentProject});
     // Handles Switching Pages
     (data) ? this.setState({currentProject: data}) : this.setState({currentProject: null}) 
     this.bodyScrollBar.scrollTo(0, 0, 0);
@@ -43,7 +44,7 @@ class App extends React.Component {
   
   componentDidMount(){
 
-    ToggleScroll(false);
+    
     // Setting Up Smooth Scrollbar
     this.bodyScrollBar = Scrollbar.init(document.querySelector(".scrollable"), {damping: .05, renderByPixels: true})
     this.bodyScrollBar.track.yAxis.element.remove();
@@ -52,6 +53,8 @@ class App extends React.Component {
 
     FixedElements(this.bodyScrollBar, document.querySelector('.navigation'));
     FixedElements(this.bodyScrollBar, document.querySelector('.header'));
+
+    ToggleScroll(false);
 
 
     //document.onload = HomePageAnimations();
@@ -74,9 +77,9 @@ class App extends React.Component {
                     <div className="col-11-of-14">
                         {
                           (!this.state.currentProject) ? (
-                            <HomePage currentProject={this.state.currentProject} switchPage={this.SwitchPageHandler} />
+                            <HomePage currentProject={this.state.currentProject} previousProject={this.state.previousProject} SwitchProjectId={this.SwitchProjectId} />
                           ):( 
-                            <Project currentProject={this.state.currentProject} switchPage={this.SwitchPageHandler}/>
+                            <Project currentProject={this.state.currentProject} previousProject={this.state.previousProject} SwitchProjectId={this.SwitchProjectId}/>
                           )
                         }
                     </div>

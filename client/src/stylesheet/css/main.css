@@ -100,6 +100,7 @@ body::-webkit-scrollbar {
 }
 
 .primary-heading {
+  display: inline-block;
   font-family: 'euclid_flexbold';
   text-transform: uppercase;
   position: relative;
@@ -497,8 +498,7 @@ body::-webkit-scrollbar {
   display: inline-block;
   cursor: pointer;
   z-index: 8;
-  background-color: white;
-  color: black;
+  color: white;
   padding: .2rem .5rem;
 }
 
@@ -511,9 +511,9 @@ body::-webkit-scrollbar {
   position: absolute;
   content: "";
   mix-blend-mode: difference;
-  height: 1px;
   background: white;
   transition: all 0.3s;
+  height: 100%;
   width: 0;
   right: 0;
   bottom: 0;
@@ -521,7 +521,7 @@ body::-webkit-scrollbar {
 
 .navigation__item:hover:not(.pass--active):before {
   width: 100%;
-  left: 0;
+  top: 0;
   background: white;
   mix-blend-mode: difference;
 }
