@@ -46,18 +46,16 @@ class App extends React.Component {
 
     
     // Setting Up Smooth Scrollbar
-    this.bodyScrollBar = Scrollbar.init(document.querySelector(".scrollable"), {damping: .05, renderByPixels: true})
+    this.bodyScrollBar = Scrollbar.init(document.querySelector(".scrollable"), {damping: .75, renderByPixels: true})
     this.bodyScrollBar.track.yAxis.element.remove();
 
     ScrollerProxy(this.bodyScrollBar);
 
+    if(this.state.currentProject === null)
+      FixedElements(this.bodyScrollBar, document.querySelector('.header'));
     FixedElements(this.bodyScrollBar, document.querySelector('.navigation'));
-    FixedElements(this.bodyScrollBar, document.querySelector('.header'));
 
     ToggleScroll(false);
-
-
-    //document.onload = HomePageAnimations();
   }
 
 
@@ -77,9 +75,9 @@ class App extends React.Component {
                     <div className="col-11-of-14">
                         {
                           (!this.state.currentProject) ? (
-                            <HomePage currentProject={this.state.currentProject} previousProject={this.state.previousProject} SwitchProjectId={this.SwitchProjectId} />
+                            <HomePage currentProject={this.state.currentProject}  SwitchProjectId={this.SwitchProjectId} />
                           ):( 
-                            <Project currentProject={this.state.currentProject} previousProject={this.state.previousProject} SwitchProjectId={this.SwitchProjectId}/>
+                            <Project currentProject={this.state.currentProject} SwitchProjectId={this.SwitchProjectId}/>
                           )
                         }
                     </div>

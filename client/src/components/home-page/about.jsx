@@ -24,9 +24,6 @@ function About(props) {
                   
                </div>
                <div className="col-11-of-11--no-margin"> 
-                  <div className="info-heading__container">
-                     <span className="exhibition__title info-heading">A Few Words</span>
-                  </div>
                   <p className="about__paragraphe paragraphe">I’m a designer who loves to code and a coder who loves to design. Bringing these two competences together opens innovative  solutions for digital spaces. I’m especially excited about developing interactive systems whether it is for the web, VR or any other digital projects.Having graduated from ECAL in 2016 with a distinction I started working as a 3D developer with focus in VR. Growing up in a multicultural environment I am both comfortable communicating in French and English and have basics in German.</p>
                </div>
             </div>

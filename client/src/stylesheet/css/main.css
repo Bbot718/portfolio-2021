@@ -6,6 +6,12 @@
   box-sizing: inherit;
 }
 
+* *::-webkit-scrollbar,
+*::after *::-webkit-scrollbar,
+*::before *::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   box-sizing: border-box;
   overflow-x: hidden;
@@ -29,6 +35,10 @@ body::-webkit-scrollbar {
   .no-mobile {
     display: none;
   }
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
 
 @font-face {
@@ -61,7 +71,7 @@ body::-webkit-scrollbar {
 
 @media only screen and (min-width: 1400px) {
   .header-heading {
-    font-size: 6vw;
+    font-size: 4.5vw;
   }
 }
 
@@ -73,13 +83,13 @@ body::-webkit-scrollbar {
 
 @media only screen and (max-width: 1200px) {
   .header-heading {
-    font-size: 3.6rem;
+    font-size: 4rem;
   }
 }
 
 @media only screen and (max-width: 1024px) {
   .header-heading {
-    font-size: 4.5rem;
+    font-size: 4.8rem;
   }
 }
 
@@ -265,7 +275,7 @@ body::-webkit-scrollbar {
 }
 
 .paragraphe {
-  font-family: 'euclid_flexmedium';
+  font-family: 'euclid_flexregular';
   margin-bottom: 1rem;
 }
 
@@ -3290,7 +3300,7 @@ header {
 .work-item {
   position: relative;
   margin: 1rem 0;
-  overflow: visible;
+  overflow: hidden;
 }
 
 .work-item__image {
@@ -3446,12 +3456,23 @@ header {
 
 .project__selection {
   position: relative;
+  display: flex;
+  justify-content: space-between;
   width: 100%;
+  overflow: hidden;
 }
 
 .project__selection__arrow {
   overflow: hidden;
   width: 0px;
+}
+
+.project__selection__label {
+  position: relative;
+  color: black;
+  display: inline-block;
+  margin: 0.2rem 0.5rem;
+  transition: all 250ms;
 }
 
 .project__selection__controls {
@@ -3464,37 +3485,10 @@ header {
 }
 
 .project__selection__controls__container {
+  cursor: POINTER;
   position: relative;
   display: inline-block;
-}
-
-.project__selection__controls__container--left {
-  background-color: blue;
-}
-
-.project__selection__controls__container--center {
-  margin: auto 0;
-}
-
-.project__selection__controls__container--right {
-  right: 0;
-}
-
-.project__selection__controls:hover {
-  cursor: pointer;
-}
-
-.project__selection__controls:hover:hover .project__selection__arrow {
-  transition: all 250ms;
-  width: 15px;
-}
-
-.project__selection__controls:hover:hover .project__selection__arrow--left {
-  margin-right: .5rem;
-}
-
-.project__selection__controls:hover:hover .project__selection__arrow--right {
-  margin-left: .5rem;
+  vertical-align: middle;
 }
 
 .project__selection__controls--right {

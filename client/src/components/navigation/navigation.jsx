@@ -3,7 +3,6 @@ import React  from 'react';
 
 //Components 
 import Menu from './menu.jsx'
-import Current from './current.jsx'
 
 class Navigation extends React.Component {   
   render() {
@@ -23,15 +22,7 @@ class Navigation extends React.Component {
 
          {/* Menu */}
          <div className="navigation__center">
-            {
-               (!this.props.currentProject) ? (
-                  <Menu scrollIntoView={this.props.scrollIntoView} />
-               ):( 
-                  <Current currentProject={this.props.currentProject} />
-               )
-            }
-            
-            
+            <Menu currentProject={this.props.currentProject} scrollIntoView={this.props.scrollIntoView} />   
          </div>
          
 

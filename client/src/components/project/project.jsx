@@ -2,73 +2,38 @@ import React, { useEffect, useState } from 'react';
 
 import Axios from 'axios';
 
+//Components
 import Selection from './selection.jsx';
+
+//Transitions
+import ProjectIn from '../../animations/transitions/project-in'
 
 import gsap from 'gsap';
 import { Timeline } from 'gsap/gsap-core';
 import { SplitText } from 'gsap/all';
 
 const Project = (props) => {
-  const [project, setProject] = useState();
+  const [project, setProject] = useState([]);
+  const [data, setData] = useState();
 
   
   useEffect(() => {
-    console.log(props.previousProject);
-    if(props.previousProject == null)
-      ProjectIn();
-    else
-      ProjectSwitchIn();
+    ProjectIn();
+    SetData();
+    console.log("current Project: " + props.currentProject)
 
-      Axios
-      .get('http://localhost:3006/api/project_' + props.currentProject )
-        .then(res => { setProject(res.data) })
-        .catch(e => console.log(e));
-
-   
+     
   }, [])
 
+  function SetData(){
+    console.log('ha');
 
-  function ProjectIn(){
-    const paragrapheSTContainer = new SplitText('.project__paragraphe', {type: "lines", linesClass: 'project__paragraphe__container' })
-    const paragrapheST = new SplitText('.project__paragraphe', {type: "lines" })
-    const paragrapheLines = paragrapheST.words;
-
-     //Project In
-     const titlTl = new Timeline( {delay: 2} );
-     titlTl.from('.project__title__line', { width: 0 });
-     titlTl.to('.project__video__hidder', {scaleY: 0 })
-     titlTl.from('.project__title', { y: '100%' })
-     titlTl.from('.project__selection__controls', { y: '110%' })
-     titlTl.from('.project__line', { width: 0 });
-     titlTl.from(paragrapheLines, { y: '100%', stagger: 1 });
-  }
-
-  function ProjectOut(){
-
-  }
-
-  function ProjectSwitchIn(){
-
-  }
-
-  function ProjectSwitchIn(){
-    
-  }
-
-  function HandleProjectToggle(){
-    console.log("coucouc");
-
-    const timeline = new Timeline();
-    timeline.to('.project__selection__controls', { y: '110%' })
-    timeline.to('.project__title__line', { width: 0 });
-    timeline.to('.project__video__hidder', {scaleY: '100%' })
-    timeline.to('.project__title', { y: '100%' })
-    
-    timeline.from('.project__line', { width: 0 });
-  }
-
-  function HandleHomeToggle(){
-    
+    Axios
+    .get('http://localhost:3006/api/project_'+ props.currentProject)
+      .then(res => { setProject(res.data)
+        console.log(res.data)
+      })
+      .catch(e => console.log(e));
   }
 
 
@@ -78,19 +43,22 @@ const Project = (props) => {
         <div className="container">
 
           <Selection  currentProject={props.currentProject} 
-                      switchProject={props.switchPage} />                 
+                      SwitchProjectId={props.SwitchProjectId} 
+                      SetData={SetData}  
+                      />                 
 
-          <div className="row">
-            <div className="col-3-of-4 col-3-of-4--no-margin">
-              <div className="project__title__container info-heading__container">
-                <h2 className="project__title">
-                  <span className="secondary-heading info-heading--bold">{ project.Name }</span>
-                  <span className="info-heading">{  " / " + props.currentProject.Date}</span>
-                </h2>
+            <React.Fragment>
+            <div className="row">
+              <div className="col-3-of-4 col-3-of-4--no-margin">
+                <div className="project__title__container info-heading__container">
+                  <h2 className="project__title">
+                    <span className="secondary-heading info-heading--bold">{project.map(project => project.Name )}</span>
+                    <span className="info-heading">{"/ " + project.map(project => project.Date )}</span>
+                  </h2>
+                </div>
+                <hr className="project__title__line line--thin"/>
               </div>
-              <hr className="project__title__line line--thin"/>
             </div>
-          </div>
 
             <div className="row">
               <div className="col-3-of-4 col-3-of-4--no-margin">
@@ -99,16 +67,20 @@ const Project = (props) => {
                   <video className="project__video">
                     <source src={require('../../assets/videos/cap_thumbnail.mp4').default}/>
                   </video>
-                  <div className="project__video__controls info-heading">▶</div>
                 </div>
+                <hr className="project__title__line line--thin"/>
                 <div className="medium-spacing" />
                 <div className="col-3-of-4 col-3-of-4--no-margin">
                   <div className="tertiary-heading info-heading--bold">A VR Experience for fucking airports </div>
-                  <div className="paragraphe project__paragraphe">{props.currentProject.Description}</div>
+                  <div className="medium-spacing" />
+                  <div className="paragraphe project__paragraphe">{project.map(project => project.Description )}</div>
                   <div className="medium-spacing" />
                 </div>
               </div>
             </div>
+
+            </React.Fragment>
+
             <div className="bottom-spacing" />
         </div>
       </div>

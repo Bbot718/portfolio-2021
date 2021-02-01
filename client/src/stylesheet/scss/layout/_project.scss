@@ -56,8 +56,10 @@
 
    &__selection{
       position: relative;
-
+      display: flex;
+      justify-content: space-between;
       width: 100%;
+      overflow: hidden;
 
 
       &__arrow{
@@ -66,7 +68,23 @@
 
       }
 
+
+      &__label{
+         position: relative;
+
+         color: black;
+         display: inline-block;
+         margin: 0.2rem 0.5rem;
+         transition: all 250ms;
+
+         &__container{
+
+         }
+      }
+
+
       &__controls{
+         
          position: relative;
          background-color: black;
          color: white;
@@ -75,29 +93,15 @@
          transition: all 250ms;
 
          &__container{
+            cursor: POINTER;
             position: relative;
            display: inline-block; 
 
-           &--left{background-color: blue;}
-           &--center{
-              margin: auto 0;
-           }
-           &--right{right: 0;}
+           vertical-align: middle;
+
          }
 
-         &:hover{
-            cursor: pointer;
-
-
-            &:hover{
-               & .project__selection__arrow{
-                  transition: all 250ms;
-                  width: 15px;
-                  &--left{ margin-right: .5rem; }
-                  &--right{ margin-left: .5rem; }
-               }
-            }
-         }
+       
 
          &--right{
             right: 0;

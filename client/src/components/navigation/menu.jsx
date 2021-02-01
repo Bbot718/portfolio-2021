@@ -15,15 +15,17 @@ class Menu extends React.Component {
       this.currentMenuItem = [];
     }
 
-    componentDidMount() {
+   componentDidMount() {
       Axios
       .get('http://localhost:3006/api/menu')
         .then(res => { this.setState({ menu: res.data })})
         .catch(e => console.log(e));
+
+       
     }
 
-    componentDidUpdate(preState){
-      if(this.state.menu !== preState.menu){
+   componentDidUpdate(preState){
+      if(this.state.menu !== preState.menu && this.props.currentProject === null){
          for(let i = 0; i < this.state.menu.length; i++){
             ScrollTrigger.create({
                trigger: this.state.menu[i].Target,
@@ -38,15 +40,20 @@ class Menu extends React.Component {
          }
       }
    }
+
+   HandleClick(target){
+      console.log(this.props.currentProject)
+      this.props.scrollIntoView(document.querySelector(target))
+   }
    
   render() {
     return (
       <ul className="navigation__menu">
          { 
             this.state.menu.map((menu, i) => (
-               <li className="navigation__item__container"> 
+               <li key={i} className="navigation__item__container"> 
                   <span /*{ref={this.menuItems.link}}*/
-                        onClick={() => this.props.scrollIntoView(document.querySelector(menu.Target))}  
+                        onClick={() => this.HandleClick(menu.Target)}  
                         className="navigation__item info-heading">{ menu.Name }</span> 
                   <div className="navigation__current">
                      <span ref={menu => this.currentMenuItem[i] = menu } 

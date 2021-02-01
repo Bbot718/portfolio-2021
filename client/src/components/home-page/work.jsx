@@ -3,11 +3,14 @@ import React, { Component }  from 'react';
 
 import Axios from 'axios';
 
-//Transitions
+//Scrolltriggers
 import TitleIn from '../../animations/scrolltrigger/title-in' 
 import ElementScrolltrigger from '../../animations/scrolltrigger/element-in.js';
 import ImageIn from '../../animations/scrolltrigger/image-in.js';
 import LineIn from '../../animations/scrolltrigger/line-in.js';
+
+//Transitions
+
 
 //GSAP
 import gsap from 'gsap';
@@ -36,7 +39,8 @@ class Work extends Component{
       video: [],
       name: [],
       date: [],
-      line: []
+      line: [],
+      tag: []
     }
   }
 
@@ -62,6 +66,7 @@ class Work extends Component{
          ImageIn(this.project.image[i], this.project.trigger[i])
          ElementScrolltrigger(this.project.name[i], this.project.trigger[i])
          ElementScrolltrigger(this.project.date[i], this.project.trigger[i])
+         ElementScrolltrigger(this.project.tag[i], this.project.trigger[i])
 
          LineIn(this.project.line[i], this.project.trigger[i], 3.2);
 
@@ -106,10 +111,11 @@ class Work extends Component{
                 this.state.projects.map((project, i) => (
 
                   <React.Fragment>
-                      <article  ref={project => (this.project.trigger[i] = project)} 
+                      <article  key={i}
+                                ref={project => (this.project.trigger[i] = project)} 
                                 className="work-item row" 
                                 onMouseEnter={() => this.handleMouseEnter(i)} 
-                                onClick={() => this.handleClick(i)}                         
+                                onClick={() => this.props.HomePageOut(project.id)}                        
                       >
                       
                         <div className="col-3-of-11--no-margin">
@@ -121,22 +127,18 @@ class Work extends Component{
                             <div ref={project => (this.project.image[i] = project)}   className="work-item__image-hidder"></div>
                            
                           </div>
-                          <div className="work-item__view__container">
-                          <div className="work-item__view">
-                           <span className="info-heading ">View Project</span>
-                            </div>
-                          </div>
+
                         </div>
                         <div className="col-8-of-11--no-margin">
                           <div className="work-item__info">
-                            <div className="work-item__tag__container">
+                            <div className="work-item__tag__container" ref={project => (this.project.tag[i] = project)}>
 
 
                             {
                               this.state.tags.map((tag, index) => {
                                   //console.log(tag.Tag_num +" - " + project.Project_num)
                                   if(tag.project_num === project.Project_num){
-                                    return  <div className="work-item__tag info-heading info-heading--medium info-heading--uppercase">{tag.Name}</div>
+                                    return  <div  className="work-item__tag info-heading info-heading--medium info-heading--uppercase">{tag.Name}</div>
                                   }
                             })}
 

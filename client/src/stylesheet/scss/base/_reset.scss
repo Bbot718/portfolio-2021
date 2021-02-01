@@ -4,6 +4,8 @@
     margin: 0;
     padding: 0;
     box-sizing: inherit;
+
+    *::-webkit-scrollbar{display: none;}
 }
 
 body {
@@ -26,4 +28,8 @@ body::-webkit-scrollbar {display: none;}
         display:none;
     }
     
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

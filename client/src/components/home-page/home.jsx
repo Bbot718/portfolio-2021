@@ -3,7 +3,7 @@ import React  from 'react';
 //Components
 import Header from './header';
 //import Work from './work';
-import Work from './work-functional';
+import Work from './work';
 import About from './about';
 import Exhibition from './exhibition';
 import Contact from './contact';
@@ -12,18 +12,20 @@ import Contact from './contact';
 import gsap from 'gsap';
 import { Timeline } from 'gsap/gsap-core';
 
-function HandleHomePageOut(id, props){
-  gsap.to(['.line--thin', '.line--thick'], {width: 0})
-  gsap.to('.work-item__image-hidder', {scaleY: 1})
-  gsap.to(['.work-item__date', '.work-item__name'], {y: '-100%'})
-  gsap.to('.primary-heading', { y: '-100%', onComplete: () => {
-    props.SwitchProjectId(id);
-  }})
-  console.log(id);
-  console.log(props);
-}
+
 
 function HomePage(props) {
+
+  function HandleHomePageOut(id){
+    gsap.to(['.line--thin', '.line--thick'], {width: 0})
+    gsap.to('.work-item__image-hidder', {scaleY: 1})
+    gsap.to('.navigation__selected', {x: '-100%'})
+    gsap.to(['.work-item__date', '.work-item__name'], {y: '-100%'})
+    gsap.to(['.work-item__tag', '.work-item__name'], {y: '-100%'})
+    gsap.to('.primary-heading', { y: '-100%', onComplete: () => {
+      props.SwitchProjectId(id)
+    }})
+  }
 
 
 
@@ -36,9 +38,8 @@ function HomePage(props) {
       </header>
 
       {/* Work Section */}
-      <Work SwitchProjectId={props.SwitchProjectId} 
-            HomePageOut={HandleHomePageOut} />
-      {/*<Work switchPage={props.switchPage} />*/}
+
+      {<Work switchPage={props.switchPage} HomePageOut={HandleHomePageOut}/>}
       
 
       {/* About Section */}

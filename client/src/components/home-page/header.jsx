@@ -12,15 +12,10 @@ import { Timeline } from 'gsap/gsap-core';
 gsap.registerPlugin(ScrollTrigger); 
 
 function HandlePlay(currentProject){
-   if(currentProject ===null){
-      
-   }
+
    const timeline = new gsap.timeline(); 
-
    const chars = document.querySelectorAll('.header__letter');
-
    let letterSelection = getRandomInt(0, (chars.length-1));
-
    let openTypeList = OpenTypeSelection(chars[letterSelection]);
 
    if(openTypeList!= undefined){
@@ -55,11 +50,10 @@ function HandlePlay(currentProject){
             else{
                chars[letterSelection].classList.add( 'openTypeStyle' + openTypeSelection)
             }
-           
          },
          onComplete:() => (currentProject === null && HandlePlay(currentProject)),
       })
-   
+
    }
   
 }
