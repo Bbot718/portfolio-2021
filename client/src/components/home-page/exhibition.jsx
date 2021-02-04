@@ -7,9 +7,11 @@ import LineIn from '../../animations/scrolltrigger/line-in.js'
 function Exhibition(props) {
 
    useEffect(() => {
-      ElementScrolltrigger('.exhibition__title', '.exhibition')
-      ElementScrolltrigger('.exhibition__element', '.exhibition')
-      LineIn('.exhibition__line', '.exhibition', 3);
+      if(props.isFirstPassage.exhibition){
+         ElementScrolltrigger('.exhibition__title', '.exhibition')
+         ElementScrolltrigger('.exhibition__element', '.exhibition', props.UpdateFirstPassage, "exhibition")
+         LineIn('.exhibition__line', '.exhibition', 3);
+      }
    }, [])
    
    return (

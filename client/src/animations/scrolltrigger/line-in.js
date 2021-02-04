@@ -14,7 +14,7 @@ const LineIn = (element, trigger, duration) => {
         toggleActions: "play none none none",
       },
       width:0,
-
+      ease: Power4.easeOut, 
     })
 
 

@@ -12,11 +12,11 @@ class Navigation extends React.Component {
          {/* Current Section */}
          <div className="navigation__top"> 
             <div className="header__name__container">
-               <div className={"header__name info-heading info-heading--bold info-heading--"+ this.props.theme}>Benjamin Botros</div>
+               <div className={"header__name info-heading info-heading--bold info-heading--"+ this.props.theme}>BENJAMIN BOTROS</div>
             </div>
             
             <div className="header__name__container">
-               <div className={"header__name info-heading info-heading--dark"}>Interaction Designer</div>
+               <div className={"header__name info-heading "}>Interaction Designer</div>
             </div>
          </div>
 
@@ -30,7 +30,7 @@ class Navigation extends React.Component {
          <div className="navigation__bottom">
             <div className="header__mail__container"> 
                <span className={"header__mail info-heading info-heading--"+ this.props.theme}>
-                  <a href="mailto:hello@benjaminbotros.ch">Email Me</a>
+                  <a href="mailto:hello@benjaminbotros.ch">EMAIL ME</a>
                </span> 
             </div>
          </div>

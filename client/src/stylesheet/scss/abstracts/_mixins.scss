@@ -20,7 +20,10 @@
    @media only screen and (max-width: $xxl) { @content };  
    }
   @if $breakpoint == xxl {
-      @media only screen and (min-width: $xxl) { @content };  
+      @media only screen and (max-width: $xxxl) { @content };  
   }
+  @if $breakpoint == xxxl {
+   @media only screen and (min-width: $xxxl) { @content };  
+}
 
 }

@@ -1,5 +1,5 @@
 //GSAP
-import gsap  from 'gsap';
+import {gsap, Power4 }from 'gsap';
 import SplitText from 'gsap/SplitText'
 import ScrollTrigger from 'gsap/ScrollTrigger';
 
@@ -27,9 +27,9 @@ const Title = (element, trigger, line) => {
     let openTypeList = OpenTypeSelection(shuffledChars[i]);
     let openTypeSelection = openTypeList[getRandomInt(0, (openTypeList.length-1))];
 
-    shuffledChars[i].classList.add( 'openTypeStyle' + openTypeSelection)
+    //shuffledChars[i].classList.add( 'openTypeStyle' + openTypeSelection)
 
-    tl.from(shuffledChars[i], { y: '100%', duration: .2});
+    tl.from(shuffledChars[i], { y: '100%', ease: Power4.easeOut, duration: .3});
   }
 
   ScrollTrigger.create({

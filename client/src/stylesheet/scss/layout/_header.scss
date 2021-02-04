@@ -12,6 +12,8 @@ header{
    height: 100vh;
    z-index: -1;
 
+ 
+
    &__title{
       display: inline-block;
       //background-color: aquamarine
@@ -64,6 +66,24 @@ header{
       justify-content: space-between;
 
       @include respond(sm) {height: auto;}
+   }
+
+   &__legend{
+
+
+
+      &__container{
+         position: absolute;
+         overflow: hidden;
+         display: flex;
+         align-items: center;
+         line-height: 1;
+         
+         width: calc(100% / 14 * 4  - #{$gutter-vertical} * 2);
+         bottom: 10vh;
+         right: 40px;
+
+      }
    }
 
    &__word{

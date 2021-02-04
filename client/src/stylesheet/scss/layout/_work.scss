@@ -10,11 +10,12 @@
       width: 100%;
       height: 100%;
       transition: all 1000ms;
-     
+      cursor: pointer;
 
       &__container{
          position: relative;
          overflow: hidden;
+         
       }
 
       &-hidder{
@@ -30,11 +31,13 @@
       }
 
       &-video{
+         cursor: pointer;
          display: block;
          position: absolute;
          width: 100%;
          height: 100%;
          transition: all 500ms;
+
       }
    }
 
@@ -82,15 +85,21 @@
          width: 100%;
          overflow: hidden;
 
+
          @include respond(sm) {
             position: static;
 
             margin: 1rem 0; 
 
          }
+
+         &__container{
+            overflow: hidden;
+            background-color: burlywood;
+         }
       }
    }
-
+   /*
    &:hover .work-item{
       &__image{
          transform:translateY(-110%);
@@ -107,4 +116,5 @@
 
       }
    }
+   */
 }

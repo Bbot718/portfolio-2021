@@ -6,8 +6,10 @@ import ParagrapheIn from '../../animations/scrolltrigger/paragraphe-in.js';
 
 function About(props) {
    useEffect(() => {
-      TitleIn('.about__title', '.about', '.about__line');
-      ParagrapheIn('.about__paragraphe', '.about__content');
+      if(props.isFirstPassage.about){
+         TitleIn('.about__title', '.about', '.about__line');
+         ParagrapheIn('.about__paragraphe', '.about__content', props.UpdateFirstPassage, "about");
+      }
    }, [])
 
 
@@ -16,8 +18,8 @@ function About(props) {
          <div className="primary-heading__container">
             <span className="about__title primary-heading">About</span>
          </div>
-         <hr className="about__line line--thick" />
-         <div className="medium-spacing" />
+
+
          <div  className="about__content container">
             <div className="row">
                <div className="col-4-of-11--no-margin">

@@ -8,9 +8,11 @@ import TitleIn from '../../animations/scrolltrigger/title-in.js';
 function Contact(props) {
 
    useEffect(() => {
-      TitleIn('.contact__title', '.contact', '.contact__line');
-      ParagrapheIn('.contact__paragraphe', '.contact__paragraphe');
-      ElementIn('.contact__mail__content', '.contact');
+      if(props.isFirstPassage.contact){
+         TitleIn('.contact__title', '.contact', '.contact__line');
+         ParagrapheIn('.contact__paragraphe', '.contact', props.UpdateFirstPassage, "contact");
+         ElementIn('.contact__mail__content', '.contact');
+      }
    }, [])
 
 
@@ -19,7 +21,7 @@ function Contact(props) {
          <div className="primary-heading__container">
             <span className="contact__title primary-heading">Contact</span>
          </div>
-         <hr className="contact__line line--thick" />
+
          <div className="medium-spacing" />
 
          <div className="container">

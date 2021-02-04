@@ -9,22 +9,34 @@ import Exhibition from './exhibition';
 import Contact from './contact';
 
 //GSAP
-import gsap from 'gsap';
+import {gsap, Power2, Power4 }from 'gsap';
 import { Timeline } from 'gsap/gsap-core';
 
 
 
-function HomePage(props) {
+const HomePage = (props) => {
 
-  function HandleHomePageOut(id){
-    gsap.to(['.line--thin', '.line--thick'], {width: 0})
-    gsap.to('.work-item__image-hidder', {scaleY: 1})
-    gsap.to('.navigation__selected', {x: '-100%'})
-    gsap.to(['.work-item__date', '.work-item__name'], {y: '-100%'})
-    gsap.to(['.work-item__tag', '.work-item__name'], {y: '-100%'})
-    gsap.to('.primary-heading', { y: '-100%', onComplete: () => {
-      props.SwitchProjectId(id)
-    }})
+  const duration = 1;
+
+  function HandleHomePageOut(id, projects){    
+    if(projects.hasAppeared[id])
+    {
+      
+      gsap.to('.navigation__item', {y: '-100%', ease: Power4.easeIn, duration: duration})
+      gsap.to(['.line--thin', '.line--thick'], {width: 0, ease: Power2.easeOut, duration: duration, onComplete: () => {
+        gsap.to('.work-item__image-hidder', {scaleY: 1, ease: Power4.easeIn, duration: duration})
+        gsap.to('.navigation__selected', {x: '-100%', ease: Power4.easeIn, duration: duration})
+
+        for(let i = 0; i < projects.name.length; i++){
+          i <= id && gsap.to([projects.date[i], projects.name[i], projects.tag[i]], {
+            y: '-100%', 
+            ease: Power4.easeIn, 
+            duration: duration, onComplete: () => {
+              props.SwitchProjectId(id)
+          }})
+        }
+      }})
+    }
   }
 
 
@@ -34,26 +46,40 @@ function HomePage(props) {
 
       {/* Welcome Section */}
       <header id="header">
-        <Header currentProject={props.currentProject}/>
+        <Header currentProject={props.currentProject}
+        
+                isFirstPassage={props.isFirstPassage} 
+                UpdateFirstPassage={props.UpdateFirstPassage}
+
+                toggleScroll={props.toggleScroll}
+                />
       </header>
 
       {/* Work Section */}
 
-      {<Work switchPage={props.switchPage} HomePageOut={HandleHomePageOut}/>}
+      {<Work  isFirstPassage={props.isFirstPassage} 
+              HomePageOut={HandleHomePageOut}
+        />}
       
 
       {/* About Section */}
       <div id="about-full" className="container">
         <div className="row">
           <div className="col-3-of-4--no-margin">
-            <About />
+            <About  isFirstPassage={props.isFirstPassage}  
+                     UpdateFirstPassage={props.UpdateFirstPassage}
+            />
             <div className="medium-spacing" />
-            <Exhibition />
+            <Exhibition isFirstPassage={props.isFirstPassage}  
+                        UpdateFirstPassage={props.UpdateFirstPassage}
+            />
           </div>
         </div>
       </div>
 
-      <Contact />
+      <Contact  isFirstPassage={props.isFirstPassage}  
+                UpdateFirstPassage={props.UpdateFirstPassage}
+      />
       <div className="medium-spacing" />
 
       <footer className="footer">

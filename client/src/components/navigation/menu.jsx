@@ -21,11 +21,11 @@ class Menu extends React.Component {
         .then(res => { this.setState({ menu: res.data })})
         .catch(e => console.log(e));
 
-       
     }
 
    componentDidUpdate(preState){
       if(this.state.menu !== preState.menu && this.props.currentProject === null){
+         
          for(let i = 0; i < this.state.menu.length; i++){
             ScrollTrigger.create({
                trigger: this.state.menu[i].Target,
@@ -49,22 +49,25 @@ class Menu extends React.Component {
   render() {
     return (
       <ul className="navigation__menu">
-         { 
-            this.state.menu.map((menu, i) => (
-               <li key={i} className="navigation__item__container"> 
-                  <span /*{ref={this.menuItems.link}}*/
-                        onClick={() => this.HandleClick(menu.Target)}  
-                        className="navigation__item info-heading">{ menu.Name }</span> 
+
+               <li className="navigation__item__container"> 
+                  <span onClick={() => this.HandleClick('#work')}  className="navigation__item info-heading ">Selected Work</span> 
                   <div className="navigation__current">
-                     <span ref={menu => this.currentMenuItem[i] = menu } 
-                           id="navigation-selected--work" 
-                           className="navigation__selected info-heading">
-                        —
-                     </span> 
+                     <span ref={menu => this.currentMenuItem[0] = menu}  id="navigation-selected--work" className="navigation__selected info-heading">—</span> 
                   </div>
                </li>
-            ))
-         }
+               <li className="navigation__item__container"> 
+                  <span onClick={() => this.HandleClick('#about')} className="navigation__item info-heading ">About</span> 
+                  <div className="navigation__current">
+                     <span ref={menu => this.currentMenuItem[1] = menu} id="navigation-selected--work" className="navigation__selected info-heading">—</span> 
+                  </div>
+               </li>
+               <li className="navigation__item__container"> 
+                  <span onClick={() => this.HandleClick('#contact')}   className="navigation__item info-heading ">Contact</span> 
+                  <div className="navigation__current">
+                     <span ref={menu => this.currentMenuItem[2] = menu} id="navigation-selected--work" className="navigation__selected info-heading">—</span> 
+                  </div>
+               </li>
       </ul>
     )
   }

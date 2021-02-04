@@ -21,6 +21,7 @@
       background: black;
       border: none;
 
+      @include respond(xxxl) {height: 10px;}
       @include respond(xxl) {height: 10px;}
       @include respond(xl) {height: .15rem;}
       @include respond(l) {height: 1px}
@@ -36,6 +37,7 @@
       background: black;
       border: none;
 
+      @include respond(xxxl) {height: 7px;}
       @include respond(xxl) {height: 5px;}
       @include respond(xl) {height: .15rem;}
       @include respond(l) {height: 1px}
@@ -50,6 +52,7 @@
       background: black;
       border: none;
 
+      @include respond(xxxl) {height: 2px;}
       @include respond(xxl) {height: 3px;}
       @include respond(xl) {height: .15rem;}
       @include respond(l) {height: 1px}

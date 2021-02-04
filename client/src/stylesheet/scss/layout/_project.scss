@@ -54,63 +54,6 @@
       }
    }
 
-   &__selection{
-      position: relative;
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      overflow: hidden;
-
-
-      &__arrow{
-        overflow: hidden;
-        width: 0px;
-
-      }
-
-
-      &__label{
-         position: relative;
-
-         color: black;
-         display: inline-block;
-         margin: 0.2rem 0.5rem;
-         transition: all 250ms;
-
-         &__container{
-
-         }
-      }
-
-
-      &__controls{
-         
-         position: relative;
-         background-color: black;
-         color: white;
-         display: inline-block;
-         padding: 0.2rem 0.5rem;
-         transition: all 250ms;
-
-         &__container{
-            cursor: POINTER;
-            position: relative;
-           display: inline-block; 
-
-           vertical-align: middle;
-
-         }
-
-       
-
-         &--right{
-            right: 0;
-         }
-      }
-      
-      
-   }
-
    &__paragraphe{
 
       &__container{
