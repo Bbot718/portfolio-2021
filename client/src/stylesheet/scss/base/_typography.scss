@@ -93,8 +93,8 @@
    text-transform: uppercase;
    line-height: 1;
 
-   @include respond(xxl) {font-size: 8vw;}
-   @include respond(xl) {font-size: 4rem;}
+   @include respond(xxl) {font-size: 2rem;}
+   @include respond(xl) {font-size: .3rem;}
    @include respond(l) { font-size: 3rem;}
    @include respond(md) { font-size: 2.5rem;}
    @include respond(sm) {font-size: 3rem;}
@@ -149,9 +149,11 @@
 .paragraphe{
    font-family: 'euclid_flexregular';
    margin-bottom: 1rem;
+   text-align: justify;
 
-   @include respond(xxxl) {font-size: 2rem;}
-   @include respond(xxl) {font-size: 1.8rem;}
+   @include respond(xxxl) {font-size: 1.5rem;}
+   @include respond(xxl) {font-size: 1.4rem;
+   line-height: 1.4;}
    @include respond(xl) {font-size: 1.5rem;}
    @include respond(l) { font-size: 1.4rem;}
    @include respond(md) { font-size: 1.2rem;}
@@ -173,7 +175,7 @@
    margin-bottom: 1rem;
    
    @include respond(xxl) {font-size: 1.2rem;}
-   @include respond(xl) {font-size: 1.5rem;}
+   @include respond(xl) {font-size: 1.4rem;}
    @include respond(l) { font-size: 1.4rem;}
    @include respond(md) { font-size: 1.2rem;}
    @include respond(sm) {font-size: 1.2rem;}

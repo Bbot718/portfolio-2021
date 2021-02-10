@@ -18,31 +18,34 @@ const HomePage = (props) => {
 
   const duration = 1;
 
-  function HandleHomePageOut(id, projects){    
-    if(projects.hasAppeared[id])
-    {
-      
+  function HandleHomePageOut(projectId, hasAppearedID, projects){   
+    /*
+    if(projects.hasAppeared[hasAppearedID])
+    {   
       gsap.to('.navigation__item', {y: '-100%', ease: Power4.easeIn, duration: duration})
       gsap.to(['.line--thin', '.line--thick'], {width: 0, ease: Power2.easeOut, duration: duration, onComplete: () => {
         gsap.to('.work-item__image-hidder', {scaleY: 1, ease: Power4.easeIn, duration: duration})
         gsap.to('.navigation__selected', {x: '-100%', ease: Power4.easeIn, duration: duration})
 
         for(let i = 0; i < projects.name.length; i++){
-          i <= id && gsap.to([projects.date[i], projects.name[i], projects.tag[i]], {
+          i <= hasAppearedID && gsap.to([projects.date[i], projects.name[i], projects.tag[i]], {
             y: '-100%', 
             ease: Power4.easeIn, 
             duration: duration, onComplete: () => {
-              props.SwitchProjectId(id)
+              props.SwitchProjectId(projectId)
           }})
         }
       }})
     }
+    */
+   props.SwitchProjectId(projectId)
   }
 
 
 
   return (
     <div id="home-page">
+      <div className="cube"></div>
 
       {/* Welcome Section */}
       <header id="header">
@@ -57,7 +60,8 @@ const HomePage = (props) => {
 
       {/* Work Section */}
 
-      {<Work  isFirstPassage={props.isFirstPassage} 
+      {<Work  setNumberOfProjects={props.setNumberOfProjects}
+              isFirstPassage={props.isFirstPassage} 
               HomePageOut={HandleHomePageOut}
         />}
       

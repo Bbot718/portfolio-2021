@@ -2,10 +2,10 @@
    margin-top: 10vh;
 
    &__title{
+      line-height: 1;
+
       &__container{
-         display: flex;
-         flex-direction: row;
-         justify-content: space-between;
+         display: inline-block;
       }
    }
 
@@ -26,6 +26,25 @@
       }
    }
 
+   &__date{
+      &__container{
+         position: relative;
+         display: inline-block;
+         bottom: .6rem;
+         overflow: hidden;
+
+      }
+   }
+
+   &__tag{
+
+      margin-right: 1rem;
+
+      &__container{
+         overflow: hidden;
+      }
+   }
+
    &__video{
       display: block;
       width: 100%;
@@ -39,17 +58,18 @@
 
       &__hidder{
          position: absolute;
-         background-color: white;
-         width: 100%;
+         background-color: red;
+         width: 120%;
          height: 100%;
          display: block;
          transform-origin: bottom;
          transform: scaleY(1);
-         z-index: 1000;
+         z-index: 100000;
       }
 
       &__container{
          position: relative;
+         display: block;
          overflow: hidden;
       }
    }
@@ -61,4 +81,6 @@
          position: relative;
       }
    }
+
+
 }

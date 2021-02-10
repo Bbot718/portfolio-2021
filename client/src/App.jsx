@@ -7,6 +7,7 @@ import '../src/stylesheet/css/main.css';
 
 //Body Scrollbar
 import Scrollbar from 'smooth-scrollbar';
+import ModalPlugin from './utils/smooth-scrollbar/modal-plugin'
 import ScrollerProxy from './utils/smooth-scrollbar/scroller-proxy.js'
 import FixedElements from './utils/smooth-scrollbar/fixed-elements.js'
 
@@ -16,13 +17,16 @@ import HomePage from './components/home-page/home.jsx'
 import Project from './components/project/project.jsx'
 
 
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
 
    this.bodyScrollBar = {};
 
-    this.state = {  currentProject: null, 
+    this.state = {  currentProject: 'home', 
+                    numberOfProjects: null,
                     isFirstPassage: {
                       header: true,
                       work: true,
@@ -31,6 +35,7 @@ class App extends React.Component {
                       contact: true
                     }
     }
+    this.setNumberOfProjects = this.setNumberOfProjects.bind(this);
     this.SwitchProjectId = this.SwitchProjectId.bind(this);
     this.UpdateFirstPassage = this.UpdateFirstPassage.bind(this);
     this.scrollIntoViewHandler = this.scrollIntoViewHandler.bind(this);
@@ -38,30 +43,28 @@ class App extends React.Component {
   }
 
   
-  UpdateFirstPassage(section){ this.setState({ isFirstPassage: {[section]: false }}) 
-}
-
+ 
   SwitchProjectId(data){
-    // Handles Switching Pages
 
-    (data) ? this.setState({currentProject: data}) : this.setState({currentProject: null}) 
+    (data) ? this.setState({currentProject: data}) : this.setState({currentProject: 'home'}) 
     this.bodyScrollBar.scrollTo(0, 0, 0);
   }
 
+  UpdateFirstPassage(section){ this.setState({ isFirstPassage: {[section]: false }})}
   scrollIntoViewHandler(target){ this.bodyScrollBar.scrollIntoView(target) }
-  toggleScroll(scrollingActive){
-    (scrollingActive) ? this.setState({ damping: 0.1}) : this.setState({ damping: 0 });
-    
-  }
+  toggleScroll(scrollingActive){ this.bodyScrollBar.updatePluginOptions('modal', { open: false })}
+  setNumberOfProjects(numberOfProjects){ this.setState({ numberOfProjects: numberOfProjects }) }
   
   componentDidMount(){
 
 
     // Setting Up Smooth Scrollbar
+
+    Scrollbar.use(ModalPlugin, /* OverscrollPlugin */);
     this.bodyScrollBar = Scrollbar.init(document.querySelector(".scrollable"), {damping: 0.1, renderByPixels: true})
     this.bodyScrollBar.track.yAxis.element.remove();
 
-    console.log(this.bodyScrollBar.damping);
+    this.bodyScrollBar.updatePluginOptions('modal', { open: false }); //Debug
 
     ScrollerProxy(this.bodyScrollBar);
 
@@ -88,8 +91,10 @@ class App extends React.Component {
                       </div>
                     <div className="col-11-of-14">
                         {
-                          (!this.state.currentProject) ? (
-                            <HomePage currentProject={this.state.currentProject}  
+                          (this.state.currentProject === "home") ? (
+                            <HomePage setNumberOfProjects={this.setNumberOfProjects}
+                                      
+                                      currentProject={this.state.currentProject}  
                                       SwitchProjectId={this.SwitchProjectId} 
 
                                       isFirstPassage={this.state.isFirstPassage}
@@ -98,7 +103,8 @@ class App extends React.Component {
                                       toggleScroll={this.toggleScroll}
                                       />
                           ):( 
-                            <Project  currentProject={this.state.currentProject} 
+                            <Project  numberOfProjects={this.state.numberOfProjects}
+                                      currentProject={this.state.currentProject} 
                                       SwitchProjectId={this.SwitchProjectId} 
                                       scrollIntoView={this.scrollIntoViewHandler}/>
                           )

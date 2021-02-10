@@ -12,20 +12,21 @@ const Selection = (props) => {
    const [nextProject, setNextProject] = useState([]); 
 
    useEffect(() => {
-      HandleSetData();
-   }, [])
-
-   function HandleSetData(){
-      Axios
-      .get('http://localhost:3006/api/project_' + (props.currentProject + 1))
-        .then(res => { setPreviousProject(res.data)})
-        .catch(e => console.log(e));
-      
-        Axios
-      .get('http://localhost:3006/api/project_' + ( props.currentProject - 1))
-         .then(res => { setNextProject(res.data)})
+      if(props.currentProject < props.numberOfProjects){
+         Axios
+         .get('http://localhost:3006/api/project_' + (props.currentProject + 1))
+         .then(res => { setPreviousProject(res.data)})
          .catch(e => console.log(e));
-   }
+      }
+      
+      if(props.currentProject -1 >= 0){
+        Axios
+         .get('http://localhost:3006/api/project_' + ( props.currentProject - 1))
+            .then(res => { setNextProject(res.data)})
+            .catch(e => console.log(e));
+      }
+
+   }, [props.currentProject, props.numberOfProjects])
 
    function HandleHover(name){
       const timeline = new Timeline();
@@ -38,23 +39,17 @@ const Selection = (props) => {
    function HandleProjectSwitch(id){
       console.log(id);
       props.SwitchProject(id)
-      HandleSetData();
+
    }
 
-   function HandleBackHome(){
-      console.log('back home')
-      props.SwitchProject(0)
-      props.scrollIntoView(document.querySelector('#work'))
-
-      console.log(document.querySelector('#work'));
-   }
+   
 
 
 
   return (
     <React.Fragment>
       <div className="selection">
-
+         <hr className="project__title__line line--thin"/>
          <div className="container">
             <div className="row">
 
@@ -72,8 +67,8 @@ const Selection = (props) => {
 
                <div className="col-1-of-3 col-1-of-3--no-margin">
                   <div className="selection__label__container">
-                     <div className="selection__label" onClick={() => HandleBackHome()}>
-                        <span className="selection__label__text info-heading info-heading--uppercase info-heading--bold">Back To home Page</span>
+                     <div className="selection__label" onClick={() => props.HandleBackHome()}>
+                        <span className="selection__label__text info-heading ">Back To ome Page</span>
                      </div>
                   </div>
                </div>
@@ -90,7 +85,7 @@ const Selection = (props) => {
                </div>
             </div>
          </div>
-
+         <hr className="project__title__line line--thin"/>
       </div>
       
     </React.Fragment>

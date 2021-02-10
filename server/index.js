@@ -44,8 +44,32 @@ app.get('/api/tag', (req, res) => {
    })
 })
 
+
+//Get All exhibition
+app.get('/api/exhibition', (req, res) => {
+   const sqlSelect = "SELECT * FROM exhibiton ORDER BY date DESC";
+   db.query(sqlSelect, (err, result) => {
+      res.send(result);
+   })
+})
+
+//Get All Location
+app.get('/api/location', (req, res) => {
+   const sqlSelect = "SELECT * FROM exhibition_location INNER JOIN location ON exhibition_location.location_num = location.id";
+   db.query(sqlSelect, (err, result) => {
+      res.send(result);
+   })
+})
+
 db.query("SELECT * FROM Projects ORDER BY id DESC", function(err, results) {
    for(let i = 0; i < results.length; i++){
+
+      app.get('/api/exhibition_' + i, (req, res) => {
+         const sqlSelect = "SELECT * FROM exhibition_project INNER JOIN exhibiton ON exhibiton.id = exhibition_project.exhibition_num WHERE exhibition_project.project_num =" + i + " ORDER BY exhibiton.date DESC";
+         db.query(sqlSelect, (err, result) => {
+            res.send(result);
+         })
+      })
 
       //Get specific Tag
       app.get('/api/project_'+ i, (req, res) => {
