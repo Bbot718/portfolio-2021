@@ -1,11 +1,16 @@
 .selection{
 
    &__label{
+      position: relative;
       overflow: hidden;
       cursor: pointer;
 
+      &__text{
+         position: relative;
+         transform: translateY(100%);
+      }
+
       &__container{
-   
          display: flex;
          justify-content: center;
          align-items: center;
@@ -18,6 +23,7 @@
       display: inline-block;
       background-color: black;
       padding: 0rem .5rem;
+      transform: translateY(100%);
 
       &--left{float: left;}
       &--center{margin: 0 auto ; }

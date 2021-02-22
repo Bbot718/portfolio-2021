@@ -1,4 +1,4 @@
-import React  from 'react';
+import React, {useEffect}  from 'react';
 
 //Components
 import Header from './header';
@@ -18,28 +18,47 @@ const HomePage = (props) => {
 
   const duration = 1;
 
+  useEffect(() => {
+    (props.firstIn === false) && HandleHomePageIn();
+
+  }, [])
+
   function HandleHomePageOut(projectId, hasAppearedID, projects){   
-    /*
+
+    props.toggleScroll(false);
+    props.UpdateFirstIn()
+    
     if(projects.hasAppeared[hasAppearedID])
     {   
-      gsap.to('.navigation__item', {y: '-100%', ease: Power4.easeIn, duration: duration})
-      gsap.to(['.line--thin', '.line--thick'], {width: 0, ease: Power2.easeOut, duration: duration, onComplete: () => {
-        gsap.to('.work-item__image-hidder', {scaleY: 1, ease: Power4.easeIn, duration: duration})
-        gsap.to('.navigation__selected', {x: '-100%', ease: Power4.easeIn, duration: duration})
+      const timeline = new Timeline();
+      timeline.to('.navigation__item', {y: '-100%', duration: .3})
+      timeline.to('.primary-heading', {y: '100%'})
+      timeline.to(['.line--thick', '.line--thin'], {width: 0})
+     
+      gsap.to('.paragraphe', {opacity: 0, delay: 1})
 
-        for(let i = 0; i < projects.name.length; i++){
-          i <= hasAppearedID && gsap.to([projects.date[i], projects.name[i], projects.tag[i]], {
-            y: '-100%', 
-            ease: Power4.easeIn, 
-            duration: duration, onComplete: () => {
-              props.SwitchProjectId(projectId)
-          }})
-        }
+      gsap.to('.work-item__image-hidder', {scaleY: 1 })
+      for(let i = 0; i < projects.name.length; i++){
+        i <= hasAppearedID && gsap.to([projects.date[i], projects.name[i], projects.tag[i]], { y: '100%' })
+      }
+
+      timeline.to('#home-page', {opacity: 0,  onComplete: () => {
+        props.SwitchProjectId(projectId)
+        props.bodyScrollBar.scrollTo(0, 0, 1);
       }})
     }
-    */
-   props.SwitchProjectId(projectId)
   }
+
+  function HandleHomePageIn(){
+    console.log('home page in');
+    props.toggleScroll(true);
+    props.scrollIntoView(document.getElementById('work'))
+
+    gsap.from('.primary-heading', {y: '100%'})
+
+  }
+
+  
 
 
 
@@ -50,7 +69,8 @@ const HomePage = (props) => {
       {/* Welcome Section */}
       <header id="header">
         <Header currentProject={props.currentProject}
-        
+
+
                 isFirstPassage={props.isFirstPassage} 
                 UpdateFirstPassage={props.UpdateFirstPassage}
 

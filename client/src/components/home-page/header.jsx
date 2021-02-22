@@ -82,7 +82,7 @@ function Header(props) {
                   chars[letterSelection].classList.add( 'openTypeStyle' + openTypeSelection)
                }
             },
-            onComplete:() => (currentProject === null && HandlePlay(currentProject)),
+            onComplete:() => (currentProject === 'home' && HandlePlay(currentProject)),
          })
    
       }

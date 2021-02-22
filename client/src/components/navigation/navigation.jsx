@@ -12,11 +12,11 @@ class Navigation extends React.Component {
          {/* Current Section */}
          <div className="navigation__top"> 
             <div className="header__name__container">
-               <div className={"header__name info-heading info-heading--bold info-heading--"+ this.props.theme}>BENJAMIN BOTROS</div>
+               <div className={"header__name info-heading info-heading--bold info-heading--uppercase "}>BENJAMIN BOTROS</div>
             </div>
             
             <div className="header__name__container">
-               <div className={"header__name info-heading "}>Interaction Designer</div>
+               <div className={"header__name info-heading info-heading--uppercase"}>Interaction Designer</div>
             </div>
          </div>
 

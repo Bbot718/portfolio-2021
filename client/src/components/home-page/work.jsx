@@ -47,7 +47,7 @@ class Work extends Component {
 
 
   componentDidMount() {
-    console.log(this.props.setNumberOfProjects)
+
     // Database Requests
     Axios
       .get('http://localhost:3006/api/project')
@@ -133,7 +133,7 @@ class Work extends Component {
                           <div className="work-item__tag__container" ref={project => (this.project.tag[i] = project)}>
                             {this.state.tags.map((tag, index) => {
                                 if (tag.project_num === project.Project_num) {
-                                  return <div className="work-item__tag info-heading info-heading--medium info-heading--uppercase">{tag.Name}</div>
+                                  return <div className="work-item__tag info-heading">{tag.Name}</div>
                                 }
                             })}
                           </div>

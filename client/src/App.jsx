@@ -27,6 +27,7 @@ class App extends React.Component {
 
     this.state = {  currentProject: 'home', 
                     numberOfProjects: null,
+                    firstIn:true,
                     isFirstPassage: {
                       header: true,
                       work: true,
@@ -38,6 +39,7 @@ class App extends React.Component {
     this.setNumberOfProjects = this.setNumberOfProjects.bind(this);
     this.SwitchProjectId = this.SwitchProjectId.bind(this);
     this.UpdateFirstPassage = this.UpdateFirstPassage.bind(this);
+    this.UpdateFirstIn = this.UpdateFirstIn.bind(this);
     this.scrollIntoViewHandler = this.scrollIntoViewHandler.bind(this);
     this.toggleScroll = this.toggleScroll.bind(this);
   }
@@ -45,14 +47,18 @@ class App extends React.Component {
   
  
   SwitchProjectId(data){
-
-    (data) ? this.setState({currentProject: data}) : this.setState({currentProject: 'home'}) 
-    this.bodyScrollBar.scrollTo(0, 0, 0);
+    if(data !== 'home'){
+      this.setState({currentProject: data})
+    }
+    else{
+      this.setState({currentProject: 'home'}) 
+    }
   }
 
+  UpdateFirstIn(){this.setState({firstIn:false})}
   UpdateFirstPassage(section){ this.setState({ isFirstPassage: {[section]: false }})}
   scrollIntoViewHandler(target){ this.bodyScrollBar.scrollIntoView(target) }
-  toggleScroll(scrollingActive){ this.bodyScrollBar.updatePluginOptions('modal', { open: false })}
+  toggleScroll(scrollingActive){ console.log('togglescroll'); this.bodyScrollBar.updatePluginOptions('modal', { open: (scrollingActive) ? false : true })}
   setNumberOfProjects(numberOfProjects){ this.setState({ numberOfProjects: numberOfProjects }) }
   
   componentDidMount(){
@@ -64,11 +70,11 @@ class App extends React.Component {
     this.bodyScrollBar = Scrollbar.init(document.querySelector(".scrollable"), {damping: 0.1, renderByPixels: true})
     this.bodyScrollBar.track.yAxis.element.remove();
 
-    this.bodyScrollBar.updatePluginOptions('modal', { open: false }); //Debug
+    this.bodyScrollBar.updatePluginOptions('modal', { open: true }); //Debug
 
     ScrollerProxy(this.bodyScrollBar);
 
-    if(this.state.currentProject === null)
+    if(this.state.currentProject === 'home')
       FixedElements(this.bodyScrollBar, document.querySelector('.header'));
     FixedElements(this.bodyScrollBar, document.querySelector('.navigation'));
 
@@ -94,19 +100,27 @@ class App extends React.Component {
                           (this.state.currentProject === "home") ? (
                             <HomePage setNumberOfProjects={this.setNumberOfProjects}
                                       
+                                      scrollIntoView={this.scrollIntoViewHandler}
+
                                       currentProject={this.state.currentProject}  
                                       SwitchProjectId={this.SwitchProjectId} 
+
+                                      firstIn={this.state.firstIn}
+                                      UpdateFirstIn={this.UpdateFirstIn}
 
                                       isFirstPassage={this.state.isFirstPassage}
                                       UpdateFirstPassage={this.UpdateFirstPassage}
 
+                                      bodyScrollBar={this.bodyScrollBar}
                                       toggleScroll={this.toggleScroll}
                                       />
                           ):( 
                             <Project  numberOfProjects={this.state.numberOfProjects}
                                       currentProject={this.state.currentProject} 
                                       SwitchProjectId={this.SwitchProjectId} 
-                                      scrollIntoView={this.scrollIntoViewHandler}/>
+                                      bodyScrollBar={this.bodyScrollBar}
+                                      toggleScroll={this.toggleScroll}
+                                      />
                           )
                         }
                     </div>

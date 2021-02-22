@@ -6,6 +6,7 @@
       background: black;
       border: none;
       box-sizing: border-box;
+      transform-origin: right;
 
 
       height: .9vw;
@@ -20,6 +21,7 @@
       max-width: 100%;
       background: black;
       border: none;
+      transform-origin: right;
 
       @include respond(xxxl) {height: 10px;}
       @include respond(xxl) {height: 10px;}
@@ -36,6 +38,7 @@
       max-width: 100%;
       background: black;
       border: none;
+      transform-origin: right;
 
       @include respond(xxxl) {height: 7px;}
       @include respond(xxl) {height: 5px;}

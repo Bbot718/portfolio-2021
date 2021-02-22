@@ -51,22 +51,16 @@ class Menu extends React.Component {
       <ul className="navigation__menu">
 
                <li className="navigation__item__container"> 
-                  <span onClick={() => this.HandleClick('#work')}  className="navigation__item info-heading ">Selected Work</span> 
-                  <div className="navigation__current">
-                     <span ref={menu => this.currentMenuItem[0] = menu}  id="navigation-selected--work" className="navigation__selected info-heading">—</span> 
-                  </div>
+                  <span onClick={() => this.HandleClick('#work')}  className="navigation__item info-heading info-heading--uppercase">Selected Work</span> 
+
                </li>
                <li className="navigation__item__container"> 
-                  <span onClick={() => this.HandleClick('#about')} className="navigation__item info-heading ">About</span> 
-                  <div className="navigation__current">
-                     <span ref={menu => this.currentMenuItem[1] = menu} id="navigation-selected--work" className="navigation__selected info-heading">—</span> 
-                  </div>
+                  <span onClick={() => this.HandleClick('#about')} className="navigation__item info-heading info-heading--uppercase">About</span> 
+
                </li>
                <li className="navigation__item__container"> 
-                  <span onClick={() => this.HandleClick('#contact')}   className="navigation__item info-heading ">Contact</span> 
-                  <div className="navigation__current">
-                     <span ref={menu => this.currentMenuItem[2] = menu} id="navigation-selected--work" className="navigation__selected info-heading">—</span> 
-                  </div>
+                  <span onClick={() => this.HandleClick('#contact')}   className="navigation__item info-heading info-heading--uppercase">Contact</span> 
+
                </li>
       </ul>
     )

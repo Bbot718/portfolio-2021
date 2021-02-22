@@ -3,10 +3,20 @@
 
    &__title{
       line-height: 1;
+      transform: translateY(100%);
 
       &__container{
          display: inline-block;
       }
+
+      &__line{
+         width: 0;
+      }
+   }
+
+   &__label{
+
+      transform: translateY(100%);
    }
 
    &__close{
@@ -27,6 +37,7 @@
    }
 
    &__date{
+      transform: translateY(100%);
       &__container{
          position: relative;
          display: inline-block;
@@ -37,7 +48,7 @@
    }
 
    &__tag{
-
+      transform: translateY(100%);
       margin-right: 1rem;
 
       &__container{
@@ -46,30 +57,37 @@
    }
 
    &__video{
-      display: block;
+      position: relative;
       width: 100%;
+      height: 100%;
 
-      &__controls{
-         background-color: black;
-         color: white;
+      &__container{
+         position: relative;
          width: 100%;
-         padding: .1rem 1rem;
+         height: 100%;
       }
 
       &__hidder{
          position: absolute;
-         background-color: red;
-         width: 120%;
-         height: 100%;
          display: block;
-         transform-origin: bottom;
-         transform: scaleY(1);
-         z-index: 100000;
+         width: 100%;
+         height: 0%;
+         background-color: white;
+         z-index: 1000;
+         transform-origin: bottom center;
+
+
+        
+
       }
+   }
+
+   &__exhibition{
+      //transform: translateY(50%);
+      float: right;
 
       &__container{
          position: relative;
-         display: block;
          overflow: hidden;
       }
    }
@@ -80,6 +98,8 @@
          overflow: hidden;
          position: relative;
       }
+
+      
    }
 
 

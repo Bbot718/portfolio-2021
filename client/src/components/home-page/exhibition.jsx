@@ -47,7 +47,7 @@ class Exhibition extends Component {
 
            
             for (let i = 0; i < this.state.exhibitions.length; i++) {
-               console.log(this.exhibition.location[i])
+
                ElementScrolltrigger([this.exhibition.name[i], this.exhibition.date[i], this.exhibition.location[i]], this.exhibition.trigger, this.props.UpdateFirstPassage, "exhibition")
                ElementScrolltrigger(this.exhibition.location[i], this.exhibition.trigger)
                LineIn(this.exhibition.line[i], this.exhibition.trigger, 3);
